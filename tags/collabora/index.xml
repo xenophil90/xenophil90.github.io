@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 25 Jan 2022 15:18:17 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/tags/collabora/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen</title>
-      <link>https://xenophil90.github.io/posts/nextcloud-23-docker-apache-2-collabora-nach-update-wieder-lauffa%CC%88hig-bekommen/</link>
+      <link>https://xenophil90.github.io/posts/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/</link>
       <pubDate>Tue, 25 Jan 2022 15:18:17 +0100</pubDate>
       
-      <guid>https://xenophil90.github.io/posts/nextcloud-23-docker-apache-2-collabora-nach-update-wieder-lauffa%CC%88hig-bekommen/</guid>
+      <guid>https://xenophil90.github.io/posts/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/</guid>
       <description>Einleitung  Mit dem Update auf die derzeit aktuelle Nextcloud-Version 23 wurde Collabora Office als bevorzugte Office-Lösung der Cloud eingeführt1.
     Fehlerbeschreibung  Ich nutze Nextcloud in einem Docker-Setup. Collabora wird in einem eigenen Docker-Container betrieben. Auf dem Host-System läuft Apache 2 als Reverse Proxy, der die Verbindungen an die einzelnen Docker-Container weiterleitet.
 Mit dem Update auf die neuste Collabora-Version zusammen mit Nextcloud 23 konnte der Collabora-Server nicht mehr gefunden werden.</description>
