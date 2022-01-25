@@ -207,7 +207,7 @@
   ProxyPassReverse    /lool https://127.0.0.1:9980/cool
 
   RewriteEngine on
-  RewriteCond %{SERVER_NAME} =office.vuv-verwaltung.de
+  RewriteCond %{SERVER_NAME} =office.domain.de
   RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 &lt;/VirtualHost&gt;
 
