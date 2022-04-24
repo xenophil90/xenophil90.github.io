@@ -169,91 +169,91 @@
 </h2>
 <p>Es stellte sich nach kurzer Recherche heraus, dass sich mit dem Update von Collabora einige Ordnerpfade geändert haben<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Meine Apache 2-Konfiguration hatte noch die alten Ordner-Pfade enthalten.</p>
 <p>Die korrigierte Fassung der Konfigurationsdatei unter <code>/etc/apache2/sites-enabled/011-collabora.conf</code> sieht wie folgt aus:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">&lt;VirtualHost *:80&gt;
-  ServerName office.domain.de
-  ErrorLog ${APACHE_LOG_DIR}/error.log
-  CustomLog ${APACHE_LOG_DIR}/access.log combined
-  AllowEncodedSlashes NoDecode
-  SSLProxyEngine On
-  SSLProxyVerify None
-  SSLProxyCheckPeerCN Off
-  SSLProxyCheckPeerName Off
-  ProxyPreserveHost On
-
-  # static html, js, images, etc. served from coolwsd
-  # browser is the client part of Collabora Online
-  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
-  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
-
-  # WOPI discovery URL
-  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
-  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
-
-  # Capabilities
-  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
-  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
-
-  # Main websocket
-  ProxyPassMatch      &#34;/cool/(.*)/ws$&#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
-
-  # Admin Console websocket
-  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
-
-  # Download as, Fullscreen presentation and Image upload operations
-  ProxyPass           /cool https://127.0.0.1:9980/cool
-  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
-  # Compatibility with integrations that use the /lool/convert-to endpoint
-  ProxyPass           /lool https://127.0.0.1:9980/cool
-  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
-
-  RewriteEngine on
-  RewriteCond %{SERVER_NAME} =office.domain.de
-  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
-&lt;/VirtualHost&gt;
-
-&lt;VirtualHost *:443&gt;
-  ServerName office.domain.de
-  ErrorLog ${APACHE_LOG_DIR}/error.log
-  CustomLog ${APACHE_LOG_DIR}/access.log combined
-  SSLEngine on
-  AllowEncodedSlashes NoDecode
-  SSLProxyEngine On
-  SSLProxyVerify None
-  SSLProxyCheckPeerCN Off
-  SSLProxyCheckPeerName Off
-  ProxyPreserveHost On
- 
-  # static html, js, images, etc. served from coolwsd
-  # browser is the client part of Collabora Online
-  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
-  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
-
-  # WOPI discovery URL
-  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
-  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
-
-  # Capabilities
-  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
-  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
-
-  # Main websocket
-  ProxyPassMatch      &#34;/cool/(.*)/ws$&#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
-
-  # Admin Console websocket
-  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
-
-  # Download as, Fullscreen presentation and Image upload operations
-  ProxyPass           /cool https://127.0.0.1:9980/cool
-  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
-  # Compatibility with integrations that use the /lool/convert-to endpoint
-  ProxyPass           /lool https://127.0.0.1:9980/cool
-  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
- 
-  Include      /etc/letsencrypt/options-ssl-apache.conf
-  SSLCertificateFile /etc/letsencrypt/live/cloud.domain.de/fullchain.pem
-  SSLCertificateKeyFile /etc/letsencrypt/live/cloud.domain.de/privkey.pem
-&lt;/VirtualHost&gt;
-</code></pre></div><p>Diese Problemlösung habe ich ebenfalls in das Nextcloud-Forum gepostet<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. Dort gibt es eine exzellente Anleitung über die Einrichtung von Nextcloud in Docker.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;
+</span></span><span class="line"><span class="cl">  ServerName office.domain.de
+</span></span><span class="line"><span class="cl">  ErrorLog ${APACHE_LOG_DIR}/error.log
+</span></span><span class="line"><span class="cl">  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</span></span><span class="line"><span class="cl">  AllowEncodedSlashes NoDecode
+</span></span><span class="line"><span class="cl">  SSLProxyEngine On
+</span></span><span class="line"><span class="cl">  SSLProxyVerify None
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerCN Off
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerName Off
+</span></span><span class="line"><span class="cl">  ProxyPreserveHost On
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # static html, js, images, etc. served from coolwsd
+</span></span><span class="line"><span class="cl">  # browser is the client part of Collabora Online
+</span></span><span class="line"><span class="cl">  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # WOPI discovery URL
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Capabilities
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Main websocket
+</span></span><span class="line"><span class="cl">  ProxyPassMatch      &#34;/cool/(.*)/ws$&#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Admin Console websocket
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Download as, Fullscreen presentation and Image upload operations
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  # Compatibility with integrations that use the /lool/convert-to endpoint
+</span></span><span class="line"><span class="cl">  ProxyPass           /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  RewriteEngine on
+</span></span><span class="line"><span class="cl">  RewriteCond %{SERVER_NAME} =office.domain.de
+</span></span><span class="line"><span class="cl">  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;VirtualHost *:443&gt;
+</span></span><span class="line"><span class="cl">  ServerName office.domain.de
+</span></span><span class="line"><span class="cl">  ErrorLog ${APACHE_LOG_DIR}/error.log
+</span></span><span class="line"><span class="cl">  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</span></span><span class="line"><span class="cl">  SSLEngine on
+</span></span><span class="line"><span class="cl">  AllowEncodedSlashes NoDecode
+</span></span><span class="line"><span class="cl">  SSLProxyEngine On
+</span></span><span class="line"><span class="cl">  SSLProxyVerify None
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerCN Off
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerName Off
+</span></span><span class="line"><span class="cl">  ProxyPreserveHost On
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  # static html, js, images, etc. served from coolwsd
+</span></span><span class="line"><span class="cl">  # browser is the client part of Collabora Online
+</span></span><span class="line"><span class="cl">  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # WOPI discovery URL
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Capabilities
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Main websocket
+</span></span><span class="line"><span class="cl">  ProxyPassMatch      &#34;/cool/(.*)/ws$&#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Admin Console websocket
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Download as, Fullscreen presentation and Image upload operations
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  # Compatibility with integrations that use the /lool/convert-to endpoint
+</span></span><span class="line"><span class="cl">  ProxyPass           /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  Include      /etc/letsencrypt/options-ssl-apache.conf
+</span></span><span class="line"><span class="cl">  SSLCertificateFile /etc/letsencrypt/live/cloud.domain.de/fullchain.pem
+</span></span><span class="line"><span class="cl">  SSLCertificateKeyFile /etc/letsencrypt/live/cloud.domain.de/privkey.pem
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
+</span></span></code></pre></div><p>Diese Problemlösung habe ich ebenfalls in das Nextcloud-Forum gepostet<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. Dort gibt es eine exzellente Anleitung über die Einrichtung von Nextcloud in Docker.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -275,6 +275,11 @@
 <div class="container">
     
     <nav class="flex container suggested">
+        
+        <a rel="prev" href="/posts/htb-meta/" title="Previous post (older)">
+            <span>Previous</span>
+            HackTheBox: Meta
+            </a>
         
         
         
