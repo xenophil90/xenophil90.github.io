@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://xenophil90.github.io/</loc>
     <lastmod>2022-01-25T15:18:17+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/</loc>
+    <loc>https://xenophil90.github.io/posts/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/</loc>
     <lastmod>2022-01-25T15:18:17+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://xenophil90.github.io/posts/</loc>
     <lastmod>2022-01-25T15:18:17+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://xenophil90.github.io/tags/</loc>
     <lastmod>2022-01-25T15:18:17+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tech/</loc>
+    <loc>https://xenophil90.github.io/tags/tech/</loc>
     <lastmod>2022-01-25T15:18:17+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hacking/</loc>
+    <loc>https://xenophil90.github.io/tags/hacking/</loc>
     <lastmod>2022-01-24T15:09:03+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hackthebox/</loc>
+    <loc>https://xenophil90.github.io/tags/hackthebox/</loc>
     <lastmod>2022-01-24T15:09:03+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb-meta/</loc>
+    <loc>https://xenophil90.github.io/posts/htb-meta/</loc>
     <lastmod>2022-01-24T15:09:03+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/beitraege/</loc>
+    <loc>https://xenophil90.github.io/beitraege/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://xenophil90.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/fotografie/</loc>
+    <loc>https://xenophil90.github.io/fotografie/</loc>
   </url><url>
-    <loc>http://localhost:1313/impressum/</loc>
+    <loc>https://xenophil90.github.io/impressum/</loc>
   </url>
 </urlset>
