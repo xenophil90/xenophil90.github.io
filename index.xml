@@ -24,7 +24,7 @@
     Einleitung
 &lt;/h2&gt;
 &lt;p&gt;Mit dem Update auf die derzeit aktuelle Nextcloud-Version 23 wurde Collabora Office als bevorzugte Office-Lösung der Cloud eingeführt&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/nextcloud-logo.svg&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/nextcloud-logo.svg&#34;&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;fehlerbeschreibung&#34;&gt;
@@ -136,20 +136,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLCertificateKeyFile /etc/letsencrypt/live/cloud.domain.de/privkey.pem
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/VirtualHost&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Diese Problemlösung habe ich ebenfalls in das Nextcloud-Forum gepostet&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Dort gibt es eine exzellente Anleitung über die Einrichtung von Nextcloud in Docker.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://nextcloud.com/de/press/pr20211130-1/&#34;&gt;Nextcloud Hub II brings major overhaul, introducing Nextcloud Office, P2P backup, more&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://sdk.collaboraonline.com/docs/installation/Proxy_settings.html&#34;&gt;Collabora Documentation: Proxy settings&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://help.nextcloud.com/t/howto-ubuntu-docker-nextcloud-talk-collabora/76430/87&#34;&gt;HowTo: Ubuntu + Docker + Nextcloud + Talk + Collabora&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 
     </description>
     </item>
@@ -173,7 +173,7 @@
 &lt;/h2&gt;
 &lt;p&gt;Meta ist eine als &lt;em&gt;Medium&lt;/em&gt; eingestufte Maschine auf HackTheBox. Sie wurde Ende Januar 2022 veröffentlicht. Um die Maschine zu hacken ist es notwendig eine Schwachstelle in &lt;em&gt;exiftool&lt;/em&gt; auszunutzen. Anschließend muss eine Schwachstelle des Moduls &lt;em&gt;Mogrify&lt;/em&gt; aus der ImageMagick-Werkzeugsammlung ausgenutzt werden, um nach der ersten Shell den nächsten Benutzeraccount zu übernehmen. Als letzter Schritt wird eine Schwachstelle der Konfiguration von &lt;em&gt;sudo&lt;/em&gt; und &lt;em&gt;neofetech&lt;/em&gt; ausgenutzt, um Root-Zugang zu erhalten.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!&lt;/strong&gt;&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-1.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-1.png&#34;&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;initiale-erkundung&#34;&gt;
@@ -225,7 +225,7 @@
     &lt;/a&gt;
     Webserver: artcorp.htb
 &lt;/h3&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-2.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-2.png&#34;&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Die Seite an sich sieht unspektakulär aus. Es scheint sich bei ArtCorp um eine Firma zu handeln, die Software entwickelt. Insbesondere wird gerade das Werkzeug &lt;em&gt;MetaView&lt;/em&gt; entwickelt, ist aber nirgends auf der Seite aufzufinden. Vielleicht gibt es einen Entwicklungs-Server?&lt;/p&gt;
@@ -255,7 +255,7 @@
     Webserver: dev01.artcorp.htb
 &lt;/h3&gt;
 &lt;p&gt;Hinter der neu entdeckten Subdomain verbirgt sich die aktuelle Entwickler-Version von &lt;em&gt;MetaView&lt;/em&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-3.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-3.png&#34;&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Nach kurzem Test entpuppt sich die Funktionsfähigkeit wie folgt: Der Benutzer lädt ein Bild Über das Webformular hoch und &lt;em&gt;MetaView&lt;/em&gt; liest die Exit-Daten des Bildes aus und gibt diese auf dem Bildschirm aus. Die Ausgabe gleicht der Ausgabe von &lt;code&gt;exiftool&lt;/code&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
@@ -301,7 +301,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1; #end%
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Anschließend wird das Bild hochgeladen und die Ausgabe auf der Seite kontrolliert: Es hat funktioniert!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-4.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-4.png&#34;&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;exploit-skript&#34;&gt;
@@ -346,7 +346,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Im letzten Schritt wird die hochgeladene Datei auf dem Server ausgeführt, während ein &lt;code&gt;netcat&lt;/code&gt;-Listener auf der Angreifer-Maschine läuft.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(metadata &amp;#34;\c${system(&amp;#39;bash /tmp/rev.sh&amp;#39;)};&amp;#34;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Das Ergebnis ist eine Reverse Shell als &lt;code&gt;www-data&lt;/code&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-5.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-5.png&#34;&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;erkundung-als-www-data&#34;&gt;
@@ -372,7 +372,7 @@
     Laufende Prozesse und Cronjobs
 &lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;pspy64&lt;/code&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; zeigt nach einigen Minuten eine wiederkehrende Aufgabe an.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-6.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-6.png&#34;&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Die wiederkehrende Aufgabe ruft &lt;code&gt;mogrify&lt;/code&gt; auf und wandelt alle Dateien in &lt;code&gt;/var/www/dev01.artcorp.htb/convert_images/&lt;/code&gt; in &lt;code&gt;.png&lt;/code&gt;-Dateien um.&lt;/p&gt;
@@ -439,29 +439,29 @@
 &lt;/h2&gt;
 &lt;p&gt;Die Maschine ist unter den als &lt;em&gt;Medium&lt;/em&gt; eingestuften Maschinen eine der leichteren und zeigt wie wichtig eine penible Erkundung des Zielsystems ist. Die Reverse Shell zu erhalten war ein echter Kampf, da alle anderen Versuche (zig Möglichkeiten durchprobiert) nicht funktioniert haben. Die Privilege Escalation zum Benutzer &lt;code&gt;root&lt;/code&gt; empfang ich als CTFig und nicht realistisch.&lt;/p&gt;
 &lt;p&gt;Alles in allem eine gute und unterhaltsame Maschine und definitiv für Anfänger geeignet!&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&#34;&gt;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.exiftool.org&#34;&gt;https://www.exiftool.org&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/&#34;&gt;https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204&#34;&gt;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/DominicBreuker/pspy&#34;&gt;https://github.com/DominicBreuker/pspy&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html&#34;&gt;https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
     </description>
     </item>
     

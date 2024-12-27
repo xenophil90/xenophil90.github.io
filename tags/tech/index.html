@@ -1,16 +1,18 @@
-
+<!DOCTYPE html>
+<html lang="de-de">
+    
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="dark">
-    <title>404 Page not found | xenophil90.github.io</title>
+    <title>Tech | xenophil90.github.io</title>
     
     <meta property="og:site_name" content="xenophil90" />
-    <meta property="og:title" content="404 Page not found | xenophil90.github.io"/>
-    <meta itemprop="name" content="404 Page not found | xenophil90.github.io" />
-    <meta name="twitter:title" content="404 Page not found | xenophil90.github.io" />
-    <meta name="application-name" content="404 Page not found | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
+    <meta property="og:title" content="Tech | xenophil90.github.io"/>
+    <meta itemprop="name" content="Tech | xenophil90.github.io" />
+    <meta name="twitter:title" content="Tech | xenophil90.github.io" />
+    <meta name="application-name" content="Tech | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
 
     <meta name="description" content="Blog von xenophil90" />
     <meta name="twitter:description" content="Blog von xenophil90"/>
@@ -25,7 +27,33 @@
     <link rel="stylesheet" href="/sass/main.min.8e5845c8f6f5d48fe256a59fcf548c65590415af8e70e0dda32f6cba26f19f98.css">
     <script defer language="javascript" type="text/javascript"  src="/js/throttle.js"></script>
 </head>
-<nav class="navbar">
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
     <div class="container">
         <div class="flex">
             <div>
@@ -56,14 +84,46 @@
     </div>
 </nav>
 
+        <main>
+            
 
-<div class="container">
-<main>
-<h1>404 NOT FOUND</h1>
-</main>
-</div>
 
-<footer class="footer flex">
+
+
+<header>
+  <div class="container">
+    <h1>Tech</h1>
+    <p class="subtitle">
+      <span class="count">1</span> posts found.
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <section>
+      <section>
+        <div class="posts">
+          
+          <div class="post">
+            <a href="/posts/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/">
+              <div class="post-row">
+                <time>Jan 25</time>
+                <h3>Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen</h3>
+              </div>
+              
+            </a>
+          </div>
+          
+        </div>
+      </section>
+    </section>
+  </div>
+</section>
+
+
+        </main>
+        <footer class="footer flex">
     <section class="container">
         <nav class="footer-links">
             
@@ -81,3 +141,5 @@
     ></script>
 </footer>
 
+    </body>
+</html>

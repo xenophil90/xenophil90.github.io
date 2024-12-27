@@ -101,15 +101,9 @@
                         </div>
                         <div class="tags">
                             
-                            <a href="/tags/htb/">htb</a>
+                            <a href="/tags/hackthebox/">Hackthebox</a>
                             
-                            <a href="/tags/exiftool/">exiftool</a>
-                            
-                            <a href="/tags/imagemagick/">ImageMagick</a>
-                            
-                            <a href="/tags/neofetch/">neofetch</a>
-                            
-                            <a href="/tags/sudo/">sudo</a>
+                            <a href="/tags/hacking/">Hacking</a>
                             
                         </div>
                     </div>
@@ -165,7 +159,7 @@
 </h2>
 <p>Meta ist eine als <em>Medium</em> eingestufte Maschine auf HackTheBox. Sie wurde Ende Januar 2022 veröffentlicht. Um die Maschine zu hacken ist es notwendig eine Schwachstelle in <em>exiftool</em> auszunutzen. Anschließend muss eine Schwachstelle des Moduls <em>Mogrify</em> aus der ImageMagick-Werkzeugsammlung ausgenutzt werden, um nach der ersten Shell den nächsten Benutzeraccount zu übernehmen. Als letzter Schritt wird eine Schwachstelle der Konfiguration von <em>sudo</em> und <em>neofetech</em> ausgenutzt, um Root-Zugang zu erhalten.</p>
 <p><strong>Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!</strong></p>
-<figure><img src="/img/htb-meta-1.png"/>
+<figure><img src="/img/htb-meta-1.png">
 </figure>
 
 <h2 id="initiale-erkundung">
@@ -217,7 +211,7 @@
     </a>
     Webserver: artcorp.htb
 </h3>
-<figure><img src="/img/htb-meta-2.png"/>
+<figure><img src="/img/htb-meta-2.png">
 </figure>
 
 <p>Die Seite an sich sieht unspektakulär aus. Es scheint sich bei ArtCorp um eine Firma zu handeln, die Software entwickelt. Insbesondere wird gerade das Werkzeug <em>MetaView</em> entwickelt, ist aber nirgends auf der Seite aufzufinden. Vielleicht gibt es einen Entwicklungs-Server?</p>
@@ -247,7 +241,7 @@
     Webserver: dev01.artcorp.htb
 </h3>
 <p>Hinter der neu entdeckten Subdomain verbirgt sich die aktuelle Entwickler-Version von <em>MetaView</em>.</p>
-<figure><img src="/img/htb-meta-3.png"/>
+<figure><img src="/img/htb-meta-3.png">
 </figure>
 
 <p>Nach kurzem Test entpuppt sich die Funktionsfähigkeit wie folgt: Der Benutzer lädt ein Bild Über das Webformular hoch und <em>MetaView</em> liest die Exit-Daten des Bildes aus und gibt diese auf dem Bildschirm aus. Die Ausgabe gleicht der Ausgabe von <code>exiftool</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
@@ -293,7 +287,7 @@
 </span></span><span class="line"><span class="cl">);
 </span></span><span class="line"><span class="cl">1; #end%
 </span></span></code></pre></div><p>Anschließend wird das Bild hochgeladen und die Ausgabe auf der Seite kontrolliert: Es hat funktioniert!</p>
-<figure><img src="/img/htb-meta-4.png"/>
+<figure><img src="/img/htb-meta-4.png">
 </figure>
 
 <h3 id="exploit-skript">
@@ -338,7 +332,7 @@
 </span></span></code></pre></div><p>Im letzten Schritt wird die hochgeladene Datei auf dem Server ausgeführt, während ein <code>netcat</code>-Listener auf der Angreifer-Maschine läuft.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">(metadata &#34;\c${system(&#39;bash /tmp/rev.sh&#39;)};&#34;)
 </span></span></code></pre></div><p>Das Ergebnis ist eine Reverse Shell als <code>www-data</code>.</p>
-<figure><img src="/img/htb-meta-5.png"/>
+<figure><img src="/img/htb-meta-5.png">
 </figure>
 
 <h2 id="erkundung-als-www-data">
@@ -364,7 +358,7 @@
     Laufende Prozesse und Cronjobs
 </h3>
 <p><code>pspy64</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> zeigt nach einigen Minuten eine wiederkehrende Aufgabe an.</p>
-<figure><img src="/img/htb-meta-6.png"/>
+<figure><img src="/img/htb-meta-6.png">
 </figure>
 
 <p>Die wiederkehrende Aufgabe ruft <code>mogrify</code> auf und wandelt alle Dateien in <code>/var/www/dev01.artcorp.htb/convert_images/</code> in <code>.png</code>-Dateien um.</p>
@@ -431,29 +425,29 @@
 </h2>
 <p>Die Maschine ist unter den als <em>Medium</em> eingestuften Maschinen eine der leichteren und zeigt wie wichtig eine penible Erkundung des Zielsystems ist. Die Reverse Shell zu erhalten war ein echter Kampf, da alle anderen Versuche (zig Möglichkeiten durchprobiert) nicht funktioniert haben. Die Privilege Escalation zum Benutzer <code>root</code> empfang ich als CTFig und nicht realistisch.</p>
 <p>Alles in allem eine gute und unterhaltsame Maschine und definitiv für Anfänger geeignet!</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p><a href="https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh">https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p><a href="https://www.exiftool.org">https://www.exiftool.org</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p><a href="https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/">https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p><a href="https://github.com/DominicBreuker/pspy">https://github.com/DominicBreuker/pspy</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
+<li id="fn:6">
 <p><a href="https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html">https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
     </div>
 </div>
 
@@ -494,7 +488,7 @@
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></i></a>
 </div>
     </section>
-    <script defer src="/ts/features.a534d05c446023fa2ae2a638f87cc2443ad8e49f6aaeb4d9f24ed61d53766712.js" 
+    <script defer src="/ts/features.706a523ba43e6d0427c7fdf2b9d05dbd0920d3f12942b453690b495cb2522743.js" 
     data-enable-footnotes="true"
     ></script>
 </footer>
