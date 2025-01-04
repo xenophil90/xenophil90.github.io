@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen | xenophil90.github.io</title>
+    
+    <meta property="og:site_name" content="xenophil90" />
+    <meta property="og:title" content="Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen | xenophil90.github.io"/>
+    <meta itemprop="name" content="Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen | xenophil90.github.io" />
+    <meta name="twitter:title" content="Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen | xenophil90.github.io" />
+    <meta name="application-name" content="Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="Fehlerbehebung nach Update von Collabora und Nextcloud 23 für den Fall, dass Collabora keine Dokumente öffnet" />
+    <meta name="twitter:description" content="Fehlerbehebung nach Update von Collabora und Nextcloud 23 für den Fall, dass Collabora keine Dokumente öffnet "/>
+    <meta itemprop="description" content=" Fehlerbehebung nach Update von Collabora und Nextcloud 23 für den Fall, dass Collabora keine Dokumente öffnet "/>
+    <meta property="og:description" content=" Fehlerbehebung nach Update von Collabora und Nextcloud 23 für den Fall, dass Collabora keine Dokumente öffnet " />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.8e5845c8f6f5d48fe256a59fcf548c65590415af8e70e0dda32f6cba26f19f98.css">
+    <script defer language="javascript" type="text/javascript"  src="/js/throttle.js"></script>
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    <span class="emoji">
+                        🦊
+                    </span>
+                    
+                    
+                    xenophil90.github.io
+                    </a>
+            </div>
+            <div class="flex">
+                
+                
+                <a href="/fotografie">Fotografie</a>
+                
+                
+                    <button id="dark-mode-button">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    </button>
+                
+            </div>
+            </div>
+    </div>
+</nav>
+
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                            Von Phil Krämer | <time>25. Januar 2022</time>
+                            | 2 Minuten Lesezeit
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="/tags/tech/">Tech</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+      
+      
+        <div class="toc-wrapper">
+          <input type="checkbox" id="tocToggle" checked>
+          <label for="tocToggle">Inhaltsverzeichnis</label>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#einleitung">Einleitung</a></li>
+    <li><a href="#fehlerbeschreibung">Fehlerbeschreibung</a></li>
+    <li><a href="#die-lösung">Die Lösung</a></li>
+  </ul>
+</nav>
+        </div>
+    
+    <h2 id="einleitung">
+    <a href="#einleitung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Einleitung
+</h2>
+<p>Mit dem Update auf die derzeit aktuelle Nextcloud-Version 23 wurde Collabora Office als bevorzugte Office-Lösung der Cloud eingeführt<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<figure><img src="/img/nextcloud-logo.svg">
+</figure>
+
+<h2 id="fehlerbeschreibung">
+    <a href="#fehlerbeschreibung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Fehlerbeschreibung
+</h2>
+<p>Ich nutze Nextcloud in einem Docker-Setup. Collabora wird in einem eigenen Docker-Container betrieben. Auf dem Host-System läuft <em>Apache 2</em> als Reverse Proxy, der die Verbindungen an die einzelnen Docker-Container weiterleitet.</p>
+<p>Mit dem Update auf die neuste Collabora-Version zusammen mit Nextcloud 23 konnte der Collabora-Server nicht mehr gefunden werden. Somit war eine Bearbeitung von Dokumenten in der Nextcloud nicht mehr möglich. <strong>Stattdessen vermeldete Collabora, dass Dokumente nicht geöffnet werden könnten.</strong></p>
+<h2 id="die-lösung">
+    <a href="#die-l%c3%b6sung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Die Lösung
+</h2>
+<p>Es stellte sich nach kurzer Recherche heraus, dass sich mit dem Update von Collabora einige Ordnerpfade geändert haben<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Meine Apache 2-Konfiguration hatte noch die alten Ordner-Pfade enthalten.</p>
+<p>Die korrigierte Fassung der Konfigurationsdatei unter <code>/etc/apache2/sites-enabled/011-collabora.conf</code> sieht wie folgt aus:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;
+</span></span><span class="line"><span class="cl">  ServerName office.domain.de
+</span></span><span class="line"><span class="cl">  ErrorLog ${APACHE_LOG_DIR}/error.log
+</span></span><span class="line"><span class="cl">  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</span></span><span class="line"><span class="cl">  AllowEncodedSlashes NoDecode
+</span></span><span class="line"><span class="cl">  SSLProxyEngine On
+</span></span><span class="line"><span class="cl">  SSLProxyVerify None
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerCN Off
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerName Off
+</span></span><span class="line"><span class="cl">  ProxyPreserveHost On
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # static html, js, images, etc. served from coolwsd
+</span></span><span class="line"><span class="cl">  # browser is the client part of Collabora Online
+</span></span><span class="line"><span class="cl">  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # WOPI discovery URL
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Capabilities
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Main websocket
+</span></span><span class="line"><span class="cl">  ProxyPassMatch      &#34;/cool/(.*)/ws$&#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Admin Console websocket
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Download as, Fullscreen presentation and Image upload operations
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  # Compatibility with integrations that use the /lool/convert-to endpoint
+</span></span><span class="line"><span class="cl">  ProxyPass           /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  RewriteEngine on
+</span></span><span class="line"><span class="cl">  RewriteCond %{SERVER_NAME} =office.domain.de
+</span></span><span class="line"><span class="cl">  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;VirtualHost *:443&gt;
+</span></span><span class="line"><span class="cl">  ServerName office.domain.de
+</span></span><span class="line"><span class="cl">  ErrorLog ${APACHE_LOG_DIR}/error.log
+</span></span><span class="line"><span class="cl">  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</span></span><span class="line"><span class="cl">  SSLEngine on
+</span></span><span class="line"><span class="cl">  AllowEncodedSlashes NoDecode
+</span></span><span class="line"><span class="cl">  SSLProxyEngine On
+</span></span><span class="line"><span class="cl">  SSLProxyVerify None
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerCN Off
+</span></span><span class="line"><span class="cl">  SSLProxyCheckPeerName Off
+</span></span><span class="line"><span class="cl">  ProxyPreserveHost On
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  # static html, js, images, etc. served from coolwsd
+</span></span><span class="line"><span class="cl">  # browser is the client part of Collabora Online
+</span></span><span class="line"><span class="cl">  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # WOPI discovery URL
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Capabilities
+</span></span><span class="line"><span class="cl">  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Main websocket
+</span></span><span class="line"><span class="cl">  ProxyPassMatch      &#34;/cool/(.*)/ws$&#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Admin Console websocket
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  # Download as, Fullscreen presentation and Image upload operations
+</span></span><span class="line"><span class="cl">  ProxyPass           /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  # Compatibility with integrations that use the /lool/convert-to endpoint
+</span></span><span class="line"><span class="cl">  ProxyPass           /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl">  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  Include      /etc/letsencrypt/options-ssl-apache.conf
+</span></span><span class="line"><span class="cl">  SSLCertificateFile /etc/letsencrypt/live/cloud.domain.de/fullchain.pem
+</span></span><span class="line"><span class="cl">  SSLCertificateKeyFile /etc/letsencrypt/live/cloud.domain.de/privkey.pem
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
+</span></span></code></pre></div><p>Diese Problemlösung habe ich ebenfalls in das Nextcloud-Forum gepostet<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. Dort gibt es eine exzellente Anleitung über die Einrichtung von Nextcloud in Docker.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://nextcloud.com/de/press/pr20211130-1/" target="_blank" rel="noreferrer noopener">Nextcloud Hub II brings major overhaul, introducing Nextcloud Office, P2P backup, more</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://sdk.collaboraonline.com/docs/installation/Proxy_settings.html" target="_blank" rel="noreferrer noopener">Collabora Documentation: Proxy settings</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://help.nextcloud.com/t/howto-ubuntu-docker-nextcloud-talk-collabora/76430/87" target="_blank" rel="noreferrer noopener">HowTo: Ubuntu + Docker + Nextcloud + Talk + Collabora</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="/posts/2022/htb-meta/" title="Previous post (older)">
+            <span>Previous</span>
+            HackTheBox: Meta
+            </a>
+        
+        
+        
+        <a rel="next" href="/posts/2025/ios-ipados-webseite-in-apple-notes/" title="Next post (newer)">
+            <span>Next</span>
+            Apple Shortcut: Webseite in Apple Notizen speichern
+            </a> 
+        
+    </nav>
+    
+    
+</div>
+ 
+<div class="container">
+    
+</div>
+
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/beitraege">Alle Beiträge</a>
+            
+            <a href="/impressum">Impressum</a>
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+
+        <div id="back-to-top">
+    <a href="#">
+<i class="inline-svg" type="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></i></a>
+</div>
+    </section>
+    <script defer src="/ts/features.706a523ba43e6d0427c7fdf2b9d05dbd0920d3f12942b453690b495cb2522743.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
+</html>

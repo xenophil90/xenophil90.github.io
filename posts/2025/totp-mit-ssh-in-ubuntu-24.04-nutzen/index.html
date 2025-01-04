@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern | xenophil90.github.io</title>
+    
+    <meta property="og:site_name" content="xenophil90" />
+    <meta property="og:title" content="SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern | xenophil90.github.io"/>
+    <meta itemprop="name" content="SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern | xenophil90.github.io" />
+    <meta name="twitter:title" content="SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern | xenophil90.github.io" />
+    <meta name="application-name" content="SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="Eine kurze Beschreibung, wie man den Zugang via SSH zu einem Ubuntu-Server absichert" />
+    <meta name="twitter:description" content="Eine kurze Beschreibung, wie man den Zugang via SSH zu einem Ubuntu-Server absichert "/>
+    <meta itemprop="description" content=" Eine kurze Beschreibung, wie man den Zugang via SSH zu einem Ubuntu-Server absichert "/>
+    <meta property="og:description" content=" Eine kurze Beschreibung, wie man den Zugang via SSH zu einem Ubuntu-Server absichert " />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.8e5845c8f6f5d48fe256a59fcf548c65590415af8e70e0dda32f6cba26f19f98.css">
+    <script defer language="javascript" type="text/javascript"  src="/js/throttle.js"></script>
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    <span class="emoji">
+                        🦊
+                    </span>
+                    
+                    
+                    xenophil90.github.io
+                    </a>
+            </div>
+            <div class="flex">
+                
+                
+                <a href="/fotografie">Fotografie</a>
+                
+                
+                    <button id="dark-mode-button">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    </button>
+                
+            </div>
+            </div>
+    </div>
+</nav>
+
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                            Von Phil Krämer | <time>04. Januar 2025</time>
+                            | 5 Minuten Lesezeit
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="/tags/ubuntu-24.04/">Ubuntu 24.04</a>
+                            
+                            <a href="/tags/ssh/">SSH</a>
+                            
+                            <a href="/tags/mfa/">MFA</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+      
+      
+        <div class="toc-wrapper">
+          <input type="checkbox" id="tocToggle" checked>
+          <label for="tocToggle">Inhaltsverzeichnis</label>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fernzugriff-mithilfe-von-ssh">Fernzugriff mithilfe von SSH</a></li>
+    <li><a href="#passwort-oder-schlüssel">Passwort oder Schlüssel?</a>
+      <ul>
+        <li><a href="#passwortauthentifizierung">Passwortauthentifizierung</a></li>
+        <li><a href="#schlüsselbasierte-authentifizierung">Schlüsselbasierte Authentifizierung</a></li>
+      </ul>
+    </li>
+    <li><a href="#multi-factor-authentication-mfa">Multi-Factor Authentication (MFA)</a></li>
+    <li><a href="#typische-risiken-beim-einsatz-von-ssh">Typische Risiken beim Einsatz von SSH</a></li>
+    <li><a href="#wie-man-sich-sicher-an-einem-ssh-server-anmeldet">Wie man sich sicher an einem SSH-Server anmeldet</a></li>
+    <li><a href="#wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein">Wie richtet man nun SSH mit zweitem Faktor ein?</a>
+      <ul>
+        <li><a href="#der-zielzustand">Der Zielzustand</a></li>
+        <li><a href="#paketinstallation">Paketinstallation</a></li>
+        <li><a href="#konfiguration-für-den-nutzer">Konfiguration für den Nutzer</a></li>
+        <li><a href="#serverkonfiguration">Serverkonfiguration</a></li>
+      </ul>
+    </li>
+    <li><a href="#fazit">Fazit</a></li>
+  </ul>
+</nav>
+        </div>
+    
+    <h2 id="fernzugriff-mithilfe-von-ssh">
+    <a href="#fernzugriff-mithilfe-von-ssh" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Fernzugriff mithilfe von SSH
+</h2>
+<p>SSH (Secure Shell) ist ein Protokoll, das eine verschlüsselte Kommunikation zwischen zwei Geräten ermöglicht. Es wird häufig verwendet, um entfernte Server sicher zu administrieren oder Dateien zu übertragen<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<h2 id="passwort-oder-schlüssel">
+    <a href="#passwort-oder-schl%c3%bcssel" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Passwort oder Schlüssel?
+</h2>
+<p>Um sich als Benutzer gegenüber einem SSH-Server auszuweisen, gibt es verschiedene Möglichkeiten. Zugang erhält nur, wer sich erfolgreich authentifiziert – der Umfang der Zugriffsrechte hängt von den vergebenen Berechtigungen ab.</p>
+<p>Die gängigsten Möglichkeiten der Authentifizierung sind im Folgenden aufgelistet.</p>
+<h3 id="passwortauthentifizierung">
+    <a href="#passwortauthentifizierung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Passwortauthentifizierung
+</h3>
+<p>Benutzer geben einen Benutzernamen und ein Passwort ein, um sich anzumelden. Diese Methode ist einfach, jedoch anfällig für Brute-Force-Angriffe, insbesondere wenn schwache Passwörter verwendet werden.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Vorteil</th>
+          <th>Nachteil</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Keine zusätzliche Einrichtung erforderlich.</td>
+          <td>Weniger sicher, besonders bei wiederverwendeten oder leicht zu erratenden Passwörtern.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="schlüsselbasierte-authentifizierung">
+    <a href="#schl%c3%bcsselbasierte-authentifizierung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Schlüsselbasierte Authentifizierung
+</h3>
+<p>Diese Methode verwendet ein Schlüsselpaar aus einem privaten und einem öffentlichen Schlüssel. Der öffentliche Schlüssel wird auf dem Server gespeichert, während der private Schlüssel lokal bleibt. Nur der Besitzer des privaten Schlüssels kann sich anmelden.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Vorteil</th>
+          <th>Nachteil</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sehr sicher, insbesondere wenn der private Schlüssel mit einem starken Passwort geschützt ist.</td>
+          <td>Die Schlüssel müssen sicher aufbewahrt werden, da ein gestohlener Schlüssel direkten Zugriff ermöglicht.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="multi-factor-authentication-mfa">
+    <a href="#multi-factor-authentication-mfa" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Multi-Factor Authentication (MFA)
+</h2>
+<p>Zusätzlich zu einer der oben genannten Methoden wird ein weiterer Faktor wie ein Einmalcode (OTP) oder ein Hardware-Token benötigt. Auch ein biometrischer Faktor (Fingerabdruck, Retina-Scan, etc.) ist denkbar.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Vorteil</th>
+          <th>Nachteil</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Hohe Sicherheit, selbst wenn ein Passwort oder Schlüssel kompromittiert wird.</td>
+          <td>Erfordert zusätzliche Software oder Hardware.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="typische-risiken-beim-einsatz-von-ssh">
+    <a href="#typische-risiken-beim-einsatz-von-ssh" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Typische Risiken beim Einsatz von SSH
+</h2>
+<p>Obwohl SSH als technisch sicher gilt, gibt es Risiken, wenn es nicht richtig eingerichtet oder nicht regelmäßig aktualisiert wird. Dazu gehören u. a.:</p>
+<ul>
+<li><strong>Brute-Force- oder Wörterbuch-Angriffe</strong>: Angreifer versuchen, durch systematisches Ausprobieren von Benutzername-Passwort-Kombinationen Zugriff zu erlangen.</li>
+<li><strong>Schwache Passwörter</strong>: Einfache oder mehrfach verwendete Passwörter erhöhen das Risiko eines erfolgreichen Angriffs.</li>
+<li><strong>Gestohlene Schlüssel</strong>: Wenn ein privater SSH-Schlüssel kompromittiert wird, können Angreifer ohne weitere Authentifizierung Zugriff erhalten.</li>
+<li><strong>Veraltete Software</strong>: Ältere Versionen von SSH-Servern können Sicherheitslücken enthalten, die von Angreifern ausgenutzt werden können.</li>
+<li><strong>Fehlerhafte Konfiguration</strong>: Fehlerhafte Konfiguration kann dazu führen, dass ein Angriff Erfolg hat. Hierzu zählen beispielsweise die Nutzung alter kryptografischer Verfahren oder das Gestatten der Anmeldung als <code>root</code>.</li>
+</ul>
+<h2 id="wie-man-sich-sicher-an-einem-ssh-server-anmeldet">
+    <a href="#wie-man-sich-sicher-an-einem-ssh-server-anmeldet" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Wie man sich sicher an einem SSH-Server anmeldet
+</h2>
+<p>Die sicherste Methode zur SSH-Authentifizierung kombiniert einen SSH-Schlüssel mit einem zeitbasierten Einmalcode (TOTP) als zweiten Faktor<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Diese Methode bietet eine hervorragende Balance zwischen Sicherheit und Benutzerfreundlichkeit und ist vergleichbar mit der MFA-Anmeldung bei vielen Online-Diensten.</p>
+<p>Eine Alternative ist beispielsweise auch die Nutzung eines YubiKey<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h2 id="wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein">
+    <a href="#wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Wie richtet man nun SSH mit zweitem Faktor ein?
+</h2>
+<p>Die Einrichtung beschreibe ich im Folgenden auf einem Server, auf dem <strong>Ubuntu 24.04</strong> läuft. Je nach Betriebssystem und genutzter SSH-Server-Version kann die Einrichtung sich unterscheiden. In meinem Fall wird die SSH-Version <strong>OpenSSH 9.6p1</strong> genutzt. Des weiteren gehe ich davon aus, dass SSH bereits wie gewünscht eingerichtet und getestet ist und nur noch MFA eingerichtet werden muss.</p>
+<h3 id="der-zielzustand">
+    <a href="#der-zielzustand" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Der Zielzustand
+</h3>
+<p>Im Folgenden eine kurze Zusammenfassung des Zielzustands:</p>
+<ul>
+<li>Im Zielzustand soll eine Anmeldung mit Kennwort auf dem Server nicht möglich sein.</li>
+<li>Die Authentifizierung erfolgt mithilfe eines SSH-Schlüssels mit einem zeitbasierten Einmalcode als zweitem Faktor.</li>
+</ul>
+<p>Ich gehe davon aus, dass ihr euch bereits mithilfe eures SSH-Schlüssels auf dem Server anmelden könnt<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<h3 id="paketinstallation">
+    <a href="#paketinstallation" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Paketinstallation
+</h3>
+<p>Für die weiteren Schritte muss das Paket <code>libpam-google-authenticator</code> installiert werden. Dies geschieht durch Eingabe von</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install libpam-google-authenticator
+</span></span></code></pre></div><p>ins Terminal.</p>
+<h3 id="konfiguration-für-den-nutzer">
+    <a href="#konfiguration-f%c3%bcr-den-nutzer" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Konfiguration für den Nutzer
+</h3>
+<p>Für jeden Nutzer, der Einmalcodes nutzen können soll, muss eine initiale Konfiguration durchgeführt werden. Diese wird gestartet, in dem sich der jeweilige Nutzer z. B. per SSH auf dem System einloggt und den Befehl</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">google-authenticator
+</span></span></code></pre></div><p>ausführt. Anschließend startet der Setup-Assistent. Meine Empfehlung lautet, die dort gestellten Fragen wie folgt zu beantworten:</p>
+<ul>
+<li>Make tokens “time-based”: <strong>yes</strong></li>
+<li>Update the .google_authenticator file: <strong>yes</strong></li>
+<li>Disallow multiple uses: <strong>yes</strong></li>
+<li>Increase the original generation time limit: <strong>no</strong></li>
+<li>Enable rate-limiting: <strong>yes</strong></li>
+</ul>
+<p>Der anschließend gezeigte QR-Code kann mit einer geeigneten Handy-App gescannt werden. Die Backup-Codes sollten sicher, beispielsweise auf einem Blatt Papier, aufbewahrt werden.</p>
+<h3 id="serverkonfiguration">
+    <a href="#serverkonfiguration" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Serverkonfiguration
+</h3>
+<p>Nun kann mit der Konfiguration des Servers fortgefahren werden. Erstellt vor Änderung der genannten Dateien jeweils ein Backup, das ihr im Fehlerfall wiederherstellen könnt!</p>
+<h4 id="anpassung-von-etcpamdsshd">
+    <a href="#anpassung-von-etcpamdsshd" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Anpassung von /etc.pam.d/sshd
+</h4>
+<p>Die Datei <code>/etc.pam.d/sshd</code> wird mit einem Editor mit <code>root</code>-Berechtigung geöffnet. Dort wird die Zeile <code>@include common-auth</code> auskommentiert, in dem man ein <code>#</code> an den Anfang der Zeile schreibt:</p>
+<figure><img src="/img/common-auth.png">
+</figure>
+
+<p>Das verhindert das Zurückfallen zu einer passwortbasierten Anmeldung.</p>
+<p>An das Ende der Datei muss anschließend der Text <code>auth required pam_google_authenticator.so</code> angefügt werden:</p>
+<figure><img src="/img/auth-required.png">
+</figure>
+
+<h4 id="anpassung-von-etcsshsshd_config">
+    <a href="#anpassung-von-etcsshsshd_config" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Anpassung von /etc/ssh/sshd_config
+</h4>
+<p>Anschließend muss die Datei <code>/etc/ssh/sshd_config</code> mit einem Editor mit <code>root</code>-Berechtigung geöffnet werden. Dort muss die Zeile <code>AuthenticationMethods</code> gefunden und der Wert auf <code>publickey,keyboard-interactive</code> geändert werden. Ist diese nicht vorhanden, kann diese an das Ende der Datei angefügt werden:</p>
+<figure><img src="/img/auth-methods.png">
+</figure>
+
+<p>Außerdem muss die Option <code>KbdInteractiveAuthentication</code> auf <code>yes</code> geändert werden. Außerdem sollte bei dieser Gelegenheit überprüft werden, dass <code>PubkeyAuthentication</code> auf <code>yes</code> und <code>PasswordAuthentication</code> auf <code>no</code> steht:</p>
+<figure><img src="/img/kbd-interactive.png">
+</figure>
+
+<h4 id="konfiguration-testen">
+    <a href="#konfiguration-testen" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Konfiguration testen
+</h4>
+<p>Sind alle oben genannten Schritte ausgeführt und alle Dateien gespeichert, muss die Konfiguration getestet werden. Haltet die bestehende SSH-Verbindung zum Server auf jeden Fall aufrecht, da ihr euch bei fehlerhafter Konfiguration eventuell nicht mehr in den Server einloggen könnt. Um die Konfiguration zu testen, stellt eine neue SSH-Verbindung her ohne die alte zu beenden!</p>
+<p>Damit die getätigte Konfiguration aktiv werden kann, muss der SSH-Server neu geladen werden. Dies geschieht durch den folgenden Befehl:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo service ssh reload
+</span></span></code></pre></div><p>Nun ist die neue Konfiguration aktiv und ihr werdet beim Login nach einem Einmal-Code gefragt, den eure Authenticator-App generiert.</p>
+<h2 id="fazit">
+    <a href="#fazit" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Fazit
+</h2>
+<p>Durch die Kombination von SSH-Schlüsseln und einem zweiten Faktor wie TOTP wird die Sicherheit signifikant erhöht. Diese Einrichtung ist relativ einfach umzusetzen und bietet effektiven Schutz vor vielen Angriffen.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.heise.de/tipps-tricks/Was-ist-SSH-7313396.html" target="_blank" rel="noreferrer noopener">„Was ist SSH?“ bei heise online</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.security-insider.de/was-ist-totp-a-875708/" target="_blank" rel="noreferrer noopener">„Was ist TOTP?“ bei security-insider</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://developers.yubico.com/SSH/" target="_blank" rel="noreferrer noopener">„Securing SSH with the YubiKey“ bei yubico</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://www.thomas-krenn.com/de/wiki/OpenSSH_Public_Key_Authentifizierung_unter_Ubuntu" target="_blank" rel="noreferrer noopener">„OpenSSH Public Key Authentifizierung unter Ubuntu“ bei Thomas-Krenn</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="/posts/2025/ios-ipados-webseite-in-apple-notes/" title="Previous post (older)">
+            <span>Previous</span>
+            Apple Shortcut: Webseite in Apple Notizen speichern
+            </a>
+        
+        
+        
+    </nav>
+    
+    
+</div>
+ 
+<div class="container">
+    
+</div>
+
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/beitraege">Alle Beiträge</a>
+            
+            <a href="/impressum">Impressum</a>
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+
+        <div id="back-to-top">
+    <a href="#">
+<i class="inline-svg" type="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></i></a>
+</div>
+    </section>
+    <script defer src="/ts/features.c1ce675a02d89d5630ab32225b56b548019ea80fbac671f9cb360f116af5e531.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
+</html>
