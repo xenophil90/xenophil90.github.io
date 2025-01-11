@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>HackTheBox: Underpass | xenophil90.github.io</title>
+    
+    <meta property="og:site_name" content="xenophil90" />
+    <meta property="og:title" content="HackTheBox: Underpass | xenophil90.github.io"/>
+    <meta itemprop="name" content="HackTheBox: Underpass | xenophil90.github.io" />
+    <meta name="twitter:title" content="HackTheBox: Underpass | xenophil90.github.io" />
+    <meta name="application-name" content="HackTheBox: Underpass | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="Writeup der HackTheBox-Maschine UnderPass" />
+    <meta name="twitter:description" content="Writeup der HackTheBox-Maschine UnderPass "/>
+    <meta itemprop="description" content=" Writeup der HackTheBox-Maschine UnderPass "/>
+    <meta property="og:description" content=" Writeup der HackTheBox-Maschine UnderPass " />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.8e5845c8f6f5d48fe256a59fcf548c65590415af8e70e0dda32f6cba26f19f98.css">
+    <script defer language="javascript" type="text/javascript"  src="/js/throttle.js"></script>
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    <span class="emoji">
+                        🦊
+                    </span>
+                    
+                    
+                    xenophil90.github.io
+                    </a>
+            </div>
+            <div class="flex">
+                
+                
+                <a href="/fotografie">Fotografie</a>
+                
+                
+                    <button id="dark-mode-button">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    </button>
+                
+            </div>
+            </div>
+    </div>
+</nav>
+
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>HackTheBox: Underpass</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                            Von Phil Krämer | <time>01. Januar 2025</time>
+                            | 7 Minuten Lesezeit
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="/tags/hackthebox/">Hackthebox</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+      
+      
+        <div class="toc-wrapper">
+          <input type="checkbox" id="tocToggle" checked>
+          <label for="tocToggle">Inhaltsverzeichnis</label>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#einleitung">Einleitung</a></li>
+    <li><a href="#erkundung">Erkundung</a></li>
+    <li><a href="#fuß-fassen">Fuß fassen</a>
+      <ul>
+        <li><a href="#daloradius">daloRADIUS</a></li>
+        <li><a href="#das-gehashte-kennwort-bekommen">Das gehashte Kennwort bekommen</a></li>
+        <li><a href="#user-flag">User Flag</a></li>
+      </ul>
+    </li>
+    <li><a href="#rechteerweiterung">Rechteerweiterung</a>
+      <ul>
+        <li><a href="#was-darf-svcmosh">Was darf svcMosh?</a></li>
+        <li><a href="#mosh">Mosh</a></li>
+        <li><a href="#root-flag">Root Flag</a></li>
+      </ul>
+    </li>
+    <li><a href="#zusammenfassung">Zusammenfassung</a></li>
+  </ul>
+</nav>
+        </div>
+    
+    <h2 id="einleitung">
+    <a href="#einleitung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Einleitung
+</h2>
+<p>Underpass ist eine als <em>Easy</em> eingestufte Maschine auf HackTheBox. Sie wurde im Dezember 2024 veröffentlicht. Für die Lösung ist es notwendig, einen UDP-Portscan durchzuführen und Informationen über <strong>SNMP</strong> zu erhalten. Diese Informationen werden anschließend genutzt, um ein <strong>Web-Interface</strong> zu finden, Zugangsdaten zum Server zu finden und erfolgreich eine interaktive Verbindung aufzubauen. Anschließend nutzt man eine <strong>Konfigurationsschwachstelle</strong> aus, um eine Applikation mit erweiterten Rechten zu starten und <code>root</code>-Zugriff zu erhalten.</p>
+<p><strong>Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!</strong></p>
+<figure><img src="/img/htb-underpass-1.png">
+</figure>
+
+<h2 id="erkundung">
+    <a href="#erkundung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Erkundung
+</h2>
+<p>Zunächst wird das System mithilfe von <code>nmap</code> gescannt. Um den Prozess zu vereinfachen, nutze ich dafür mein Skript mit dem Namen <code>fast-nmap</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[...]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PORT   STATE SERVICE VERSION
+</span></span><span class="line"><span class="cl">22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+</span></span><span class="line"><span class="cl">| ssh-hostkey: 
+</span></span><span class="line"><span class="cl">|   256 48:b0:d2:c7:29:26:ae:3d:fb:b7:6b:0f:f5:4d:2a:ea (ECDSA)
+</span></span><span class="line"><span class="cl">|_  256 cb:61:64:b8:1b:1b:b5:ba:b8:45:86:c5:16:bb:e2:a2 (ED25519)
+</span></span><span class="line"><span class="cl">80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+</span></span><span class="line"><span class="cl">|_http-server-header: Apache/2.4.52 (Ubuntu)
+</span></span><span class="line"><span class="cl">|_http-title: Apache2 Ubuntu Default Page: It works
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[...]
+</span></span></code></pre></div><p>Hierbei ist zu beachten, dass <code>nmap</code> in der obigen Konfiguration nur TCP-Ports scannt, keine UDP-Ports. Der TCP-Scan ergibt zwei offenen Ports, nämlich <strong>22 (SSH)</strong> und <strong>80 (Apache HTTP-Server)</strong>. Auf den ersten (und zweiten) Blick ist hier nichts Interessantes zu holen.</p>
+<p>Ich versuche mein Glück also mit einem UDP-Scan:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmap -A -sU -p- 10.10.11.48
+</span></span></code></pre></div><p>Das Ergebnis sieht u. a. wie folgt aus:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">PORT    STATE SERVICE VERSION
+</span></span><span class="line"><span class="cl">161/udp open  snmp    SNMPv1 server; net-snmp SNMPv3 server (public)
+</span></span><span class="line"><span class="cl">| snmp-info: 
+</span></span><span class="line"><span class="cl">|   enterprise: net-snmp
+</span></span><span class="line"><span class="cl">|   engineIDFormat: unknown
+</span></span><span class="line"><span class="cl">|   engineIDData: c7ad5c4856d1cf6600000000
+</span></span><span class="line"><span class="cl">|   snmpEngineBoots: 30
+</span></span><span class="line"><span class="cl">|_  snmpEngineTime: 1h10m13s
+</span></span><span class="line"><span class="cl">| snmp-sysdescr: Linux underpass 5.15.0-126-generic #136-Ubuntu SMP Wed Nov 6 10:38:22 UTC 2024 x86_64
+</span></span><span class="line"><span class="cl">|_  System uptime: 1h10m12.62s (421262 timeticks)
+</span></span><span class="line"><span class="cl">Too many fingerprints match this host to give specific OS details
+</span></span><span class="line"><span class="cl">Network Distance: 2 hops
+</span></span><span class="line"><span class="cl">Service Info: Host: UnDerPass.htb is the only daloradius server in the basin!
+</span></span></code></pre></div><p>Alle wichtigen Informationen sind in dieser Nachricht bereits enthalten, aber trotzdem schaue ich mithilfe von <code>snmpwalk</code>, ob sich weitere Informationen finden lassen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">snmpwalk -v <span class="m">1</span> -c public 10.10.11.48
+</span></span></code></pre></div><p>Wirklich neue Informationen erhalte ich dadurch allerdings nicht (daher beschreibe ich den Output hier auch nicht).</p>
+<p>Die wichtige Information aus der Ausgabe oben ist diese hier:</p>
+<blockquote>
+<p>UnDerPass.htb is the only <strong>daloradius</strong> server in the basin!</p>
+</blockquote>
+<h2 id="fuß-fassen">
+    <a href="#fu%c3%9f-fassen" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Fuß fassen
+</h2>
+<h3 id="daloradius">
+    <a href="#daloradius" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    daloRADIUS
+</h3>
+<p>Was hat es nun aber mit <strong>daloRADIUS</strong> auf sich?</p>
+<h4 id="was-ist-daloradius">
+    <a href="#was-ist-daloradius" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Was ist daloRADIUS?
+</h4>
+<p>Laut der Hersteller-Webseite<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> ist daloRADIUS wie folgt zu beschreiben:</p>
+<blockquote>
+<p>About daloRADIUS</p>
+<p>daloRADIUS is an advanced RADIUS web platform aimed at managing Hotspots and general-purpose ISP deployments. It features rich user management, graphical reporting, accounting, and integrates with GoogleMaps for geo-locating (GIS). daloRADIUS is written in PHP and JavaScript and utilizes a database abstraction layer which means that it supports many database systems, among them the popular MySQL, PostgreSQL, Sqlite, MsSQL, and many others.</p>
+<p>It is based on a FreeRADIUS deployment with a database server serving as the backend. Among other features it implements ACLs, GoogleMaps integration for locating hotspots/access points visually and many more features. <strong>daloRADIUS is essentially a web application to manage a radius server</strong> so theoretically it can manage any radius server but specifically it manages FreeRADIUS and it&rsquo;s database structure. Since version 0.9-3 daloRADIUS has introduced an application-wide database abstraction layer based on PHP&rsquo;s PEAR::DB package which support a range of database servers.</p>
+</blockquote>
+<p>Es handelt sich also um eine Web-Applikation. Deren Quellcode und Dokumentation sind auf Github verfügbar<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h4 id="finden-des-web-interface">
+    <a href="#finden-des-web-interface" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Finden des Web-Interface
+</h4>
+<p>Da es sich um eine Web-Applikation handelt und ich ein Github-Repository gefunden habe, in dem alle Daten zu daloRADIUS verfügbar sind, sollte es nicht schwer sein, das Webinterface zu finden. Tatsächlich komme ich im weiteren Verlauf auch ohne toolgestütztes Fuzzing oder Directory Busting zum Ziel.</p>
+<h5 id="der-richtige-pfad">
+    <a href="#der-richtige-pfad" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Der richtige Pfad
+</h5>
+<p>Zunächst lohnt sich ein Blick in die Installations-Anweisungen von daloRADIUS<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, genauer gesagt auf das Kapitel 5:</p>
+<figure><img src="/img/htb-underpass-2.png">
+</figure>
+
+<p>Hier erhalte ich die Standard-Zugangsdaten sowie einen möglichen Pfad zum Management-Interface auf dem Webserver. Leider wird unter der in der Dokumentation gezeigten Adresse auf dem von mir gerade begutachteten Server kein Login-Fenster angezeigt.</p>
+<figure><img src="/img/htb-underpass-3.png">
+</figure>
+
+<p><strong>Die gute Nachricht:</strong> Ich erhalte keinen Fehler 404, der bedeuten würde, dass es das Verzeichnis auf dem Server nicht gibt. Stattdessen schließe ich aus der Fehlermeldung, dass das Verzeichnis existiert, aber nicht zugänglich ist.</p>
+<p>Nun heißt es also den Login zu finden&hellip;</p>
+<h5 id="wo-ist-die-loginphp">
+    <a href="#wo-ist-die-loginphp" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Wo ist die Login.php?
+</h5>
+<p>Dabei hilft mir auch die Tatsache, dass daloRADIUS öffentlich verfügbar ist. Nach kurzer Durchsicht des Github-Repositories finde ich hier<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> eine <code>login.php</code>:</p>
+<figure><img src="/img/htb-underpass-4.png">
+</figure>
+
+<p>Dies probiere ich nun mit dem Webbrowser auf dem Server (<code>http://10.10.11.48/daloradius/app/operators/login.php</code>) und finde tatsächlich das gesuchte Interface. Da ich die Standard-Zugangsdaten im Verlauf meiner Recherche bereits gefunden habe, teste ich diese direkt und erhalte tatsächlich Zugang zum Management-Interface!</p>
+<figure><img src="/img/htb-underpass-5.png">
+</figure>
+
+<h5 id="das-interface-erkunden">
+    <a href="#das-interface-erkunden" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Das Interface erkunden
+</h5>
+<p>Im Interface lohnt es sich nun, alle Menüpunkt langsam einmal anzusehen. Unter anderem gibt es dort den Punkt <em>List Users</em>. Dort werden alle im daloRADIUS-Server angelegten Benutzer samt eines gehashten Kennworts angezeigt. Interessant ist, dass es nur einen Benutzer gibt: <code>svcMosh</code>.</p>
+<figure><img src="/img/htb-underpass-6.png">
+</figure>
+
+<p>Es gibt verschiedene Möglichkeiten herauszubekommen, um welche Art Hash es sich in diesem Fall handelt. Eine der einfachsten Varianten ist es, die Zeichenfolge in CyberChef<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> einzugeben und analysieren zu lassen.</p>
+<figure><img src="/img/htb-underpass-7.png">
+</figure>
+
+<p>Damit wird schnell klar, dass es sich um einen MD5-Hash handelt.</p>
+<h3 id="das-gehashte-kennwort-bekommen">
+    <a href="#das-gehashte-kennwort-bekommen" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Das gehashte Kennwort bekommen
+</h3>
+<p>Mithilfe von <code>hashcat</code> versuche ich nun das Kennwort zu finden, das zur gefundenen MD5-Hashsumme passt. Als Wordlist nutze ich <code>rockyou.txt</code>. Die Hashsumme habe ich vorher in der Datei <code>hash-list</code> gespeichert.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hashcat -m <span class="m">0</span> hash-list /usr/share/wordlists/rockyou.txt
+</span></span></code></pre></div><p>Nach sehr kurzer Zeit habe ich auch bereits ein Match (das Kennwort zeige ich an dieser Stelle natürlich nicht):</p>
+<figure><img src="/img/htb-underpass-8.png">
+</figure>
+
+<h3 id="user-flag">
+    <a href="#user-flag" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    User Flag
+</h3>
+<p>Mit den gefundenen Zugangsdaten für den Benutzer <code>svcMosh</code> ist nun ein Login via <strong>SSH</strong> möglich.</p>
+<figure><img src="/img/htb-underpass-9.png">
+</figure>
+
+<p>Damit ist die User Flag schnell gefunden.</p>
+<figure><img src="/img/htb-underpass-10.png">
+</figure>
+
+<h2 id="rechteerweiterung">
+    <a href="#rechteerweiterung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Rechteerweiterung
+</h2>
+<p>Mit einem ersten interaktiven Zugang zum Server möchte ich nun natürlich weitere Rechte auf dem Server bekommen. Dafür lohnt sich erst ein Blick auf <code>sudo</code>. Damit kann ich Befehle mit erweiterten Berechtigungen ausführen.</p>
+<h3 id="was-darf-svcmosh">
+    <a href="#was-darf-svcmosh" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Was darf svcMosh?
+</h3>
+<p>Um Informationen darüber zu bekommen, ob <code>svcMosh</code> Befehle mit erweiterten Berechtigungen ausführen kann, führe ich den folgenden Befehl aus.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo -l
+</span></span></code></pre></div><p>Das Ergebnis kann sich sehen lassen.</p>
+<figure><img src="/img/htb-underpass-11.png">
+</figure>
+
+<p>Der Befehl <code>/usr/bin/mosh-server</code> darf vom Benutzer <code>svcMosh</code> ohne weitere Hürden ausgeführt werden.</p>
+<h3 id="mosh">
+    <a href="#mosh" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Mosh
+</h3>
+<p>Welche Informationen gibt es zu Mosh?</p>
+<h4 id="was-ist-mosh">
+    <a href="#was-ist-mosh" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Was ist Mosh?
+</h4>
+<p>Ein kurzer Blick auf die Webseite des Produkts<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> beantwortet die Frage schnell:</p>
+<blockquote>
+<p>Mosh</p>
+<p>(mobile shell)</p>
+<p>Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.</p>
+<p>Mosh is a replacement for interactive SSH terminals. It&rsquo;s more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.</p>
+<p>Mosh is free software, available for GNU/Linux, BSD, macOS, Solaris, Android, Chrome, and iOS.</p>
+</blockquote>
+<p>Es handelt sich also um eine Verwaltungskonsole ähnlich SSH. Und diese darf der Benutzer <code>svcMosh</code> mit erweiterten Berechtigungen ausführen.</p>
+<h4 id="konfigurationsfehler-ausnutzen">
+    <a href="#konfigurationsfehler-ausnutzen" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Konfigurationsfehler ausnutzen
+</h4>
+<p>Nach der Recherche zu Mosh wird schnell klar, dass es keine gute Idee ist, dem Benutzer <code>svcMosh</code> zu gestatten, diese Applikation mit <code>sudo</code> auszuführen.</p>
+<p>Ein wenig Recherche auf der Webseite bringt zu Tage, dass man den <code>mosh-server</code> quasi überall speichern und ausführen kann. Die Frage lautet: Auch mit <code>sudo</code>?</p>
+<figure><img src="/img/htb-underpass-12.png">
+</figure>
+
+<p>Tatsächlich ist die Frage schnell zu beantworten: Ja.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mosh --server<span class="o">=</span><span class="s2">&#34;sudo /usr/bin/mosh-server&#34;</span> localhost
+</span></span></code></pre></div><p>Dieser Befehl führt den Mosh-Server mit erweiterten Berechtigungen aus und stellt eine Verbindung her. Dort habe ich sofort <code>root</code>-Rechte.</p>
+<figure><img src="/img/htb-underpass-13.png">
+</figure>
+
+<h3 id="root-flag">
+    <a href="#root-flag" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Root Flag
+</h3>
+<p>Die Root-Flag ist damit auch sehr schnell gefunden.</p>
+<figure><img src="/img/htb-underpass-14.png">
+</figure>
+
+<h2 id="zusammenfassung">
+    <a href="#zusammenfassung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Zusammenfassung
+</h2>
+<p>Die Maschine <strong>Underpass</strong> bietet eine spannende und lehrreiche Herausforderung, die eine sorgfältige Erkundung und Analyse erfordert. Besonders hervorzuheben ist die Bedeutung eines umfassenden Scans, einschließlich UDP-Ports, um versteckte Dienste wie SNMP aufzudecken. Die weitere Analyse zeigt, wie man durch gezielte Recherche und das Verständnis von Diensten wie <strong>daloRADIUS</strong> und <strong>Mosh</strong> Sicherheitslücken effektiv ausnutzen kann.</p>
+<p>Die Rechteerweiterung basiert auf einer Konfigurationsschwachstelle, die zeigt, wie gefährlich es ist, Anwendungen mit erweiterten Berechtigungen auszuführen. Gleichzeitig bleibt der Schwierigkeitsgrad zugänglich, da keine komplexen Angriffsmethoden notwendig sind.</p>
+<p>Insgesamt bietet Underpass eine großartige Gelegenheit, die eigene Methodik zu verfeinern und dabei wichtige Prinzipien der IT-Sicherheit zu lernen. Für Anfänger eine lohnenswerte Erfahrung!</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh" target="_blank" rel="noreferrer noopener">https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.daloradius.com" target="_blank" rel="noreferrer noopener">https://www.daloradius.com</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://github.com/lirantal/daloradius" target="_blank" rel="noreferrer noopener">https://github.com/lirantal/daloradius</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://github.com/lirantal/daloradius/blob/master/doc/install/INSTALL" target="_blank" rel="noreferrer noopener">https://github.com/lirantal/daloradius/blob/master/doc/install/INSTALL</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://github.com/lirantal/daloradius/tree/master/app/operators" target="_blank" rel="noreferrer noopener">https://github.com/lirantal/daloradius/tree/master/app/operators</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noreferrer noopener">https://gchq.github.io/CyberChef/</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://mosh.org" target="_blank" rel="noreferrer noopener">https://mosh.org</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="/posts/2022/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/" title="Previous post (older)">
+            <span>Previous</span>
+            Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen
+            </a>
+        
+        
+        
+        <a rel="next" href="/posts/2025/ios-ipados-webseite-in-apple-notes/" title="Next post (newer)">
+            <span>Next</span>
+            Apple Shortcut: Webseite in Apple Notizen speichern
+            </a> 
+        
+    </nav>
+    
+    
+</div>
+ 
+<div class="container">
+    
+</div>
+
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/beitraege">Alle Beiträge</a>
+            
+            <a href="/impressum">Impressum</a>
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+
+        <div id="back-to-top">
+    <a href="#">
+<i class="inline-svg" type="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></i></a>
+</div>
+    </section>
+    <script defer src="/ts/features.c1ce675a02d89d5630ab32225b56b548019ea80fbac671f9cb360f116af5e531.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
+</html>
