@@ -7,6 +7,297 @@
     <language>de-de</language>
     <lastBuildDate>Sun, 19 Jan 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+    <title>SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern</title>
+    <link>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</link>
+    <pubDate>Sun, 12 Jan 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</guid>
+    <description>
+        &lt;h2 id=&#34;fernzugriff-mithilfe-von-ssh&#34;&gt;
+    &lt;a href=&#34;#fernzugriff-mithilfe-von-ssh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fernzugriff mithilfe von SSH
+&lt;/h2&gt;
+&lt;p&gt;SSH (Secure Shell) ist ein Protokoll, das eine verschlüsselte Kommunikation zwischen zwei Geräten ermöglicht. Es wird häufig verwendet, um entfernte Server sicher zu administrieren oder Dateien zu übertragen&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;passwort-oder-schlüssel&#34;&gt;
+    &lt;a href=&#34;#passwort-oder-schl%c3%bcssel&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Passwort oder Schlüssel?
+&lt;/h2&gt;
+&lt;p&gt;Um sich als Benutzer gegenüber einem SSH-Server auszuweisen, gibt es verschiedene Möglichkeiten. Zugang erhält nur, wer sich erfolgreich authentifiziert – der Umfang der Zugriffsrechte hängt von den vergebenen Berechtigungen ab.&lt;/p&gt;
+&lt;p&gt;Die gängigsten Möglichkeiten der Authentifizierung sind im Folgenden aufgelistet.&lt;/p&gt;
+&lt;h3 id=&#34;passwortauthentifizierung&#34;&gt;
+    &lt;a href=&#34;#passwortauthentifizierung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Passwortauthentifizierung
+&lt;/h3&gt;
+&lt;p&gt;Benutzer geben einen Benutzernamen und ein Passwort ein, um sich anzumelden. Diese Methode ist einfach, jedoch anfällig für Brute-Force-Angriffe, insbesondere wenn schwache Passwörter verwendet werden.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Vorteil&lt;/th&gt;
+          &lt;th&gt;Nachteil&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Keine zusätzliche Einrichtung erforderlich.&lt;/td&gt;
+          &lt;td&gt;Weniger sicher, besonders bei wiederverwendeten oder leicht zu erratenden Passwörtern.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;schlüsselbasierte-authentifizierung&#34;&gt;
+    &lt;a href=&#34;#schl%c3%bcsselbasierte-authentifizierung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Schlüsselbasierte Authentifizierung
+&lt;/h3&gt;
+&lt;p&gt;Diese Methode verwendet ein Schlüsselpaar aus einem privaten und einem öffentlichen Schlüssel. Der öffentliche Schlüssel wird auf dem Server gespeichert, während der private Schlüssel lokal bleibt. Nur der Besitzer des privaten Schlüssels kann sich anmelden.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Vorteil&lt;/th&gt;
+          &lt;th&gt;Nachteil&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Sehr sicher, insbesondere wenn der private Schlüssel mit einem starken Passwort geschützt ist.&lt;/td&gt;
+          &lt;td&gt;Die Schlüssel müssen sicher aufbewahrt werden, da ein gestohlener Schlüssel direkten Zugriff ermöglicht.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;multi-factor-authentication-mfa&#34;&gt;
+    &lt;a href=&#34;#multi-factor-authentication-mfa&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Multi-Factor Authentication (MFA)
+&lt;/h2&gt;
+&lt;p&gt;Zusätzlich zu einer der oben genannten Methoden wird ein weiterer Faktor wie ein Einmalcode (OTP) oder ein Hardware-Token benötigt. Auch ein biometrischer Faktor (Fingerabdruck, Retina-Scan, etc.) ist denkbar.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Vorteil&lt;/th&gt;
+          &lt;th&gt;Nachteil&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Hohe Sicherheit, selbst wenn ein Passwort oder Schlüssel kompromittiert wird.&lt;/td&gt;
+          &lt;td&gt;Erfordert zusätzliche Software oder Hardware.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;typische-risiken-beim-einsatz-von-ssh&#34;&gt;
+    &lt;a href=&#34;#typische-risiken-beim-einsatz-von-ssh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Typische Risiken beim Einsatz von SSH
+&lt;/h2&gt;
+&lt;p&gt;Obwohl SSH als technisch sicher gilt, gibt es Risiken, wenn es nicht richtig eingerichtet oder nicht regelmäßig aktualisiert wird. Dazu gehören u. a.:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Brute-Force- oder Wörterbuch-Angriffe&lt;/strong&gt;: Angreifer versuchen, durch systematisches Ausprobieren von Benutzername-Passwort-Kombinationen Zugriff zu erlangen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Schwache Passwörter&lt;/strong&gt;: Einfache oder mehrfach verwendete Passwörter erhöhen das Risiko eines erfolgreichen Angriffs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gestohlene Schlüssel&lt;/strong&gt;: Wenn ein privater SSH-Schlüssel kompromittiert wird, können Angreifer ohne weitere Authentifizierung Zugriff erhalten.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Veraltete Software&lt;/strong&gt;: Ältere Versionen von SSH-Servern können Sicherheitslücken enthalten, die von Angreifern ausgenutzt werden können.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fehlerhafte Konfiguration&lt;/strong&gt;: Fehlerhafte Konfiguration kann dazu führen, dass ein Angriff Erfolg hat. Hierzu zählen beispielsweise die Nutzung alter kryptografischer Verfahren oder das Gestatten der Anmeldung als &lt;code&gt;root&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wie-man-sich-sicher-an-einem-ssh-server-anmeldet&#34;&gt;
+    &lt;a href=&#34;#wie-man-sich-sicher-an-einem-ssh-server-anmeldet&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wie man sich sicher an einem SSH-Server anmeldet
+&lt;/h2&gt;
+&lt;p&gt;Die sicherste Methode zur SSH-Authentifizierung kombiniert einen SSH-Schlüssel mit einem zeitbasierten Einmalcode (TOTP) als zweiten Faktor&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Diese Methode bietet eine hervorragende Balance zwischen Sicherheit und Benutzerfreundlichkeit und ist vergleichbar mit der MFA-Anmeldung bei vielen Online-Diensten.&lt;/p&gt;
+&lt;p&gt;Eine Alternative ist beispielsweise auch die Nutzung eines YubiKey&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein&#34;&gt;
+    &lt;a href=&#34;#wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wie richtet man nun SSH mit zweitem Faktor ein?
+&lt;/h2&gt;
+&lt;p&gt;Die Einrichtung beschreibe ich im Folgenden auf einem Server, auf dem &lt;strong&gt;Ubuntu 24.04&lt;/strong&gt; läuft. Je nach Betriebssystem und genutzter SSH-Server-Version kann die Einrichtung sich unterscheiden. In meinem Fall wird die SSH-Version &lt;strong&gt;OpenSSH 9.6p1&lt;/strong&gt; genutzt. Des weiteren gehe ich davon aus, dass SSH bereits wie gewünscht eingerichtet und getestet ist und nur noch MFA eingerichtet werden muss.&lt;/p&gt;
+&lt;h3 id=&#34;der-zielzustand&#34;&gt;
+    &lt;a href=&#34;#der-zielzustand&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Der Zielzustand
+&lt;/h3&gt;
+&lt;p&gt;Im Folgenden eine kurze Zusammenfassung des Zielzustands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Im Zielzustand soll eine Anmeldung mit Kennwort auf dem Server nicht möglich sein.&lt;/li&gt;
+&lt;li&gt;Die Authentifizierung erfolgt mithilfe eines SSH-Schlüssels mit einem zeitbasierten Einmalcode als zweitem Faktor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich gehe davon aus, dass ihr euch bereits mithilfe eures SSH-Schlüssels auf dem Server anmelden könnt&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;paketinstallation&#34;&gt;
+    &lt;a href=&#34;#paketinstallation&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Paketinstallation
+&lt;/h3&gt;
+&lt;p&gt;Für die weiteren Schritte muss das Paket &lt;code&gt;libpam-google-authenticator&lt;/code&gt; installiert werden. Dies geschieht durch Eingabe von&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install libpam-google-authenticator
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ins Terminal.&lt;/p&gt;
+&lt;h3 id=&#34;konfiguration-für-den-nutzer&#34;&gt;
+    &lt;a href=&#34;#konfiguration-f%c3%bcr-den-nutzer&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Konfiguration für den Nutzer
+&lt;/h3&gt;
+&lt;p&gt;Für jeden Nutzer, der Einmalcodes nutzen können soll, muss eine initiale Konfiguration durchgeführt werden. Diese wird gestartet, in dem sich der jeweilige Nutzer z. B. per SSH auf dem System einloggt und den Befehl&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;google-authenticator
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ausführt. Anschließend startet der Setup-Assistent. Meine Empfehlung lautet, die dort gestellten Fragen wie folgt zu beantworten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make tokens “time-based”: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Update the .google_authenticator file: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Disallow multiple uses: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Increase the original generation time limit: &lt;strong&gt;no&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enable rate-limiting: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Der anschließend gezeigte QR-Code kann mit einer geeigneten Handy-App gescannt werden. Die Backup-Codes sollten sicher, beispielsweise auf einem Blatt Papier, aufbewahrt werden.&lt;/p&gt;
+&lt;h3 id=&#34;serverkonfiguration&#34;&gt;
+    &lt;a href=&#34;#serverkonfiguration&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Serverkonfiguration
+&lt;/h3&gt;
+&lt;p&gt;Nun kann mit der Konfiguration des Servers fortgefahren werden. Erstellt vor Änderung der genannten Dateien jeweils ein Backup, das ihr im Fehlerfall wiederherstellen könnt!&lt;/p&gt;
+&lt;h4 id=&#34;anpassung-von-etcpamdsshd&#34;&gt;
+    &lt;a href=&#34;#anpassung-von-etcpamdsshd&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Anpassung von /etc.pam.d/sshd
+&lt;/h4&gt;
+&lt;p&gt;Die Datei &lt;code&gt;/etc.pam.d/sshd&lt;/code&gt; wird mit einem Editor mit &lt;code&gt;root&lt;/code&gt;-Berechtigung geöffnet. Dort wird die Zeile &lt;code&gt;@include common-auth&lt;/code&gt; auskommentiert, in dem man ein &lt;code&gt;#&lt;/code&gt; an den Anfang der Zeile schreibt:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/common-auth.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Das verhindert das Zurückfallen zu einer passwortbasierten Anmeldung.&lt;/p&gt;
+&lt;p&gt;An das Ende der Datei muss anschließend der Text &lt;code&gt;auth required pam_google_authenticator.so&lt;/code&gt; angefügt werden:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/auth-required.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;anpassung-von-etcsshsshd_config&#34;&gt;
+    &lt;a href=&#34;#anpassung-von-etcsshsshd_config&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Anpassung von /etc/ssh/sshd_config
+&lt;/h4&gt;
+&lt;p&gt;Anschließend muss die Datei &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; mit einem Editor mit &lt;code&gt;root&lt;/code&gt;-Berechtigung geöffnet werden. Dort muss die Zeile &lt;code&gt;AuthenticationMethods&lt;/code&gt; gefunden und der Wert auf &lt;code&gt;publickey,keyboard-interactive&lt;/code&gt; geändert werden. Ist diese nicht vorhanden, kann diese an das Ende der Datei angefügt werden:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/auth-methods.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Außerdem muss die Option &lt;code&gt;KbdInteractiveAuthentication&lt;/code&gt; auf &lt;code&gt;yes&lt;/code&gt; geändert werden. Außerdem sollte bei dieser Gelegenheit überprüft werden, dass &lt;code&gt;PubkeyAuthentication&lt;/code&gt; auf &lt;code&gt;yes&lt;/code&gt; und &lt;code&gt;PasswordAuthentication&lt;/code&gt; auf &lt;code&gt;no&lt;/code&gt; steht:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/kbd-interactive.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;konfiguration-testen&#34;&gt;
+    &lt;a href=&#34;#konfiguration-testen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Konfiguration testen
+&lt;/h4&gt;
+&lt;p&gt;Sind alle oben genannten Schritte ausgeführt und alle Dateien gespeichert, muss die Konfiguration getestet werden. Haltet die bestehende SSH-Verbindung zum Server auf jeden Fall aufrecht, da ihr euch bei fehlerhafter Konfiguration eventuell nicht mehr in den Server einloggen könnt. Um die Konfiguration zu testen, stellt eine neue SSH-Verbindung her ohne die alte zu beenden!&lt;/p&gt;
+&lt;p&gt;Damit die getätigte Konfiguration aktiv werden kann, muss der SSH-Server neu geladen werden. Dies geschieht durch den folgenden Befehl:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo service ssh reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nun ist die neue Konfiguration aktiv und ihr werdet beim Login nach einem Einmal-Code gefragt, den eure Authenticator-App generiert.&lt;/p&gt;
+&lt;h2 id=&#34;fazit&#34;&gt;
+    &lt;a href=&#34;#fazit&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fazit
+&lt;/h2&gt;
+&lt;p&gt;Durch die Kombination von SSH-Schlüsseln und einem zweiten Faktor wie TOTP wird die Sicherheit signifikant erhöht. Diese Einrichtung ist relativ einfach umzusetzen und bietet effektiven Schutz vor vielen Angriffen.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.heise.de/tipps-tricks/Was-ist-SSH-7313396.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„Was ist SSH?“ bei heise online&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.security-insider.de/was-ist-totp-a-875708/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„Was ist TOTP?“ bei security-insider&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.yubico.com/SSH/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„Securing SSH with the YubiKey“ bei yubico&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thomas-krenn.com/de/wiki/OpenSSH_Public_Key_Authentifizierung_unter_Ubuntu&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„OpenSSH Public Key Authentifizierung unter Ubuntu“ bei Thomas-Krenn&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+    </description>
+    </item>
+    
+    <item>
     <title>Apple Shortcut: Webseite in Apple Notizen speichern</title>
     <link>https://xenophil90.github.io/posts/2025/ios-ipados-webseite-in-apple-notes/</link>
     <pubDate>Sat, 04 Jan 2025 17:53:20 +0100</pubDate>
