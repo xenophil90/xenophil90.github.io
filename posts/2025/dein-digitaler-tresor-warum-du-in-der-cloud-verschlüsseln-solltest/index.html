@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest | xenophil90.github.io</title>
+    
+    <meta property="og:site_name" content="xenophil90" />
+    <meta property="og:title" content="Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest | xenophil90.github.io"/>
+    <meta itemprop="name" content="Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest | xenophil90.github.io" />
+    <meta name="twitter:title" content="Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest | xenophil90.github.io" />
+    <meta name="application-name" content="Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest | xenophil90.github.io" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="Schütze deine Daten in der Cloud mit Verschlüsselung! In diesem Artikel erfährst du, warum unverschlüsselte Cloud-Speicherung riskant ist und wie Cryptomator, ein kostenloses Open-Source-Tool, deine sensiblen Dateien vor unerwünschtem Zugriff schützt. Ich erkläre, wie die Software funktioniert, welche Vorteile sie bietet und warum Verschlüsselung essenziell für Datenschutz und Privatsphäre ist. Jetzt lesen und deine Cloud-Sicherheit verbessern!" />
+    <meta name="twitter:description" content="Schütze deine Daten in der Cloud mit Verschlüsselung! In diesem Artikel erfährst du, warum unverschlüsselte Cloud-Speicherung riskant ist und wie Cryptomator, ein kostenloses Open-Source-Tool, deine sensiblen Dateien vor unerwünschtem Zugriff schützt. Ich erkläre, wie die Software funktioniert, welche Vorteile sie bietet und warum Verschlüsselung essenziell für Datenschutz und Privatsphäre ist. Jetzt lesen und deine Cloud-Sicherheit verbessern! "/>
+    <meta itemprop="description" content=" Schütze deine Daten in der Cloud mit Verschlüsselung! In diesem Artikel erfährst du, warum unverschlüsselte Cloud-Speicherung riskant ist und wie Cryptomator, ein kostenloses Open-Source-Tool, deine sensiblen Dateien vor unerwünschtem Zugriff schützt. Ich erkläre, wie die Software funktioniert, welche Vorteile sie bietet und warum Verschlüsselung essenziell für Datenschutz und Privatsphäre ist. Jetzt lesen und deine Cloud-Sicherheit verbessern! "/>
+    <meta property="og:description" content=" Schütze deine Daten in der Cloud mit Verschlüsselung! In diesem Artikel erfährst du, warum unverschlüsselte Cloud-Speicherung riskant ist und wie Cryptomator, ein kostenloses Open-Source-Tool, deine sensiblen Dateien vor unerwünschtem Zugriff schützt. Ich erkläre, wie die Software funktioniert, welche Vorteile sie bietet und warum Verschlüsselung essenziell für Datenschutz und Privatsphäre ist. Jetzt lesen und deine Cloud-Sicherheit verbessern! " />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.8e5845c8f6f5d48fe256a59fcf548c65590415af8e70e0dda32f6cba26f19f98.css">
+    <script defer language="javascript" type="text/javascript"  src="/js/throttle.js"></script>
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    <span class="emoji">
+                        🦊
+                    </span>
+                    
+                    
+                    xenophil90.github.io
+                    </a>
+            </div>
+            <div class="flex">
+                
+                
+                <a href="/fotografie">Fotografie</a>
+                
+                
+                    <button id="dark-mode-button">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    </button>
+                
+            </div>
+            </div>
+    </div>
+</nav>
+
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                            Von Phil Krämer | <time>16. Januar 2025</time>
+                            | 3 Minuten Lesezeit
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="/tags/verschl%C3%BCsselung/">Verschlüsselung</a>
+                            
+                            <a href="/tags/cloud/">Cloud</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+      
+      
+        <div class="toc-wrapper">
+          <input type="checkbox" id="tocToggle" checked>
+          <label for="tocToggle">Inhaltsverzeichnis</label>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#einleitung">Einleitung</a></li>
+    <li><a href="#kein-vertrauen-in-die-anbieter">Kein Vertrauen in die Anbieter</a></li>
+    <li><a href="#was-ist-cryptomator">Was ist Cryptomator?</a>
+      <ul>
+        <li><a href="#die-vorteile-von-cryptomator-auf-einen-blick">Die Vorteile von Cryptomator auf einen Blick</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    
+    <h2 id="einleitung">
+    <a href="#einleitung" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Einleitung
+</h2>
+<p>In letzter Zeit werde ich immer häufiger von Freunden, Bekannten und Familienmitgliedern gefragt, welche Konsequenzen die aktuelle (geo)politische Lage für die Sicherheit ihrer persönlichen Daten hat. Anstatt auf die spezifischen Ereignisse der letzten Wochen und Monate einzugehen, wiederhole ich meistens, was ich seit Jahren sage: Wenn es um die Sicherheit der persönlichen Daten geht, sollte man diese grundsätzlich <strong>verschlüsselt</strong> bei Cloud-Anbietern speichern.</p>
+<h2 id="kein-vertrauen-in-die-anbieter">
+    <a href="#kein-vertrauen-in-die-anbieter" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Kein Vertrauen in die Anbieter
+</h2>
+<p>Viele Menschen in meinem Umfeld nutzen Cloud-Dienste, um persönliche Daten wie Steuerbescheide, Urkunden, Krankenhausberichte, Kreditverträge und Ähnliches abzulegen. Meistens sind es US-amerikanische Anbieter – aber letztlich spielt die Herkunft kaum eine Rolle. Ich vertraue keinem Storage-Cloud-Anbieter so sehr, dass ich ihm meine persönlichen Daten im Klartext anvertrauen würde – egal, wo er sitzt.</p>
+<p>Die Bedrohungslage hat sich durch die aktuellen Entwicklungen rund um Künstliche Intelligenz (KI) noch einmal verändert – wenngleich nicht wesentlich. Die wenigsten Personen werden möchte, dass ihre Daten zum Training von LLMs oder für andere undurchsichtige Zwecke verwendet werden. Auch früher gab es schon immer Diskussionen darüber, ob z. B. Google Cloud-Daten nutzt, um personalisierte Werbung zu schalten oder Persönlichkeitsprofile zu erstellen – daher hat sich die Diskussion selbst kaum verändert. Damals wie heute lautet die Antwort: Sind die Daten ordentlich verschlüsselt und kann der Anbieter nicht darauf zugreifen, so sind sie auch für unerwünschte Zwecke unbrauchbar.</p>
+<p><strong>Doch wie kann man heutzutage eine gute Verschlüsselung auf Datei-Ebene in der Cloud umsetzen?</strong> Viele Lösungen sind unpraktisch – etwa verschlüsselte ZIP-Dateien, die nach jeder Änderung komplett herunter- und wieder hochgeladen werden müssen.</p>
+<h2 id="was-ist-cryptomator">
+    <a href="#was-ist-cryptomator" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Was ist Cryptomator?
+</h2>
+<p>Cryptomator<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ist ein kostenloses Open-Source-Programm, das eure Dateien verschlüsselt, bevor sie in der Cloud gespeichert werden. Das bedeutet: Niemand – weder Hacker noch der Cloud-Anbieter – kann auf eure Daten zugreifen, selbst wenn sie in Diensten wie Google Drive, Dropbox oder OneDrive liegen.</p>
+<p>Die Software funktioniert wie ein virtueller Tresor: Ihr legt eure sensiblen Dateien in einen speziellen Ordner („Tresor“), und Cryptomator verschlüsselt sie automatisch, bevor sie in der Cloud abgelegt werden. Nur mit eurem Passwort könnt ihr die Dateien wieder entschlüsseln und öffnen.</p>
+<h3 id="die-vorteile-von-cryptomator-auf-einen-blick">
+    <a href="#die-vorteile-von-cryptomator-auf-einen-blick" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Die Vorteile von Cryptomator auf einen Blick
+</h3>
+<p>Hier sind die Vorteile der Lösung auf einen Blick:</p>
+<ul style="list-style:none;">
+<li>✅ <strong>Einfache Bedienung:</strong> Keine komplizierten Einstellungen nötig.</li>
+<li>✅ <strong>Maximale Sicherheit:</strong> Starke Ende-zu-Ende-Verschlüsselung schützt eure Daten.</li>
+<li>✅ <strong>Transparenz durch Open Source:</strong> Der öffentlich einsehbare Code schafft zusätzliches Vertrauen.</li>
+<li>✅ <strong>Plattformunabhängig:</strong> Funktioniert auf Windows, macOS, Linux, Android und iOS.</li>
+</ul>
+<p>Kurz gesagt: Mit Cryptomator bleiben eure in der Cloud gespeicherten Daten wirklich privat – einfach, sicher und kostenlos.</p>
+<p>Wer auf eine andere Lösung setzen möchte, kann sich auch gerne Veracrypt<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> anschauen – hier wird die Verschlüsselung aber pro Container und nicht pro Datei durchgeführt und ist damit unpraktischer für die Verwendung mit Cloud-Diensten.</p>
+<p>Wer sich darüber hinaus informieren möchte, welche europäischen Alternativen zu den großen US-amerikanischen Cloud-Anbietern es gibt, dem lege ich diese Übersicht<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> ans Herz.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://cryptomator.org" target="_blank" rel="noreferrer noopener">https://cryptomator.org</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.veracrypt.fr/en/Home.html" target="_blank" rel="noreferrer noopener">https://www.veracrypt.fr/en/Home.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://european-alternatives.eu" target="_blank" rel="noreferrer noopener">https://european-alternatives.eu</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="/posts/2025/htb-underpass/" title="Previous post (older)">
+            <span>Previous</span>
+            HackTheBox: Underpass
+            </a>
+        
+        
+        
+    </nav>
+    
+    
+</div>
+ 
+<div class="container">
+    
+</div>
+
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/beitraege">Alle Beiträge</a>
+            
+            <a href="/impressum">Impressum</a>
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+
+        <div id="back-to-top">
+    <a href="#">
+<i class="inline-svg" type="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></i></a>
+</div>
+    </section>
+    <script defer src="/ts/features.706a523ba43e6d0427c7fdf2b9d05dbd0920d3f12942b453690b495cb2522743.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
+</html>

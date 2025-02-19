@@ -5,7 +5,431 @@
     <description>Recent content on xenophil90.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 19 Jan 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Feb 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest</title>
+    <link>https://xenophil90.github.io/posts/2025/dein-digitaler-tresor-warum-du-in-der-cloud-verschl%C3%BCsseln-solltest/</link>
+    <pubDate>Sun, 16 Feb 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/dein-digitaler-tresor-warum-du-in-der-cloud-verschl%C3%BCsseln-solltest/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;In letzter Zeit werde ich immer häufiger von Freunden, Bekannten und Familienmitgliedern gefragt, welche Konsequenzen die aktuelle (geo)politische Lage für die Sicherheit ihrer persönlichen Daten hat. Anstatt auf die spezifischen Ereignisse der letzten Wochen und Monate einzugehen, wiederhole ich meistens, was ich seit Jahren sage: Wenn es um die Sicherheit der persönlichen Daten geht, sollte man diese grundsätzlich &lt;strong&gt;verschlüsselt&lt;/strong&gt; bei Cloud-Anbietern speichern.&lt;/p&gt;
+&lt;h2 id=&#34;kein-vertrauen-in-die-anbieter&#34;&gt;
+    &lt;a href=&#34;#kein-vertrauen-in-die-anbieter&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Kein Vertrauen in die Anbieter
+&lt;/h2&gt;
+&lt;p&gt;Viele Menschen in meinem Umfeld nutzen Cloud-Dienste, um persönliche Daten wie Steuerbescheide, Urkunden, Krankenhausberichte, Kreditverträge und Ähnliches abzulegen. Meistens sind es US-amerikanische Anbieter – aber letztlich spielt die Herkunft kaum eine Rolle. Ich vertraue keinem Storage-Cloud-Anbieter so sehr, dass ich ihm meine persönlichen Daten im Klartext anvertrauen würde – egal, wo er sitzt.&lt;/p&gt;
+&lt;p&gt;Die Bedrohungslage hat sich durch die aktuellen Entwicklungen rund um Künstliche Intelligenz (KI) noch einmal verändert – wenngleich nicht wesentlich. Die wenigsten Personen werden möchte, dass ihre Daten zum Training von LLMs oder für andere undurchsichtige Zwecke verwendet werden. Auch früher gab es schon immer Diskussionen darüber, ob z. B. Google Cloud-Daten nutzt, um personalisierte Werbung zu schalten oder Persönlichkeitsprofile zu erstellen – daher hat sich die Diskussion selbst kaum verändert. Damals wie heute lautet die Antwort: Sind die Daten ordentlich verschlüsselt und kann der Anbieter nicht darauf zugreifen, so sind sie auch für unerwünschte Zwecke unbrauchbar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Doch wie kann man heutzutage eine gute Verschlüsselung auf Datei-Ebene in der Cloud umsetzen?&lt;/strong&gt; Viele Lösungen sind unpraktisch – etwa verschlüsselte ZIP-Dateien, die nach jeder Änderung komplett herunter- und wieder hochgeladen werden müssen.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-cryptomator&#34;&gt;
+    &lt;a href=&#34;#was-ist-cryptomator&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was ist Cryptomator?
+&lt;/h2&gt;
+&lt;p&gt;Cryptomator&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ist ein kostenloses Open-Source-Programm, das eure Dateien verschlüsselt, bevor sie in der Cloud gespeichert werden. Das bedeutet: Niemand – weder Hacker noch der Cloud-Anbieter – kann auf eure Daten zugreifen, selbst wenn sie in Diensten wie Google Drive, Dropbox oder OneDrive liegen.&lt;/p&gt;
+&lt;p&gt;Die Software funktioniert wie ein virtueller Tresor: Ihr legt eure sensiblen Dateien in einen speziellen Ordner („Tresor“), und Cryptomator verschlüsselt sie automatisch, bevor sie in der Cloud abgelegt werden. Nur mit eurem Passwort könnt ihr die Dateien wieder entschlüsseln und öffnen.&lt;/p&gt;
+&lt;h3 id=&#34;die-vorteile-von-cryptomator-auf-einen-blick&#34;&gt;
+    &lt;a href=&#34;#die-vorteile-von-cryptomator-auf-einen-blick&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Die Vorteile von Cryptomator auf einen Blick
+&lt;/h3&gt;
+&lt;p&gt;Hier sind die Vorteile der Lösung auf einen Blick:&lt;/p&gt;
+&lt;ul style=&#34;list-style:none;&#34;&gt;
+&lt;li&gt;✅ &lt;strong&gt;Einfache Bedienung:&lt;/strong&gt; Keine komplizierten Einstellungen nötig.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Maximale Sicherheit:&lt;/strong&gt; Starke Ende-zu-Ende-Verschlüsselung schützt eure Daten.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Transparenz durch Open Source:&lt;/strong&gt; Der öffentlich einsehbare Code schafft zusätzliches Vertrauen.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Plattformunabhängig:&lt;/strong&gt; Funktioniert auf Windows, macOS, Linux, Android und iOS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kurz gesagt: Mit Cryptomator bleiben eure in der Cloud gespeicherten Daten wirklich privat – einfach, sicher und kostenlos.&lt;/p&gt;
+&lt;p&gt;Wer auf eine andere Lösung setzen möchte, kann sich auch gerne Veracrypt&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; anschauen – hier wird die Verschlüsselung aber pro Container und nicht pro Datei durchgeführt und ist damit unpraktischer für die Verwendung mit Cloud-Diensten.&lt;/p&gt;
+&lt;p&gt;Wer sich darüber hinaus informieren möchte, welche europäischen Alternativen zu den großen US-amerikanischen Cloud-Anbietern es gibt, dem lege ich diese Übersicht&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; ans Herz.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://cryptomator.org&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://cryptomator.org&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.veracrypt.fr/en/Home.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.veracrypt.fr/en/Home.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://european-alternatives.eu&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://european-alternatives.eu&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
+    </item>
+    
+    <item>
+    <title>HackTheBox: Underpass</title>
+    <link>https://xenophil90.github.io/posts/2025/htb-underpass/</link>
+    <pubDate>Sun, 19 Jan 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/htb-underpass/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;Underpass ist eine als &lt;em&gt;Easy&lt;/em&gt; eingestufte Maschine auf HackTheBox. Sie wurde im Dezember 2024 veröffentlicht. Für die Lösung ist es notwendig, einen UDP-Portscan durchzuführen und Informationen über &lt;strong&gt;SNMP&lt;/strong&gt; zu erhalten. Diese Informationen werden anschließend genutzt, um ein &lt;strong&gt;Web-Interface&lt;/strong&gt; zu finden, Zugangsdaten zum Server zu finden und erfolgreich eine interaktive Verbindung aufzubauen. Anschließend nutzt man eine &lt;strong&gt;Konfigurationsschwachstelle&lt;/strong&gt; aus, um eine Applikation mit erweiterten Rechten zu starten und &lt;code&gt;root&lt;/code&gt;-Zugriff zu erhalten.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-1.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;erkundung&#34;&gt;
+    &lt;a href=&#34;#erkundung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Erkundung
+&lt;/h2&gt;
+&lt;p&gt;Zunächst wird das System mithilfe von &lt;code&gt;nmap&lt;/code&gt; gescannt. Um den Prozess zu vereinfachen, nutze ich dafür mein Skript mit dem Namen &lt;code&gt;fast-nmap&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[...]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| ssh-hostkey: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   256 48:b0:d2:c7:29:26:ae:3d:fb:b7:6b:0f:f5:4d:2a:ea (ECDSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_  256 cb:61:64:b8:1b:1b:b5:ba:b8:45:86:c5:16:bb:e2:a2 (ED25519)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_http-server-header: Apache/2.4.52 (Ubuntu)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_http-title: Apache2 Ubuntu Default Page: It works
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[...]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hierbei ist zu beachten, dass &lt;code&gt;nmap&lt;/code&gt; in der obigen Konfiguration nur TCP-Ports scannt, keine UDP-Ports. Der TCP-Scan ergibt zwei offenen Ports, nämlich &lt;strong&gt;22 (SSH)&lt;/strong&gt; und &lt;strong&gt;80 (Apache HTTP-Server)&lt;/strong&gt;. Auf den ersten (und zweiten) Blick ist hier nichts Interessantes zu holen.&lt;/p&gt;
+&lt;p&gt;Ich versuche mein Glück also mit einem UDP-Scan:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nmap -A -sU -p- 10.10.11.48
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Das Ergebnis sieht u. a. wie folgt aus:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PORT    STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;161/udp open  snmp    SNMPv1 server; net-snmp SNMPv3 server (public)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| snmp-info: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   enterprise: net-snmp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   engineIDFormat: unknown
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   engineIDData: c7ad5c4856d1cf6600000000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   snmpEngineBoots: 30
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_  snmpEngineTime: 1h10m13s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| snmp-sysdescr: Linux underpass 5.15.0-126-generic #136-Ubuntu SMP Wed Nov 6 10:38:22 UTC 2024 x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_  System uptime: 1h10m12.62s (421262 timeticks)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Too many fingerprints match this host to give specific OS details
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Network Distance: 2 hops
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Service Info: Host: UnDerPass.htb is the only daloradius server in the basin!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alle wichtigen Informationen sind in dieser Nachricht bereits enthalten, aber trotzdem schaue ich mithilfe von &lt;code&gt;snmpwalk&lt;/code&gt;, ob sich weitere Informationen finden lassen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;snmpwalk -v &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -c public 10.10.11.48
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wirklich neue Informationen erhalte ich dadurch allerdings nicht (daher beschreibe ich den Output hier auch nicht).&lt;/p&gt;
+&lt;p&gt;Die wichtige Information aus der Ausgabe oben ist diese hier:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;UnDerPass.htb is the only &lt;strong&gt;daloradius&lt;/strong&gt; server in the basin!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;fuß-fassen&#34;&gt;
+    &lt;a href=&#34;#fu%c3%9f-fassen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fuß fassen
+&lt;/h2&gt;
+&lt;h3 id=&#34;daloradius&#34;&gt;
+    &lt;a href=&#34;#daloradius&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    daloRADIUS
+&lt;/h3&gt;
+&lt;p&gt;Was hat es nun aber mit &lt;strong&gt;daloRADIUS&lt;/strong&gt; auf sich?&lt;/p&gt;
+&lt;h4 id=&#34;was-ist-daloradius&#34;&gt;
+    &lt;a href=&#34;#was-ist-daloradius&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was ist daloRADIUS?
+&lt;/h4&gt;
+&lt;p&gt;Laut der Hersteller-Webseite&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; ist daloRADIUS wie folgt zu beschreiben:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;About daloRADIUS&lt;/p&gt;
+&lt;p&gt;daloRADIUS is an advanced RADIUS web platform aimed at managing Hotspots and general-purpose ISP deployments. It features rich user management, graphical reporting, accounting, and integrates with GoogleMaps for geo-locating (GIS). daloRADIUS is written in PHP and JavaScript and utilizes a database abstraction layer which means that it supports many database systems, among them the popular MySQL, PostgreSQL, Sqlite, MsSQL, and many others.&lt;/p&gt;
+&lt;p&gt;It is based on a FreeRADIUS deployment with a database server serving as the backend. Among other features it implements ACLs, GoogleMaps integration for locating hotspots/access points visually and many more features. &lt;strong&gt;daloRADIUS is essentially a web application to manage a radius server&lt;/strong&gt; so theoretically it can manage any radius server but specifically it manages FreeRADIUS and it&amp;rsquo;s database structure. Since version 0.9-3 daloRADIUS has introduced an application-wide database abstraction layer based on PHP&amp;rsquo;s PEAR::DB package which support a range of database servers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Es handelt sich also um eine Web-Applikation. Deren Quellcode und Dokumentation sind auf Github verfügbar&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;finden-des-web-interface&#34;&gt;
+    &lt;a href=&#34;#finden-des-web-interface&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Finden des Web-Interface
+&lt;/h4&gt;
+&lt;p&gt;Da es sich um eine Web-Applikation handelt und ich ein Github-Repository gefunden habe, in dem alle Daten zu daloRADIUS verfügbar sind, sollte es nicht schwer sein, das Webinterface zu finden. Tatsächlich komme ich im weiteren Verlauf auch ohne toolgestütztes Fuzzing oder Directory Busting zum Ziel.&lt;/p&gt;
+&lt;h5 id=&#34;der-richtige-pfad&#34;&gt;
+    &lt;a href=&#34;#der-richtige-pfad&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Der richtige Pfad
+&lt;/h5&gt;
+&lt;p&gt;Zunächst lohnt sich ein Blick in die Installations-Anweisungen von daloRADIUS&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, genauer gesagt auf das Kapitel 5:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-2.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Hier erhalte ich die Standard-Zugangsdaten sowie einen möglichen Pfad zum Management-Interface auf dem Webserver. Leider wird unter der in der Dokumentation gezeigten Adresse auf dem von mir gerade begutachteten Server kein Login-Fenster angezeigt.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-3.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Die gute Nachricht:&lt;/strong&gt; Ich erhalte keinen Fehler 404, der bedeuten würde, dass es das Verzeichnis auf dem Server nicht gibt. Stattdessen schließe ich aus der Fehlermeldung, dass das Verzeichnis existiert, aber nicht zugänglich ist.&lt;/p&gt;
+&lt;p&gt;Nun heißt es also den Login zu finden&amp;hellip;&lt;/p&gt;
+&lt;h5 id=&#34;wo-ist-die-loginphp&#34;&gt;
+    &lt;a href=&#34;#wo-ist-die-loginphp&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wo ist die Login.php?
+&lt;/h5&gt;
+&lt;p&gt;Dabei hilft mir auch die Tatsache, dass daloRADIUS öffentlich verfügbar ist. Nach kurzer Durchsicht des Github-Repositories finde ich hier&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; eine &lt;code&gt;login.php&lt;/code&gt;:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-4.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Dies probiere ich nun mit dem Webbrowser auf dem Server (&lt;code&gt;http://10.10.11.48/daloradius/app/operators/login.php&lt;/code&gt;) und finde tatsächlich das gesuchte Interface. Da ich die Standard-Zugangsdaten im Verlauf meiner Recherche bereits gefunden habe, teste ich diese direkt und erhalte tatsächlich Zugang zum Management-Interface!&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-5.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h5 id=&#34;das-interface-erkunden&#34;&gt;
+    &lt;a href=&#34;#das-interface-erkunden&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Das Interface erkunden
+&lt;/h5&gt;
+&lt;p&gt;Im Interface lohnt es sich nun, alle Menüpunkt langsam einmal anzusehen. Unter anderem gibt es dort den Punkt &lt;em&gt;List Users&lt;/em&gt;. Dort werden alle im daloRADIUS-Server angelegten Benutzer samt eines gehashten Kennworts angezeigt. Interessant ist, dass es nur einen Benutzer gibt: &lt;code&gt;svcMosh&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-6.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Es gibt verschiedene Möglichkeiten herauszubekommen, um welche Art Hash es sich in diesem Fall handelt. Eine der einfachsten Varianten ist es, die Zeichenfolge in CyberChef&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; einzugeben und analysieren zu lassen.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-7.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Damit wird schnell klar, dass es sich um einen MD5-Hash handelt.&lt;/p&gt;
+&lt;h3 id=&#34;das-gehashte-kennwort-bekommen&#34;&gt;
+    &lt;a href=&#34;#das-gehashte-kennwort-bekommen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Das gehashte Kennwort bekommen
+&lt;/h3&gt;
+&lt;p&gt;Mithilfe von &lt;code&gt;hashcat&lt;/code&gt; versuche ich nun das Kennwort zu finden, das zur gefundenen MD5-Hashsumme passt. Als Wordlist nutze ich &lt;code&gt;rockyou.txt&lt;/code&gt;. Die Hashsumme habe ich vorher in der Datei &lt;code&gt;hash-list&lt;/code&gt; gespeichert.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hashcat -m &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; hash-list /usr/share/wordlists/rockyou.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nach sehr kurzer Zeit habe ich auch bereits ein Match (das Kennwort zeige ich an dieser Stelle natürlich nicht):&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-8.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;user-flag&#34;&gt;
+    &lt;a href=&#34;#user-flag&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    User Flag
+&lt;/h3&gt;
+&lt;p&gt;Mit den gefundenen Zugangsdaten für den Benutzer &lt;code&gt;svcMosh&lt;/code&gt; ist nun ein Login via &lt;strong&gt;SSH&lt;/strong&gt; möglich.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-9.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Damit ist die User Flag schnell gefunden.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-10.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;rechteerweiterung&#34;&gt;
+    &lt;a href=&#34;#rechteerweiterung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Rechteerweiterung
+&lt;/h2&gt;
+&lt;p&gt;Mit einem ersten interaktiven Zugang zum Server möchte ich nun natürlich weitere Rechte auf dem Server bekommen. Dafür lohnt sich erst ein Blick auf &lt;code&gt;sudo&lt;/code&gt;. Damit kann ich Befehle mit erweiterten Berechtigungen ausführen.&lt;/p&gt;
+&lt;h3 id=&#34;was-darf-svcmosh&#34;&gt;
+    &lt;a href=&#34;#was-darf-svcmosh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was darf svcMosh?
+&lt;/h3&gt;
+&lt;p&gt;Um Informationen darüber zu bekommen, ob &lt;code&gt;svcMosh&lt;/code&gt; Befehle mit erweiterten Berechtigungen ausführen kann, führe ich den folgenden Befehl aus.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Das Ergebnis kann sich sehen lassen.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-11.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Der Befehl &lt;code&gt;/usr/bin/mosh-server&lt;/code&gt; darf vom Benutzer &lt;code&gt;svcMosh&lt;/code&gt; ohne weitere Hürden ausgeführt werden.&lt;/p&gt;
+&lt;h3 id=&#34;mosh&#34;&gt;
+    &lt;a href=&#34;#mosh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Mosh
+&lt;/h3&gt;
+&lt;p&gt;Welche Informationen gibt es zu Mosh?&lt;/p&gt;
+&lt;h4 id=&#34;was-ist-mosh&#34;&gt;
+    &lt;a href=&#34;#was-ist-mosh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was ist Mosh?
+&lt;/h4&gt;
+&lt;p&gt;Ein kurzer Blick auf die Webseite des Produkts&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt; beantwortet die Frage schnell:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mosh&lt;/p&gt;
+&lt;p&gt;(mobile shell)&lt;/p&gt;
+&lt;p&gt;Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.&lt;/p&gt;
+&lt;p&gt;Mosh is a replacement for interactive SSH terminals. It&amp;rsquo;s more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.&lt;/p&gt;
+&lt;p&gt;Mosh is free software, available for GNU/Linux, BSD, macOS, Solaris, Android, Chrome, and iOS.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Es handelt sich also um eine Verwaltungskonsole ähnlich SSH. Und diese darf der Benutzer &lt;code&gt;svcMosh&lt;/code&gt; mit erweiterten Berechtigungen ausführen.&lt;/p&gt;
+&lt;h4 id=&#34;konfigurationsfehler-ausnutzen&#34;&gt;
+    &lt;a href=&#34;#konfigurationsfehler-ausnutzen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Konfigurationsfehler ausnutzen
+&lt;/h4&gt;
+&lt;p&gt;Nach der Recherche zu Mosh wird schnell klar, dass es keine gute Idee ist, dem Benutzer &lt;code&gt;svcMosh&lt;/code&gt; zu gestatten, diese Applikation mit &lt;code&gt;sudo&lt;/code&gt; auszuführen.&lt;/p&gt;
+&lt;p&gt;Ein wenig Recherche auf der Webseite bringt zu Tage, dass man den &lt;code&gt;mosh-server&lt;/code&gt; quasi überall speichern und ausführen kann. Die Frage lautet: Auch mit &lt;code&gt;sudo&lt;/code&gt;?&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-12.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Tatsächlich ist die Frage schnell zu beantworten: Ja.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mosh --server&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sudo /usr/bin/mosh-server&amp;#34;&lt;/span&gt; localhost
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dieser Befehl führt den Mosh-Server mit erweiterten Berechtigungen aus und stellt eine Verbindung her. Dort habe ich sofort &lt;code&gt;root&lt;/code&gt;-Rechte.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-13.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;root-flag&#34;&gt;
+    &lt;a href=&#34;#root-flag&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Root Flag
+&lt;/h3&gt;
+&lt;p&gt;Die Root-Flag ist damit auch sehr schnell gefunden.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-14.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;zusammenfassung&#34;&gt;
+    &lt;a href=&#34;#zusammenfassung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Zusammenfassung
+&lt;/h2&gt;
+&lt;p&gt;Die Maschine &lt;strong&gt;Underpass&lt;/strong&gt; bietet eine spannende und lehrreiche Herausforderung, die eine sorgfältige Erkundung und Analyse erfordert. Besonders hervorzuheben ist die Bedeutung eines umfassenden Scans, einschließlich UDP-Ports, um versteckte Dienste wie SNMP aufzudecken. Die weitere Analyse zeigt, wie man durch gezielte Recherche und das Verständnis von Diensten wie &lt;strong&gt;daloRADIUS&lt;/strong&gt; und &lt;strong&gt;Mosh&lt;/strong&gt; Sicherheitslücken effektiv ausnutzen kann.&lt;/p&gt;
+&lt;p&gt;Die Rechteerweiterung basiert auf einer Konfigurationsschwachstelle, die zeigt, wie gefährlich es ist, Anwendungen mit erweiterten Berechtigungen auszuführen. Gleichzeitig bleibt der Schwierigkeitsgrad zugänglich, da keine komplexen Angriffsmethoden notwendig sind.&lt;/p&gt;
+&lt;p&gt;Insgesamt bietet Underpass eine großartige Gelegenheit, die eigene Methodik zu verfeinern und dabei wichtige Prinzipien der IT-Sicherheit zu lernen. Für Anfänger eine lohnenswerte Erfahrung!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.daloradius.com&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.daloradius.com&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lirantal/daloradius&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/lirantal/daloradius&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lirantal/daloradius/blob/master/doc/install/INSTALL&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/lirantal/daloradius/blob/master/doc/install/INSTALL&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lirantal/daloradius/tree/master/app/operators&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/lirantal/daloradius/tree/master/app/operators&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gchq.github.io/CyberChef/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://gchq.github.io/CyberChef/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://mosh.org&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://mosh.org&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
+    </item>
+    
     <item>
     <title>SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern</title>
     <link>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</link>

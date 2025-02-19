@@ -6,8 +6,29 @@
     <description>Recent content in Tags on xenophil90.github.io</description>
     <generator>Hugo</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 12 Jan 2025 09:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2025 09:00:00 +0100</lastBuildDate>
     <atom:link href="https://xenophil90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud</title>
+      <link>https://xenophil90.github.io/tags/cloud/</link>
+      <pubDate>Sun, 16 Feb 2025 09:00:00 +0100</pubDate>
+      <guid>https://xenophil90.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Verschlüsselung</title>
+      <link>https://xenophil90.github.io/tags/verschl%C3%BCsselung/</link>
+      <pubDate>Sun, 16 Feb 2025 09:00:00 +0100</pubDate>
+      <guid>https://xenophil90.github.io/tags/verschl%C3%BCsselung/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hackthebox</title>
+      <link>https://xenophil90.github.io/tags/hackthebox/</link>
+      <pubDate>Sun, 19 Jan 2025 09:00:00 +0100</pubDate>
+      <guid>https://xenophil90.github.io/tags/hackthebox/</guid>
+      <description></description>
+    </item>
     <item>
       <title>MFA</title>
       <link>https://xenophil90.github.io/tags/mfa/</link>
@@ -55,13 +76,6 @@
       <link>https://xenophil90.github.io/tags/tech/</link>
       <pubDate>Tue, 25 Jan 2022 15:18:17 +0100</pubDate>
       <guid>https://xenophil90.github.io/tags/tech/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hackthebox</title>
-      <link>https://xenophil90.github.io/tags/hackthebox/</link>
-      <pubDate>Mon, 24 Jan 2022 15:09:03 +0100</pubDate>
-      <guid>https://xenophil90.github.io/tags/hackthebox/</guid>
       <description></description>
     </item>
   </channel>
