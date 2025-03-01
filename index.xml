@@ -5,7 +5,101 @@
     <description>Recent content on xenophil90.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 16 Feb 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Feb 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Die Wahl des richtigen E-Mail-Anbieters: Datenschutz und Sicherheit im digitalen Alltag</title>
+    <link>https://xenophil90.github.io/posts/2025/die-wahl-des-richtigen-e-mail-anbieters-datenschutz-und-sicherheit-im-digitalen-alltag/</link>
+    <pubDate>Sun, 23 Feb 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/die-wahl-des-richtigen-e-mail-anbieters-datenschutz-und-sicherheit-im-digitalen-alltag/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;E-Mail-Kommunikation ist ein essenzieller Bestandteil unseres digitalen Lebens. Dennoch wird die Bedeutung der Wahl des richtigen E-Mail-Anbieters oft unterschätzt. Besonders in Zeiten, in denen das Vertrauen in große, insbesondere US-amerikanische Anbieter schwindet, rückt das Thema Datenschutz und Sicherheit wieder stärker in den Fokus.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/E-Mail-Security.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;warum-ist-die-wahl-des-e-mail-anbieters-so-wichtig&#34;&gt;
+    &lt;a href=&#34;#warum-ist-die-wahl-des-e-mail-anbieters-so-wichtig&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Warum ist die Wahl des E-Mail-Anbieters so wichtig?
+&lt;/h2&gt;
+&lt;p&gt;Viele bekannte Anbieter, die kostenlose E-Mail-Dienste anbieten, finanzieren sich möglicherweise durch die Analyse und Verwertung der Nutzerdaten&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Nach dem Motto „Wenn der Service kostenlos ist, bist du die Ware“ werden E-Mail-Inhalte eventuell systematisch ausgewertet. Dies ist nicht nur eine Frage der Privatsphäre, sondern auch der Sicherheit. Schließlich enthalten E-Mail-Konten oft hochsensible Daten wie Korrespondenz mit Steuerberatern, Anwälten oder Ärzten.&lt;/p&gt;
+&lt;p&gt;Darüber hinaus dient die eigene E-Mail-Adresse häufig als Schlüssel für andere digitale Dienste. Mit der „Passwort vergessen“-Funktion können Angreifer durch den Zugriff auf ein kompromittiertes E-Mail-Konto auch andere Accounts übernehmen. Identitätsdiebstahl, Erpressung oder unbefugte Kontozugriffe sind dann oft nur noch eine Frage der Zeit.&lt;/p&gt;
+&lt;h2 id=&#34;europäische-alternativen-sicherheit-gegen-eine-kleine-gebühr&#34;&gt;
+    &lt;a href=&#34;#europ%c3%a4ische-alternativen-sicherheit-gegen-eine-kleine-geb%c3%bchr&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Europäische Alternativen: Sicherheit gegen eine kleine Gebühr
+&lt;/h2&gt;
+&lt;p&gt;Es gibt jedoch Alternativen zu den großen E-Mail-Anbietern, die mehr Datenschutz bieten und sich nicht durch Werbung oder Datenanalyse finanzieren. Europäische Anbieter wie &lt;strong&gt;Mailbox.org&lt;/strong&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; und &lt;strong&gt;Posteo&lt;/strong&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; setzen auf Sicherheit und Datenschutzfreundlichkeit. Der Unterschied zu den „kostenlosen“ Anbietern: Statt mit persönlichen Daten bezahlt man mit Geld – ein kleiner Preis für eine größere Kontrolle über die eigenen Daten.&lt;/p&gt;
+&lt;p&gt;Beide Anbieter bieten eine verschlüsselte E-Mail-Kommunikation und -Speicherung sowie Schutz vor Tracking. Insbesondere Posteo ermöglicht es, neben E-Mails auch Kalender- und Kontaktdaten verschlüsselt zu speichern – und das auf eine Weise, die für den normalen Nutzer unsichtbar bleibt.&lt;/p&gt;
+&lt;h2 id=&#34;praktische-funktionen-für-mehr-kontrolle&#34;&gt;
+    &lt;a href=&#34;#praktische-funktionen-f%c3%bcr-mehr-kontrolle&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Praktische Funktionen für mehr Kontrolle
+&lt;/h2&gt;
+&lt;p&gt;Ein besonders nützliches Feature bei Posteo sind die sogenannten &lt;strong&gt;Filter-Adressen&lt;/strong&gt;. Dabei handelt es sich um eine einfache, aber effektive Möglichkeit, Spam zu minimieren und die eigene E-Mail-Adresse vor Datenhändlern zu schützen. Die Funktionsweise ist simpel:&lt;/p&gt;
+&lt;p&gt;Zusätzlich zur Hauptadresse (z. B. &lt;a href=&#34;mailto:max.mustermann@posteo.de&#34;&gt;max.mustermann@posteo.de&lt;/a&gt;) können Filter-Adressen mit einem Plus-Zeichen und einer beliebigen Zeichenfolge erstellt werden, z. B. &lt;strong&gt;&lt;a href=&#34;mailto:max.mustermann&amp;#43;newsletter@posteo.de&#34;&gt;max.mustermann+newsletter@posteo.de&lt;/a&gt;&lt;/strong&gt;. Dies ermöglicht eine gezielte Organisation der E-Mails, indem Nachrichten für bestimmte Dienste automatisch in eigene Ordner verschoben werden.&lt;/p&gt;
+&lt;p&gt;Darüber hinaus bieten Filter-Adressen einen weiteren Vorteil: Wenn plötzlich Spam an eine bestimmte Adresse (z. B. &lt;a href=&#34;mailto:max.mustermann&amp;#43;webshop@posteo.de&#34;&gt;max.mustermann+webshop@posteo.de&lt;/a&gt;) gesendet wird, lässt sich leicht erkennen, welcher Anbieter die E-Mail-Adresse weitergegeben oder durch eine Sicherheitslücke verloren hat. Dadurch können Nutzer gezielt Maßnahmen ergreifen, etwa durch das Training des Spam-Filters oder die Kontaktaufnahme mit dem betroffenen Unternehmen.&lt;/p&gt;
+&lt;h2 id=&#34;fazit&#34;&gt;
+    &lt;a href=&#34;#fazit&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fazit
+&lt;/h2&gt;
+&lt;p&gt;Die Wahl des E-Mail-Anbieters sollte nicht leichtfertig getroffen werden. Wer Wert auf Datenschutz und Sicherheit legt, sollte sich bewusst für einen Anbieter entscheiden, der diese Aspekte ernst nimmt. Europäische Anbieter wie Posteo und Mailbox.org bieten eine sichere und datenschutzfreundliche Alternative zu den großen US-amerikanischen Plattformen – und das zu einem fairen Preis. Mit zusätzlichen Funktionen wie Filter-Adressen lassen sich nicht nur Spam reduzieren, sondern auch potenzielle Sicherheitsrisiken frühzeitig erkennen und eindämmen.&lt;/p&gt;
+&lt;p&gt;Ein bewusster Umgang mit digitalen Diensten ist eine wichtige Form der Selbstverteidigung in der vernetzten Welt. Ein Wechsel zu einem sicheren E-Mail-Anbieter ist ein erster, aber essenzieller Schritt in Richtung eines datenschutzfreundlicheren digitalen Alltags.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Hinweis: Es handelt sich nicht um bezahlte Werbung o. ä. Das Thema ist einfach wichtig&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.computerwoche.de/article/2823977/gmail-integriert-ki-in-seine-mobile-app.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.computerwoche.de/article/2823977/gmail-integriert-ki-in-seine-mobile-app.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://tuta.com/de/blog/gmail-trained-bard&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://tuta.com/de/blog/gmail-trained-bard&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://dr-dsgvo.de/google-transparenzbericht-google-gibt-verarbeitung-von-nutzerdaten-durch-geheimdienste-zu/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://dr-dsgvo.de/google-transparenzbericht-google-gibt-verarbeitung-von-nutzerdaten-durch-geheimdienste-zu/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://mailbox.org/de/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://mailbox.org/de/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://posteo.de/de&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://posteo.de/de&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
+    </item>
+    
     <item>
     <title>Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest</title>
     <link>https://xenophil90.github.io/posts/2025/dein-digitaler-tresor-warum-du-in-der-cloud-verschl%C3%BCsseln-solltest/</link>
