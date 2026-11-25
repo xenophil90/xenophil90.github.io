@@ -18,7 +18,7 @@ html{height:100%}
 body{
   margin:0; min-height:100%; background:var(--bg); color:var(--text);
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  display:flex; align-items:center; justify-content:center; padding:24px 16px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:24px 16px;
   -webkit-font-smoothing:antialiased;
 }
 .card{
@@ -47,6 +47,27 @@ h1{margin:0; font-size:26px; font-weight:650; letter-spacing:-.01em}
 .links a.primary{background:var(--accent); border-color:var(--accent); color:#fff}
 .links a.primary:hover,.links a.primary:focus-visible{filter:brightness(1.08); background:var(--accent); color:#fff}
 
+.showcase{text-align:left; padding:28px 24px 24px}
+.showcase h2{margin:0; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); text-align:center}
+.certs{list-style:none; margin:20px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.cert{
+  position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  padding:16px 14px 14px; border:1px solid var(--line); border-radius:16px; background:var(--card);
+  transition:border-color .15s, transform .15s, box-shadow .15s;
+}
+.cert:hover{border-color:var(--accent); transform:translateY(-2px); box-shadow:0 6px 20px rgba(10,108,255,.10)}
+.cert .badge{
+  width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+  background:var(--accent-soft); color:var(--accent);
+}
+.cert .badge svg{width:22px; height:22px}
+.cert strong{display:block; font-size:15px; font-weight:650; line-height:1.25; color:var(--text)}
+.cert small{display:block; margin-top:3px; font-size:12px; line-height:1.35; color:var(--muted)}
+.cert .issuer{
+  margin-top:auto; font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:3px 8px; border-radius:999px;
+}
+@media (max-width:340px){ .certs{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -69,5 +90,30 @@ h1{margin:0; font-size:26px; font-weight:650; letter-spacing:-.01em}
     </a>
   </nav>
 </main>
+  <section class="card showcase" aria-labelledby="certs-title">
+    <h2 id="certs-title">Certifications</h2>
+    <ul class="certs">
+      <li class="cert">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></span>
+        <span><strong>ISO 27001 Lead Auditor</strong><small>Auditing information security management systems</small></span>
+        <span class="issuer">ISO/IEC</span>
+      </li>
+      <li class="cert">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
+        <span><strong>CRISC</strong><small>Certified in Risk and Information Systems Control</small></span>
+        <span class="issuer">ISACA</span>
+      </li>
+      <li class="cert">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span><strong>CISM</strong><small>Certified Information Security Manager</small></span>
+        <span class="issuer">ISACA</span>
+      </li>
+      <li class="cert">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+        <span><strong>GSLC</strong><small>GIAC Security Leadership Certification</small></span>
+        <span class="issuer">GIAC</span>
+      </li>
+    </ul>
+  </section>
 </body>
 </html>
