@@ -18,7 +18,7 @@ html{height:100%}
 body{
   margin:0; min-height:100%; background:var(--bg); color:var(--text);
   font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  display:flex; align-items:center; justify-content:center; padding:24px 16px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:24px 16px;
   -webkit-font-smoothing:antialiased;
 }
 .card{
@@ -47,6 +47,25 @@ h1{margin:0; font-size:26px; font-weight:650; letter-spacing:-.01em}
 .links a.primary{background:var(--accent); border-color:var(--accent); color:#fff}
 .links a.primary:hover,.links a.primary:focus-visible{filter:brightness(1.08); background:var(--accent); color:#fff}
 
+.showcase{text-align:left; padding:28px 20px 20px}
+.showcase h2{margin:0; font-size:20px; font-weight:650; letter-spacing:-.01em; text-align:center}
+.group{margin:24px 0 0}
+.group h3{margin:0 0 10px 4px; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.certs{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+.cert{
+  display:flex; align-items:center; gap:14px; padding:10px 14px 10px 10px;
+  border:1px solid var(--line); border-radius:16px; color:var(--text); text-decoration:none;
+  transition:border-color .15s, background .15s, transform .15s, box-shadow .15s;
+}
+.cert:hover,.cert:focus-visible{border-color:var(--accent); background:var(--accent-soft); transform:translateY(-1px); box-shadow:0 6px 20px rgba(10,108,255,.10); outline:none}
+.cert img{width:64px; height:64px; flex:none; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,.12)); transition:transform .2s}
+.cert:hover img{transform:scale(1.06) rotate(-3deg)}
+.cert .info{flex:1; min-width:0}
+.cert strong{display:block; font-size:15px; font-weight:650; line-height:1.25}
+.cert small{display:block; margin-top:2px; font-size:12px; line-height:1.35; color:var(--muted)}
+.cert .meta{display:block; margin-top:5px; font-size:11px; font-weight:600; letter-spacing:.03em; color:var(--accent)}
+.cert .verify{flex:none; width:18px; height:18px; color:var(--muted); transition:color .15s}
+.cert:hover .verify{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -69,5 +88,48 @@ h1{margin:0; font-size:26px; font-weight:650; letter-spacing:-.01em}
     </a>
   </nav>
 </main>
+  <section class="card showcase" aria-labelledby="certs-title">
+    <h2 id="certs-title">Certifications</h2>
+    <div class="group">
+      <h3>Leadership</h3>
+      <ul class="certs">
+        <li><a class="cert" href="https://www.credly.com/badges/91ccfe75-3850-48b9-9532-8d337b79d261" target="_blank" rel="noopener" aria-label="Verify GSLC credential (GIAC)">
+          <img src="assets/badges/gslc.png" alt="GSLC badge" width="64" height="64" loading="lazy">
+          <span class="info"><strong>GSLC</strong><small>GIAC Security Leadership</small><span class="meta">GIAC · 2026</span></span>
+          <svg class="verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Governance, Risk &amp; Compliance</h3>
+      <ul class="certs">
+        <li><a class="cert" href="https://www.credly.com/badges/2dcc7d3b-f389-4570-a007-64c354f06f6e" target="_blank" rel="noopener" aria-label="Verify CISM credential (ISACA)">
+          <img src="assets/badges/cism.png" alt="CISM badge" width="64" height="64" loading="lazy">
+          <span class="info"><strong>CISM</strong><small>Certified Information Security Manager</small><span class="meta">ISACA · 2024</span></span>
+          <svg class="verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a></li>
+        <li><a class="cert" href="https://www.credly.com/badges/d29b0328-14d9-414b-95fb-daaf2a83bdbf" target="_blank" rel="noopener" aria-label="Verify CRISC credential (ISACA)">
+          <img src="assets/badges/crisc.png" alt="CRISC badge" width="64" height="64" loading="lazy">
+          <span class="info"><strong>CRISC</strong><small>Certified in Risk and Information Systems Control</small><span class="meta">ISACA · 2025</span></span>
+          <svg class="verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Offensive Security</h3>
+      <ul class="certs">
+        <li><a class="cert" href="https://www.credential.net/351f4d08-04d3-4775-bd80-beb71ec304bc" target="_blank" rel="noopener" aria-label="Verify PNPT credential (TCM Security)">
+          <img src="assets/badges/pnpt.png" alt="PNPT badge" width="64" height="64" loading="lazy">
+          <span class="info"><strong>PNPT</strong><small>Practical Network Penetration Tester</small><span class="meta">TCM Security · 2021</span></span>
+          <svg class="verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a></li>
+        <li><a class="cert" href="https://certified.tcm-sec.com/a3161543-b52a-460e-b63a-ee206a072886" target="_blank" rel="noopener" aria-label="Verify PORP credential (TCM Security)">
+          <img src="assets/badges/porp.png" alt="PORP badge" width="64" height="64" loading="lazy">
+          <span class="info"><strong>PORP</strong><small>Practical OSINT Research Professional</small><span class="meta">TCM Security · 2025</span></span>
+          <svg class="verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </section>
 </body>
 </html>
